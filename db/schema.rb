@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_215504) do
-
+ActiveRecord::Schema.define(version: 2020_08_03_215514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignatures", force: :cascade do |t|
+    t.string "name"
+    t.bigint "teacher", null: false
+    t.bigint "batch_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["batch_id"], name: "index_assignatures_on_batch_id"
+  end
 
   create_table "batches", force: :cascade do |t|
     t.string "grade"
@@ -24,6 +32,14 @@ ActiveRecord::Schema.define(version: 2020_08_03_215504) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lessons", force: :cascade do |t|
+    t.bigint "assignature_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "video"
+    t.index ["assignature_id"], name: "index_lessons_on_assignature_id"
+    
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.bigint "batch_id", null: false
@@ -61,7 +77,9 @@ ActiveRecord::Schema.define(version: 2020_08_03_215504) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
+  
+  add_foreign_key "assignatures", "batches"
+  add_foreign_key "lessons", "assignatures"
   add_foreign_key "courses", "batches"
   add_foreign_key "events", "courses"
   add_foreign_key "users", "batches"
