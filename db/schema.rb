@@ -39,6 +39,23 @@ ActiveRecord::Schema.define(version: 2020_08_03_215514) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "video"
     t.index ["assignature_id"], name: "index_lessons_on_assignature_id"
+    
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.bigint "batch_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["batch_id"], name: "index_courses_on_batch_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "date"
+    t.string "eventable_type"
+    t.string "eventable_id"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_events_on_course_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,10 +66,21 @@ ActiveRecord::Schema.define(version: 2020_08_03_215514) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "role"
+    t.string "institute"
+    t.datetime "birthday"
+    t.boolean "available"
+    t.bigint "batch_id", null: false
+    t.index ["batch_id"], name: "index_users_on_batch_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
+  
   add_foreign_key "assignatures", "batches"
   add_foreign_key "lessons", "assignatures"
+  add_foreign_key "courses", "batches"
+  add_foreign_key "events", "courses"
+  add_foreign_key "users", "batches"
 end
