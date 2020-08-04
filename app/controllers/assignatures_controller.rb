@@ -3,6 +3,7 @@ class AssignaturesController < ApplicationController
 
   def index
     @assignatures = current_user.assignatures
+ 
   end
 
   def show

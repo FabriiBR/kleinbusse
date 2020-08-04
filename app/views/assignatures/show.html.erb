@@ -1,13 +1,9 @@
 <div class="container">
   <div class="d-flex justify-content-between">
     <h2><%= @assignature.name %></h2>
-    <div>
-      <%= link_to "Video" %>
-      <%= linl_to "Ejercicios" %>
-    </div>
   </div>
-  <div class="d-flex">
-    <div>
+  <div class="d-flex justify-content-between">
+    <div class="d-flex flex-column">
       <div>
         <h3>Tareas Pendientes</h3>
       </div>
@@ -21,4 +17,5 @@
       </div>
     </div>    
   </div>
+  <%= link_to "Volver", assignatures_path, class:"btn btn-success" %>
 </div>
