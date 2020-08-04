@@ -28,9 +28,9 @@ a1.save!
 a2.save!
 a3.save!
 
-puts batch
-puts user
-puts teacher
-puts a1
-puts a2
-puts a3
+p batch
+p user
+p teacher
+p a1
+p a2
+p a3
