@@ -107,7 +107,10 @@ ActiveRecord::Schema.define(version: 2020_08_04_144309) do
   end
 
   add_foreign_key "assignatures", "batches"
+<<<<<<< HEAD
   add_foreign_key "courses", "batches"
+=======
+>>>>>>> master
   add_foreign_key "events", "courses"
   add_foreign_key "lessons", "assignatures"
   add_foreign_key "user_homeworks", "homeworks"
