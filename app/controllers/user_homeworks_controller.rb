@@ -1,0 +1,2 @@
+class UserHomeworksController < ApplicationController
+end
