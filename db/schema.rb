@@ -34,10 +34,9 @@ ActiveRecord::Schema.define(version: 2020_08_04_144309) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.bigint "batch_id", null: false
+    t.bigint "batches", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["batch_id"], name: "index_courses_on_batch_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -107,10 +106,6 @@ ActiveRecord::Schema.define(version: 2020_08_04_144309) do
   end
 
   add_foreign_key "assignatures", "batches"
-<<<<<<< HEAD
-  add_foreign_key "courses", "batches"
-=======
->>>>>>> master
   add_foreign_key "events", "courses"
   add_foreign_key "lessons", "assignatures"
   add_foreign_key "user_homeworks", "homeworks"
