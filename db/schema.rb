@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_234605) do
+ActiveRecord::Schema.define(version: 2020_08_04_144309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignatures", force: :cascade do |t|
     t.string "name"
+<<<<<<< HEAD
     t.bigint "teacher", null: false
+=======
+    t.bigint "teacher_id", null: false
+>>>>>>> 5bbc736125f5b4feb6fef388fae904ef883b128d
     t.bigint "batch_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,9 +38,10 @@ ActiveRecord::Schema.define(version: 2020_08_03_234605) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.bigint "batches", null: false
+    t.bigint "batch_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["batch_id"], name: "index_courses_on_batch_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -52,8 +57,8 @@ ActiveRecord::Schema.define(version: 2020_08_03_234605) do
   create_table "homeworks", force: :cascade do |t|
     t.string "content"
     t.string "answer"
-    t.string "type"
-    t.bigint "lessons", null: false
+    t.integer "type"
+    t.bigint "lesson_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_08_03_234605) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.bigint "lessons", null: false
+    t.bigint "lesson_id", null: false
     t.string "state"
     t.string "description"
     t.bigint "student_id", null: false
@@ -106,6 +111,10 @@ ActiveRecord::Schema.define(version: 2020_08_03_234605) do
   end
 
   add_foreign_key "assignatures", "batches"
+<<<<<<< HEAD
+=======
+  add_foreign_key "courses", "batches"
+>>>>>>> 5bbc736125f5b4feb6fef388fae904ef883b128d
   add_foreign_key "events", "courses"
   add_foreign_key "lessons", "assignatures"
   add_foreign_key "user_homeworks", "homeworks"
