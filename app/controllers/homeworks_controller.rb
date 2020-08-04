@@ -1,5 +1,5 @@
 class HomeworksController < ApplicationController
-  before _action :set_homework, only: %i[show :update]
+  before_action :set_homework, only: %i[show :update]
 
   def index
     @homework = Homework.all
