@@ -4,7 +4,7 @@ class CreateHomeworks < ActiveRecord::Migration[6.0]
       t.string :content
       t.string :answer
       t.string :type
-      t.bigint :lessons, null: false, foreign_key: true
+      t.bigint :lesson_id, null: false, foreign_key: true
 
       t.timestamps
     end
