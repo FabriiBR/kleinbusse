@@ -7,6 +7,7 @@ class AssignaturesController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.new
   end
 
   private
