@@ -3,6 +3,7 @@ class HomeworksController < ApplicationController
 
   def index
     @homework = Homework.all
+
   end
 
   def show
