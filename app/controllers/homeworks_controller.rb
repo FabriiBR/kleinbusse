@@ -1,10 +1,15 @@
 class HomeworksController < ApplicationController
-  before _action :set_homework, only: %i[show]
+  before _action :set_homework, only: %i[show :update]
 
   def index
+    @homework = Homework.all
   end
 
   def show
+  end
+
+  def update
+    @homework.update
   end
 
   private
@@ -17,3 +22,4 @@ class HomeworksController < ApplicationController
     params.requiere(:homework).permit(:attach, :content, :answer, :type)
   end
 end
+
