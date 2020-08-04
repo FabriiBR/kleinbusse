@@ -10,9 +10,9 @@ class AssignaturesController < ApplicationController
   end
 
   private
+
   def set_assignature
     @assignature = Assignature.find(params[:id])
   end
-  
-  
+
 end
