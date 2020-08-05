@@ -6,7 +6,7 @@
     <h2 class="card-appointment d-flex justify-content-between"></h2>  
   </div>
 
-  <% uno =0    %>
+  <% uno = 0    %>
   <% @homework.group_by(&:lesson).each do |lesson, homework| %>
     <h4><%= lesson.name if lesson %></h4>
     <ul>
