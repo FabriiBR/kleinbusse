@@ -37,6 +37,7 @@ a1.save!
 a2.save!
 a3.save!
 
+<<<<<<< HEAD
 #--- Seed Lesssons de prueba 1--
 lesson = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/watch?v=uK4-s0ojHFg" )
 lesson2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/watch?v=o2UTk8bsLS0" )
@@ -47,6 +48,15 @@ lesson2.save!
 lesson3.save!
 
 #--- Seed Lesssons de prueba 2--
+=======
+#--- Seed Lesssons de prueba--
+lesson = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg" )
+lesson2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0" )
+lesson3 = Lesson.new(assignature_id: a1.id,name: "Integrales", video: "https://www.youtube.com/embed/d7Y9Om4KCUM" )
+lesson.save
+lesson2.save
+lesson3.save
+>>>>>>> 415e36035aad6b5b57869e7f20d2c1f37b6de9a6
 l1 = Lesson.new(name:'Calculo', assignature_id: a1.id)
 l2 = Lesson.new(name:'Limite', assignature_id: a1.id)
 l3 = Lesson.new(name:'Derivada', assignature_id: a2.id)
