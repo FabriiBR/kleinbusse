@@ -6,26 +6,17 @@
     <h2 class="card-appointment d-flex justify-content-between"></h2>  
   </div>
 
-  <% uno = 0    %>
-  <% @homework.group_by(&:lesson).each do |lesson, homework| %>
-    <h4><%= lesson.name if lesson %></h4>
-    <ul>
-    <% homework.each do |home| %>
-     <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li>
-     <% uno =+ 1 %>
+  <%# @homeworks.group_by(&:assignature).each  do |assignatures, homeworks  | %> 
+  <% @assignatures.each do | assignature|  %>
+  <h4> <%= assignature.name %> </h4>
+    <% assignature.lessons.each do |lesson| %>
+    <h4><%= lesson.name %></h4>
+      <% lesson.homeworks.each do |home| %>
+        <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li>
+      <% end %>
     <% end %>
-    <%= uno  %>
-    </ul>
   <% end %>
 
-  <p> --------------------------- </p>
-
-  <p> --------------------------- </p>
-  <% @homework.each do |home| %>
-    <h4> Assignature: <%= home.lesson.assignature.name%>   </h4> 
-    <h4> Lesson: <%= home.lesson.name%></h4> 
-    <p> <%= link_to home.name, homework_path(home.id) %> </p>
-  <% end %>
 </div>
 
 

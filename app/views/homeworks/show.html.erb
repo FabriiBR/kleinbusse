@@ -1,11 +1,21 @@
-<h1>  Aca se lista UNA tarea</h1>
 
 
-<h4> Descripcion: <%= @homework.content%></h4> 
-
-
-<h4> Respuesta: <%= @homework.answer%></h4> 
-
+<% if @homework.type_off == 0 %>
+  <h4> tipo: <%=@homework.type_off%></h4>
+  <h4> Homework </h4>
+  <h4>  <%= @homework.name %></h4>
+  <h4> Descripcion: <%= @homework.content%></h4> 
+  <h4> Adjunta la respuesta aqui: </h4> 
+<% else %>
+  <h4> Flashcard </h4>
+  <h4>  <%= @homework.name%></h4>
+  <h4> Descripcion: <%= @homework.content%></h4> 
+  <%= simple_form_for(@homework) do |f| %> 
+    <%= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
+    <%= f.submit class:"btn btn-dark" %>
+  <% end %>
+  <h4> tipo: <%=@homework.type_off%></h4>
+<% end %>
 <p>--------------------------</p>
 
 <h3>Todavia tenés dudas?</h3>

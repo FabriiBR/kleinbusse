@@ -1,5 +1,5 @@
 class Homework < ApplicationRecord
   belongs_to :lesson
-  enum type: [:homework, :flashcard]
+  enum type_off: [:homework, :flashcard]
   validates :content, presence: true
 end
