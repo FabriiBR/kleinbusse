@@ -36,9 +36,9 @@ a2.save!
 a3.save!
 
 #--- Seed Lesssons de prueba--
-lesson = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/watch?v=uK4-s0ojHFg" )
-lesson2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/watch?v=o2UTk8bsLS0" )
-lesson3 = Lesson.new(assignature_id: a1.id,name: "Integrales", video: "https://www.youtube.com/watch?v=d7Y9Om4KCUM" )
+lesson = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg" )
+lesson2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0" )
+lesson3 = Lesson.new(assignature_id: a1.id,name: "Integrales", video: "https://www.youtube.com/embed/d7Y9Om4KCUM" )
 lesson.save
 lesson2.save
 lesson3.save

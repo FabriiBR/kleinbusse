@@ -4,7 +4,7 @@ class UserHomeworksController < ApplicationController
   def create
     @user = User.find(current_user)
     @homework = Homework.find(params[:homework_id])
-    @uh = UserHomework.new(status: "pending")
+    @uh = UserHomework.new(status: "pending", file: user_params)
     @uh.user = @user
     @uh.homework = @homework
     if @uh.save!
@@ -17,5 +17,11 @@ class UserHomeworksController < ApplicationController
   def update
     @uh = UserHomework.find(params[:id])
     @uh.update
+  end
+
+  private
+
+  def user_params
+    params.require(:user_homework).permit(:file)
   end
 end
