@@ -3,10 +3,10 @@ class AssignaturesController < ApplicationController
 
   def index
     @assignatures = current_user.assignatures
- 
   end
 
   def show
+    @lessons = Lesson.where(assignature_id: @assignature.id)
   end
 
   private
