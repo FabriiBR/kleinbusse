@@ -1,7 +1,40 @@
-.cardhomework {
-
+.white-card {
+    position: flex;
+    width: 30vw;
+    height: 291px;
+    left: 389px;
+    top: 572px;
+    background: #FEFEFE;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    h2 {
+        font-family: DM Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        color: #212037;
+    }
+    li {
+        font-family: DM Sans;
+        font-style: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: #AAAAB7;
+    }
 }
-
-.cardlesson {
-
+.video-card {
+    width: 100%;
+    min-height: 60vh;
+    background: #FEFEFE;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+.cont {
+    width: 70vw !important;
 }

@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+// require('util.js')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -23,6 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+import $ from 'jquery';
 import "bootstrap";
 // import btn_newman from '../components/sidebar';
 
@@ -30,6 +31,10 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 
+$('#myTab a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+})
 
 // document.addEventListener('turbolinks:load', () => {
 // });

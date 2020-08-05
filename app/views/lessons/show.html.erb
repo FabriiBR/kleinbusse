@@ -1,43 +1,44 @@
-<ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" id="clase-tab" class="tab-underlined active">Clase</a>
-  </li>
-  <li>
-    <a href="#" id="video-tab" class="tab-underlined">Video</a>
-  </li>
-  <li>
-    <a href="#" id="ejercicio-tab" class="tab-underlined">Ejercicio</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="clase" role="tabpanel" aria-labelledby="clase-tab">.hola..</div>
-  <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">.video</div>
-  <div class="tab-pane fade" id="ejercicio" role="tabpanel" aria-labelledby="ejercicio-tab">ejercicio.</div>
-</div>
-<div class="bottom d-flex justify-content-around">
-  <div class="card cardlesson">
-    <h2>Clases</h2>
-    <% @lessons.each do |lesson| %>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <%=link_to lesson_path(lesson.id) do%>
-            <%= lesson.name %>
-          <%end %>
-        </li>
-      </ul>
-    <%end%>
+<div class="container cont">
+  <div class= 'card video-card px-2 mb-2'>
+    <div class="tabs-underlined nav nav-tabs d-flex justify-content-end" id="nav-tab" role="tablist">
+      <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true">clase</a>
+      <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false">video</a>
+    </div>
+    <div class="tab-content" style="height: 45vh;" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
+        Clase
+      </div>
+      <div class="tab-pane fade" style="height: 45vh;" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
+        <iframe width="100%" height="100%" src=<%="#{@lesson.video }"%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
-  <div class="card cardhomework">
-    <h2>Tareas</h2>
-    <%=link_to 'ver todaslas tareas', homeworks_path, class:'btn btn-success' %>
-    <% @homeworks.each do |hw| %>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <%=link_to homework_path(hw.id) do%>
-            <%= hw.name %>
-          <%end %>
-        </li>
-      </ul>
-    <%end%>
+<%# -------------------------------------------------------- %>
+  <div class="bottom d-flex justify-content-between mt-5">
+    <div class=" white-card p-2">
+      <h2 class='p-2 border-bottom'>Clases</h2>
+      <% @lessons.each do |lesson| %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <%=link_to lesson_path(lesson.id) do%>
+              <%= lesson.name %>
+            <%end %>
+          </li>
+        </ul>
+      <%end%>
+    </div>
+    <div class="white-card p-2 center">
+      <h2 class='p-2 border-bottom'>Tareas</h2>
+      <%=link_to 'ver todaslas tareas', homeworks_path, class:'btn btn-success' %>
+      <% @homeworks.each do |hw| %>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <%=link_to homework_path(hw.id) do%>
+              <%= hw.name %>
+            <%end %>
+          </li>
+        </ul>
+      <%end%>
+    </div>
   </div>
 </div>
