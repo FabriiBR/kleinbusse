@@ -13,4 +13,31 @@
   <div class="tab-pane fade show active" id="clase" role="tabpanel" aria-labelledby="clase-tab">.hola..</div>
   <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">.video</div>
   <div class="tab-pane fade" id="ejercicio" role="tabpanel" aria-labelledby="ejercicio-tab">ejercicio.</div>
-</div>  
+</div>
+<div class="bottom d-flex justify-content-around">
+  <div class="card cardlesson">
+    <h2>Clases</h2>
+    <% @lessons.each do |lesson| %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%=link_to lesson_path(lesson.id) do%>
+            <%= lesson.name %>
+          <%end %>
+        </li>
+      </ul>
+    <%end%>
+  </div>
+  <div class="card cardhomework">
+    <h2>Tareas</h2>
+    <%=link_to 'ver todaslas tareas', homeworks_path, class:'btn btn-success' %>
+    <% @homeworks.each do |hw| %>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%=link_to homework_path(hw.id) do%>
+            <%= hw.name %>
+          <%end %>
+        </li>
+      </ul>
+    <%end%>
+  </div>
+</div>

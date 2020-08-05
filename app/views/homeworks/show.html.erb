@@ -5,3 +5,9 @@
 
 
 <h4> Respuesta: <%= @homework.answer%></h4> 
+
+<p>--------------------------</p>
+
+<h3>Todavia tenés dudas?</h3>
+
+<%=link_to 'Tengo una duda!', lesson_tickets_path(@homework.lesson_id), class: 'btn btn-success'%>
