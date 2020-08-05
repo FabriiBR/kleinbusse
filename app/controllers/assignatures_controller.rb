@@ -3,9 +3,11 @@ class AssignaturesController < ApplicationController
 
   def index
     @assignatures = current_user.assignatures
+ 
   end
 
   def show
+    @lesson = Lesson.new
   end
 
   private
