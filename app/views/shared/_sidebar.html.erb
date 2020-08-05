@@ -2,28 +2,90 @@
   <div class="sidebar-head">
     <div class="head">
       <a class="head-link">
-        <input type="image" class="head-img" id="btn_open" src="<%= asset_path 'favicon.png' %>">
+        <input type="image" onclick="toggleNav()" class="head-img" id="btn_open" src="<%= asset_path 'favicon.png' %>">
         <span class="head-text">Cardenal Newman</span>
       </a>
     </div>
   </div>
-  <div class="sidebar-info">
-     <img class="info-avatar" src="https://randomuser.me/api/portraits/women/67.jpg">
+  <div class="sidebar-info dropdown">
+     <%= image_tag "https://randomuser.me/api/portraits/women/67.jpg", class:"info-avatar dropdown-toggle" , data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+        <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
      <span class="info-name ">Juan Martinez</span>
      <span class="info-type">Estudiante</span>
   </div>
-  <div class="event-header">
-    <a class="nav-link" >
-      <i class="link-bell far fa-bell"></i>
-      <span class="link-text">Proximos Eventos</span>
-    </a>
-  </div>
-  <div class="event">
-    <ul class="sidebar-nav">
-      <li class="nav-item">
-        <a class="nav-link" >
-        </a>
-      </li>
-    </ul>
+  <div class= "sidebar-event">
+    <div class="event-header">
+      <a class="nav-link" >
+        <i class="link-bell far fa-bell"></i>
+        <span class="link-text">Proximos Eventos</span>
+      </a>
+    </div>
+    <div class="event">
+      <ul class="sidebar-nav">
+        <li class="event-item">
+          <div class="event-date">
+            <span>2</span>
+            <span>Dias</span>
+          </div>
+          <div class="event-assig">
+            <span class="date-assig">Matematica</span>
+            <span class="date-day">Viernes, 24 sep 2020</span>
+          </div>
+        </li>
+        <li class="event-item">
+          <div class="event-date">
+            <span>2</span>
+            <span>Dias</span>
+          </div>
+          <div class="event-assig">
+            <span class="date-assig">Matematica</span>
+            <span class="date-day">Viernes, 24 sep 2020</span>
+          </div>
+        </li>
+        <li class="event-item">
+          <div class="event-date">
+            <span>2</span>
+            <span>Dias</span>
+          </div>
+          <div class="event-assig">
+            <span class="date-assig">Matematica</span>
+            <span class="date-day">Viernes, 24 sep 2020</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+<script>
+let toggleStatus = false;
+function toggleNav(){
+  // let navSize = getComputedStyle(document.documentElement).getPropertyValue('--sizesidebar');
+  if (toggleStatus === false) {
+    document.documentElement.style.setProperty('--sizesidebar','18rem');
+    document.querySelector(".head-text").style.display = "block";
+    document.querySelector(".link-text").style.display = "block";
+    document.querySelector(".info-name").style.display = "block";
+    document.querySelector(".info-type").style.display = "block";
+    document.querySelector(".event").style.display = "block";
+    document.querySelector(".info-avatar").style.width = "150px";
+    document.querySelector(".info-avatar").style.height = "150px";
+    toggleStatus = true;
+  }
+  else if (toggleStatus === true){
+    document.documentElement.style.setProperty('--sizesidebar','5rem');
+    document.querySelector(".head-text").style.display = "none";
+    document.querySelector(".link-text").style.display = "none";
+    document.querySelector(".info-name").style.display = "none";
+    document.querySelector(".info-type").style.display = "none";
+    document.querySelector(".event").style.display = "none";
+    document.querySelector(".info-avatar").style.width = "60px";
+    document.querySelector(".info-avatar").style.height = "60px";
+    toggleStatus = false;
+  }
+}
+</script>
