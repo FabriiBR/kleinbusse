@@ -3,17 +3,16 @@ class AssignaturesController < ApplicationController
 
   def index
     @assignatures = current_user.assignatures
- 
   end
 
   def show
-    @lesson = Lesson.new
+    @lessons = Lesson.where(assignature_id: @assignature.id)
   end
 
   private
+
   def set_assignature
     @assignature = Assignature.find(params[:id])
   end
-  
-  
+
 end
