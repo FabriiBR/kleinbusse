@@ -17,11 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_04_144309) do
 
   create_table "assignatures", force: :cascade do |t|
     t.string "name"
-<<<<<<< HEAD
-    t.bigint "teacher", null: false
-=======
     t.bigint "teacher_id", null: false
->>>>>>> 5bbc736125f5b4feb6fef388fae904ef883b128d
     t.bigint "batch_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -111,10 +107,7 @@ ActiveRecord::Schema.define(version: 2020_08_04_144309) do
   end
 
   add_foreign_key "assignatures", "batches"
-<<<<<<< HEAD
-=======
   add_foreign_key "courses", "batches"
->>>>>>> 5bbc736125f5b4feb6fef388fae904ef883b128d
   add_foreign_key "events", "courses"
   add_foreign_key "lessons", "assignatures"
   add_foreign_key "user_homeworks", "homeworks"
