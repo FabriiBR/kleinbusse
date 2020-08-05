@@ -6,12 +6,13 @@ class AssignaturesController < ApplicationController
   end
 
   def show
+    @lessons = Lesson.where(assignature_id: @assignature.id)
   end
 
   private
+
   def set_assignature
     @assignature = Assignature.find(params[:id])
   end
-  
-  
+
 end
