@@ -1,20 +1,41 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login_main">
+  
+  <div class="login_form">
+    <h1>Cardenal Newman</h1>
+    <h3>Campus</h3>
+    <div class="login_form-form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-school"}) do |f| %>
+        <div class="form_field">
+          <label class="icon-form"><i class="fas fa-user"></i></label>
+          <%= f.input :email,
+                      label: false,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", class: 'input_login'} %>
+        </div>
+        <div class="form_field">
+          <label class="icon-form"><i class="fas fa-lock"></i></label>
+          <%= f.input :password,
+                      label: false,
+                      required: false,
+                      input_html: { autocomplete: "current-password", class: 'input_login' } %>
+        </div>
+        <div class="form_action">
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.button :submit, "Log in",
+                        class: "input_button" %>
+        </div>
+        <% end %>
+        <div class="form_faq">
+          <%= render "devise/shared/links" %>
+        </div>
+    </div>
+    <br>
+    <h5>Estimada/o estudiante,<br>si su usuario se encuntra suspendido temporalmente, por favor comunicarse con el<br>sector Administracion por medio de administracion@newmancollage.edu.ar <br> Muchas Gracias</h5>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="login_background">
+    <img src="<%= asset_path 'login.jpg' %>" class="background-img">
+    <img src="<%= asset_path 'favicon.png' %>" class="school-img">
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
