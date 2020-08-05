@@ -27,6 +27,7 @@ user.save!
 teacher = User.new(email: "teacher@teacher.com", password:"123456", first_name:"Florencia", last_name:"Fernandez", role:"teacher", institute:"Cardenal Newman", birthday: "12/04/1965", batch_id: batch.id)
 teacher.save!
 
+
 a1 = Assignature.new(name:"Matematica 1", teacher_id: teacher.id, batch_id: batch.id)
 a2 = Assignature.new(name:"Matematica 2", teacher_id: teacher.id, batch_id: batch2.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: teacher.id, batch_id: batch.id)
@@ -80,3 +81,4 @@ h11.save!
 
 
 puts 'finish seed'
+
