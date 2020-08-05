@@ -1,0 +1,161 @@
+.main-container{
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px 45px;
+
+  h2{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding-bottom: 27px;
+    padding-left: 50px;
+  }
+
+  .assigment{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+  }
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.card-assignature{
+  border: 15px solid #f4f4f4;
+  border-radius: 8px;
+  padding: 15px 45px;
+
+  p{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #AAAAB7;
+  
+  }
+
+}
+
+h3{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  
+  
+}
+
+p{
+  padding-bottom: 4px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #212037;
+}
+
+.fas{
+  text-align: center;
+  font-size: 30px ;
+  margin-bottom: 25px;
+}
+
+
+.fa-bookmark{
+  color: #CE72ED;
+}
+
+.fa-file-alt{
+  color:#498FFC;
+}
+
+.far{
+  text-align: center;
+  font-size: 30px ;
+  margin-bottom: 25px;
+}
+
+.fa-ellipsis-v{
+  font-size: 20px;
+  opacity: 0.7;
+
+  &:hover{
+    opacity: 0.9;
+  }
+}
+
+.fa-pen{
+  font-size: 20px;
+  opacity: 0.7;
+
+  &:hover{
+    opacity: 0.9;
+  }
+}
+
+.fa-lightbulb{
+  font-size: 20px;
+  opacity: 0.7;
+
+  &:hover{
+    opacity: 0.9;
+  }
+}
+
+.fa-link{
+  color: #FADB39;
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
