@@ -5,7 +5,6 @@ class LessonsController < ApplicationController
   @assignature = Assignature.find(params[:assignature_id])
   end
   
-
   def show
     # @assignature = Assignature.find(params[:assignature_id])
     @lesson = Lesson.find(params[:id])
