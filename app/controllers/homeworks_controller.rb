@@ -2,8 +2,7 @@ class HomeworksController < ApplicationController
   before_action :set_homework, only: %i[show :update]
 
   def index
-    @homework = Homework.all
-
+    @homework_assignatures = Assignature.joins(lessons: :homeworks).where(homeworks: {type_off: "homework"}).distinct
   end
 
   def show

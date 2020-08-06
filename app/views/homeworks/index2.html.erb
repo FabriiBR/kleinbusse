@@ -1,24 +1,22 @@
 <div class = "main-container">
   <h2> Listado </h2>  
-  <div class="cards_home d-flex align-items-around">
+  <div class="cards">
     <div class="main-container assigment">
       <h3>Homeworks</h3>
       <% @homework_assignatures.each do | assignature|   %>
-        <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "homework"}.empty? }.each do |lesson| %>
-          <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
-            <p><%= lesson.name %> </p>
-          </div>
-          <ul>
-            <div>
-              <% lesson.homeworks.select { |h| h.type_off == "homework"}.each do |home| %>     
-                <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
-                  <p> <%= link_to home.name, homework_path(home.id), class:"text-decoration-none text-dark" %> </p>
-                  <i class="fa fa-bullseye" aria-hidden="true"></i>
-                </div>
-              <% end %>
+        <h4> <%=# assignature.name %> </h4> 
+        <div>
+          <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "homework"}.empty? }.each do |lesson| %>
+            <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
+              <h4><%= lesson.name %> </h4>
+              <ul>
+                <% lesson.homeworks.select { |h| h.type_off == "homework"}.each do |home| %>     
+                  <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li> 
+                <% end %>
+              </ul>
             </div>
-          </ul>
-        <% end %>
+          <% end %>
+        </div> 
       <% end %>
     </div> 
     <div class="main-container assigment">  
