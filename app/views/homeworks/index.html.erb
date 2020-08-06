@@ -5,16 +5,17 @@
       <div class="main-container_home assigment">
         <div class="card-title d-flex d-flex justify-content-start align-items-left">
           <i class="fa fa-file" aria-hidden="true"></i>
-          <h3>  Homeworks  </h3>
+          <h4> <strong>  Homeworks </strong>  </h4>
         </div>
         <% if @assignature_homeworks.empty? %>
            <p> No tenes homeworks!!! 😁 </p>
         <% else %>
           <% @assignature_homeworks.each do |lesson , homework| %>
-            <p> <%=  lesson.name%> </p>
+            <h3>  <%=  lesson.name%>  </h3>
             <% homework.each do |home| %> 
-              <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
-                <p> <%= link_to home.name, homework_path(home.id)  %> </p> 
+              <div class="d-flex align-items-center justify-content-between" id="h_homework">
+                <p> <%= link_to home.name, homework_path(home.id) ,class:"text-decoration-none text-dark"  %> </p> 
+                <i class="fa fa-file" aria-hidden="true"></i>
               </div>
             <% end %>
           <% end %>
@@ -23,15 +24,18 @@
       <div class="main-container_home assigment">
         <div class="card-title d-flex d-flex justify-content-start align-items-left">
           <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-          <h3>  Flashcards  </h3>
+          <h3> <strong>  Flashcards  </strong>  </h3>
         </div>
         <% if @assignature_flashcards.empty? %>
           <p> No tenes Flashcards!!! 😁 </p>
         <% else %>
           <% @assignature_flashcards.each do |lesson , homework| %>
-            <p> <%=  lesson.name%> </p>
+            <h4>  <%=  lesson.name%>  </h4>
             <% homework.each do |home| %>    
-              <p> <%= link_to home.name, homework_path(home.id)  %> </p> 
+              <div class="d-flex align-items-center justify-content-between" id="h_flashcard">
+                <p> <%= link_to home.name, homework_path(home.id), class:"text-decoration-none text-dark"  %> </p> 
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+              </div>
             <% end %>
           <% end %>
         <% end %>  

@@ -63,6 +63,25 @@ h3{
   
 }
 
+
+#h_homework:hover{
+  border-left: 4px solid  #FADB39;
+  padding-left: 8px;
+}
+
+#h_flashcard:hover{
+  border-left: 4px solid  #9FDBFC;
+  padding-left: 8px;
+}
+
+.fa-print{
+  color: #FADB39;
+  font-size: 15px ;
+}
+
+
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
