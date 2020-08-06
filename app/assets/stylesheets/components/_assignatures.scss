@@ -47,6 +47,28 @@
 
 }
 
+.borde{
+  border-left: 4px solid transparent;
+  padding-left: 8px;
+}
+
+#lesson:hover{
+  border-left: 4px solid  #CE72ED;
+  padding-left: 8px;
+}
+
+#homework:hover{
+  border-left: 4px solid  #498FFC;
+  padding-left: 8px;
+}
+
+#link:hover{
+  border-left: 4px solid  #FADB39;
+  padding-left: 8px;
+}
+
+
+
 h3{
   font-family: DM Sans;
   font-style: normal;
