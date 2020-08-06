@@ -1,16 +1,22 @@
 <div class="container">
-  <div>
-    <h3>Listado de Materias</h3>
-      <% if current_user.role == "student" %>
-        <% @assignatures.each do |assignature| %>
-          <h3><%= link_to assignature.name, assignature_path(assignature) %></h3>
-          <p>Docente: <%= assignature.teacher.last_name %></p>
+  <div class="main-container">
+    <h2 class="my-4">Materias</h3>
+      <div class="cards d-flex">
+        <% if current_user.role == "student" %>
+          <% @assignatures.each do |assignature| %>
+            <%= link_to assignature_path(assignature), class:"card-assignature text-decoration-none text-dark" do %>           
+              <h3><%= assignature.name %></h3>
+              <p>Docente: <%= assignature.teacher.last_name %></p>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% @assignatures.each do |assignature| %>
+            <%= link_to assignature_path(assignature), class:"card-assignature text-decoration-none text-dark" do %>
+              <h3><%= assignature.name %></h3>
+            <% end %>
+          <% end %>
         <% end %>
-      <% else %>
-        <% @assignatures.each do |assignature| %>
-          <h3><%= assignature.name %></h3>
-        <% end %>
-      <% end %>
+      </div>
   </div>
 </div>
 
