@@ -21,16 +21,16 @@
       <i class="far fa-file-alt"></i>
       <h3>Tareas Pendientes</h3>
       <div>
-        <% @lessons.each do |lesson| %>
+        <% @assignature.homeworks.each do |homework| %>
             <hr>
-            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+            <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
               <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
-                <p><%= lesson.name %></p>
+                <p><%= homework.name %></p>
                 <i class="fas fa-ellipsis-v"></i>
               </div>
             <%end %>
         <%end%>
-        <%=link_to "Ver mas", homeworks_path %>
+        <%=link_to "Ver mas", assignature_homeworks_path(@assignature) %>
       </div>
     </div>
     <div class="main-container assigment">
@@ -39,7 +39,7 @@
       <div>
          <% @lessons.each do |lesson| %>
             <hr>
-            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+            <%=link_to "#{lesson.link}",target: :_blank, class:"text-decoration-none text-dark" do%>
               <div class="d-flex justify-content-between align-items-center my-2 borde" id="link">
                 <p><%= lesson.name %></p>
               <i class="far fa-lightbulb"></i>
