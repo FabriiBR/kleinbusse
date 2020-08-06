@@ -13,7 +13,7 @@
           <% @assignature_homeworks.each do |lesson , homework| %>
             <h3>  <%=  lesson.name%>  </h3>
             <% homework.each do |home| %> 
-              <div class="d-flex align-items-center justify-content-between" id="h_homework">
+              <div class="d-flex align-items-start justify-content-between" id="h_homework">
                 <p> <%= link_to home.name, homework_path(home.id) ,class:"text-decoration-none text-dark"  %> </p> 
                 <i class="fa fa-file" aria-hidden="true"></i>
               </div>
@@ -32,7 +32,7 @@
           <% @assignature_flashcards.each do |lesson , homework| %>
             <h4>  <%=  lesson.name%>  </h4>
             <% homework.each do |home| %>    
-              <div class="d-flex align-items-center justify-content-between" id="h_flashcard">
+              <div class="d-flex align-items-start justify-content-between" id="h_flashcard">
                 <p> <%= link_to home.name, homework_path(home.id), class:"text-decoration-none text-dark"  %> </p> 
                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
               </div>
