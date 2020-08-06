@@ -1,3 +1,10 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://localhost:3000/assignatures">Home</a></li>
+    <li class="breadcrumb-item"><a href="http://localhost:3000/lessons">Materias</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Tareas</li>
+  </ol>
+</nav>
 <div class="container">
   <div class = "main-container_home">
     <h2 class="card-title d-flex justify-content-between"> Listado <%= @assignature.name  %>   <%= link_to "Volver a la Materia", assignatures_path(@assignature.id), class:"btn btn-success mt-4"%></h2> 
@@ -11,7 +18,9 @@
            <p> No tenes homeworks!!! 😁 </p>
         <% else %>
           <% @assignature_homeworks.each do |lesson , homework| %>
+            
             <h3>  <%=  lesson.name%>  </h3>
+            <hr>
             <% homework.each do |home| %> 
               <div class="d-flex align-items-start justify-content-between" id="h_homework">
                 <p> <%= link_to home.name, homework_path(home.id) ,class:"text-decoration-none text-dark"  %> </p> 

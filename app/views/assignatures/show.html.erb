@@ -7,7 +7,7 @@
       <div>
         <% @lessons.first(4).each do |lesson| %>
             <hr>
-            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+            <%=link_to lesson_path(lesson), class:"text-decoration-none text-dark" do%>
               <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
                 <p><%= lesson.name %></p>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
