@@ -8,9 +8,9 @@
 Lesson.destroy_all
 User.destroy_all
 Assignature.destroy_all
-Batch.destroy_all
+Event.destroy_all
 Course.destroy_all
-
+Batch.destroy_all
 
 
 puts 'start seed'
@@ -101,9 +101,5 @@ event7 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:
 event8 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Filosofia', eventable_id:"Repaso", course_id: course4.id)
 event9 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course1.id)
 event10 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course2.id)
-event11 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course3.id)
-event12 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course4.id)
-
 
 puts 'finish seed'
-
