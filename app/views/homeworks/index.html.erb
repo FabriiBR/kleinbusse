@@ -1,9 +1,12 @@
 <div class="container">
   <div class = "main-container_home">
     <h2 class="card-title d-flex justify-content-between"> Listado <%= @assignature.name  %>   <%= link_to "Volver a la Materia", assignatures_path(@assignature.id), class:"btn btn-success mt-4"%></h2> 
-    <div class="cards_home d-flex align-items-around">
+    <div class="cards_home">
       <div class="main-container_home assigment">
-        <h3>Homeworks  </h3>
+        <div class="card-title d-flex d-flex justify-content-start align-items-left">
+          <i class="fa fa-file" aria-hidden="true"></i>
+          <h3>  Homeworks  </h3>
+        </div>
         <% if @assignature_homeworks.empty? %>
            <p> No tenes homeworks!!! 😁 </p>
         <% else %>
@@ -18,7 +21,10 @@
         <% end %>
       </div>
       <div class="main-container_home assigment">
-        <h3>Flashcards  </h3>
+        <div class="card-title d-flex d-flex justify-content-start align-items-left">
+          <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+          <h3>  Flashcards  </h3>
+        </div>
         <% if @assignature_flashcards.empty? %>
           <p> No tenes Flashcards!!! 😁 </p>
         <% else %>
