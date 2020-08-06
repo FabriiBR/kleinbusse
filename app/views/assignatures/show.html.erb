@@ -1,23 +1,22 @@
-<div class="container">
-  <div class="main-container">
-    <h2><%= @assignature.name %></h2>
-    <div class="cards">
-      <div class="main-container assigment">
-        <i class="fas fa-bookmark"></i>
-        <h3>Proximas Clases</h3>
-        <div>
-          <% @lessons.each do |lesson| %>
-              <hr>
-              <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
-                <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
-                  <p><%= lesson.name %></p>
-                  <i class="fas fa-ellipsis-v"></i>
-                </div>
-              <%end %>
-          <%end%>
-          <%=link_to "Ver mas", assignature_lessons_path(@assignature) %>
-        </div>
+<div class="main-container">
+  <h2><%= @assignature.name %></h2>
+  <div class="cards">
+    <div class="main-container assigment">
+      <i class="fas fa-bookmark"></i>
+      <h3>Proximas Clases</h3>
+      <div>
+        <% @lessons.first(4).each do |lesson| %>
+            <hr>
+            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
+                <p><%= lesson.name %></p>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            <%end %>
+        <%end%>
+        <%=link_to "Ver mas", assignature_lessons_path(@assignature) %>
       </div>
+<<<<<<< HEAD
       <div class="main-container assigment">
         <i class="far fa-file-alt"></i>
         <h3>Tareas Pendientes</h3>
@@ -33,6 +32,23 @@
           <%end%>
           <%=link_to "Ver mas", assignature_homeworks_path(@assignature) %>
         </div>
+=======
+    </div>
+    <div class="main-container assigment">
+      <i class="far fa-file-alt"></i>
+      <h3>Tareas Pendientes</h3>
+      <div>
+        <% @assignature.homeworks.first(4).each do |homework| %>
+            <hr>
+            <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
+                <p><%= homework.name %></p>
+                <i class="fas fa-pencil-alt"></i>
+              </div>
+            <%end %>
+        <%end%>
+        <%=link_to "Ver mas", assignature_homeworks_path(@assignature) %>
+>>>>>>> master
       </div>
       <div class="main-container assigment">
         <i class="fas fa-link"></i>
@@ -50,7 +66,26 @@
         </div>
       </div>  
     </div>
+<<<<<<< HEAD
   </div> 
+=======
+    <div class="main-container assigment">
+      <i class="fas fa-link"></i>
+      <h3>Links Importantes</h3>
+      <div>
+         <% @lessons.first(4).each do |lesson| %>
+            <hr>
+            <%=link_to "#{lesson.link}",target: :_blank, class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="link">
+                <p><%= lesson.name %></p>
+              <i class="far fa-lightbulb"></i>
+              </div>
+            <%end %>
+        <%end%>
+      </div>
+    </div>  
+  </div>
+>>>>>>> master
 </div>
 <%= link_to "Volver", assignatures_path, class:"btn btn-success mt-4" %>
 </div>

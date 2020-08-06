@@ -8,8 +8,9 @@
 Lesson.destroy_all
 User.destroy_all
 Assignature.destroy_all
-Batch.destroy_all
+Event.destroy_all
 Course.destroy_all
+Batch.destroy_all
 
 
 
@@ -40,12 +41,12 @@ a2.save!
 a3.save!
 
 #--- Seed Lesssons de prueba--
-l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/watch?v=UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"  )
-l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/watch?v=o2UTk8bsLS0", link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
-l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/watch?v=uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada"  )
-l4 = Lesson.new(assignature_id: a3.id,name: "La palabra", video:"https://www.youtube.com/watch?v=zHlER3p3pko")
-l5 = Lesson.new(assignature_id: a3.id,name: "Sustantivo", video:"https://www.youtube.com/watch?v=_QndKx287w8")
-l6 = Lesson.new(assignature_id: a3.id,name: "Ortografia", video:"https://www.youtube.com/watch?v=XVVheqqMOu4")
+l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/embed/UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"  )
+l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0", link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
+l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada"  )
+l4 = Lesson.new(assignature_id: a3.id,name: "La palabra", video:"https://www.youtube.com/embed/zHlER3p3pko")
+l5 = Lesson.new(assignature_id: a3.id,name: "Sustantivo", video:"https://www.youtube.com/embed/QndKx287w8")
+l6 = Lesson.new(assignature_id: a3.id,name: "Ortografia", video:"https://www.youtube.com/embed/XVVheqqMOu4")
 
 l1.save!
 l2.save!
