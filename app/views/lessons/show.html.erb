@@ -1,8 +1,8 @@
 <div class="container cont">
   <div class= 'card video-card px-2 mb-2'>
     <div class="tabs-underlined nav nav-tabs d-flex justify-content-end" id="nav-tab" role="tablist">
-      <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true">clase</a>
-      <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false">video</a>
+      <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true"><i class="fa  fa-book" aria-hidden="true"></i>  Clase</a>
+      <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false"><i class="fa fa-play" aria-hidden="true"></i>  Video</a>
     </div>
     <div class="tab-content" style="height: 45vh;" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
@@ -15,8 +15,11 @@
   </div>
 <%# -------------------------------------------------------- %>
   <div class="bottom d-flex justify-content-between mt-5">
-    <div class=" white-card p-2">
-      <h2 class='p-2 border-bottom'>Clases</h2>
+    <div class="white-card px-2 pt-2 center">
+      <div class="d-flex  align-items-start m-2 border-bottom">
+        <i class=" fas fa-bookmark"></i>
+        <h2 class='p-2 '> Clases</h2>
+      </div>
       <% @lessons.each do |lesson| %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -27,8 +30,12 @@
         </ul>
       <%end%>
     </div>
-    <div class="white-card p-2 center">
-      <h2 class='p-2 border-bottom'>Tareas</h2>
+    <div class="white-card px-2 pt-2 center">
+      <div class="d-flex bd-highlight m-2 border-bottom text-center">
+        <i class="px-2 bd-highlightp-2 far fa-file-alt"></i>
+        <h2 class='px-2 bd-highlightp-2'> Tareas</h2>
+        <%=link_to "Ver mas", homeworks_path, class:" ml-auto px-2 bd-highlight" %>
+      </div>
       <%=link_to 'ver todaslas tareas', homeworks_path, class:'btn btn-success' %>
       <% @homeworks.each do |hw| %>
         <ul class="list-group list-group-flush">
