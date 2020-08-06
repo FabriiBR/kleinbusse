@@ -6,7 +6,7 @@ class HomeworksController < ApplicationController
     @assignature_homeworks = Homework.joins(:lesson).where(homeworks: {type_off: "homework"}).where("lessons.assignature_id =?",params[:assignature_id] ).group_by(&:lesson)
     @assignature_flashcards = Homework.joins(:lesson).where(homeworks: {type_off: "flashcard"}).where("lessons.assignature_id =?",params[:assignature_id] ).group_by(&:lesson)
     @assignature = Assignature.find(params[:assignature_id])
-
+    @user_homework = User_homework.new
   end
 
   def show

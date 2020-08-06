@@ -7,7 +7,10 @@
         <h4> Titulo: <%= @homework.name %></h4>
         <h4> Descripcion del ejercicio: <%= @homework.content%></h4> 
         <h4> Adjunta la respuesta aqui: </h4> 
-        <p>------BUTTON---------</p>
+        <%= simple_form_for([@user_homework, @homework]) do |f| %>
+          <%= f.input :file, as: :file %>
+          <%= f.submit class:'btn btn-success' %>
+        <% end %>
       <% else %>
         <h4> Flashcard </h4> 
         <h4> Titulo:  <%= @homework.name%></h4>

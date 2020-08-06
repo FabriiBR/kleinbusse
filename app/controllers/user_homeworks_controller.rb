@@ -8,15 +8,25 @@ class UserHomeworksController < ApplicationController
     @uh.user = @user
     @uh.homework = @homework
     if @uh.save!
-      redirect_to homework_path(@homework)
+      redirect_to homeworks_path(@homework)
     else
-      render user_homework_path(@homework)
+      render homeworks_path(@homework)
     end
   end
 
   def update
-    @uh = UserHomework.find(params[:id])
-    @uh.update
+    # @uh = UserHomework.find(params[:id])
+    # @uh.update
+    @user = User.find(current_user)
+    @homework = Homework.find(params[:homework_id])
+    @uh = UserHomework.new(status: "pending", file: user_params)
+    @uh.user = @user
+    @uh.homework = @homework
+    if @uh.save!
+      redirect_to homeworks_path(@homework)
+    else
+      render homeworks_path(@homework)
+    end
   end
 
   private
