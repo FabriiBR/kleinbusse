@@ -36,6 +36,33 @@
 }
 
 
+.fa-file{
+  color: #FADB39;
+  padding-right: 15px;
+  font-size: 20px ;
+}
+
+.fa-arrow-circle-right{
+  padding-right: 15px;
+  color: #9FDBFC;
+  font-size: 20px ;
+  margin-bottom: 0;
+}
+
+
+h3{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  
+  
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

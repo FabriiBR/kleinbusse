@@ -30,38 +30,54 @@ teacher = User.new(email: "teacher@teacher.com", password:"123456", first_name:"
 teacher.save!
 
 
-a1 = Assignature.new(name:"Matematica 1", teacher_id: teacher.id, batch_id: batch.id)
+
+
+a1 = Assignature.new(name:"Matematica Inicial", teacher_id: teacher.id, batch_id: batch.id)
+a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: teacher.id, batch_id: batch.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: teacher.id, batch_id: batch.id)
-#mat1: techer.id = 4, barch:id3
+
 a1.save!
+a2.save!
 a3.save!
 
 #--- Seed Lesssons de prueba--
 l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/embed/UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"  )
-l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0" , link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
+l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0", link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
 l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada"  )
-l4 = Lesson.new(name:'Prefijos', assignature_id: a3.id)
-l5 = Lesson.new(name:'Sufijos', assignature_id: a3.id)
+l4 = Lesson.new(assignature_id: a3.id,name: "La palabra", video:"https://www.youtube.com/embed/zHlER3p3pko")
+l5 = Lesson.new(assignature_id: a3.id,name: "Sustantivo", video:"https://www.youtube.com/embed/QndKx287w8")
+l6 = Lesson.new(assignature_id: a3.id,name: "Ortografia", video:"https://www.youtube.com/embed/XVVheqqMOu4")
 
 l1.save!
 l2.save!
 l3.save!
 l4.save!
 l5.save!
+l6.save!
 
 
 #--- Seed homework de prueba--
-h1 = Homework.new(name:'Este es un ejercicio de Calculo',content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "homework", answer: "", lesson_id: l1.id)
-h2 = Homework.new(name:'Este es un ejercicio de Calculo2', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "homework",answer: "", lesson_id: l1.id)
-h3 = Homework.new(name:'Este es un ejercicio de Calculo3', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",type_off: "homework", answer: "",  lesson_id: l1.id)
-h4 = Homework.new(name:'Este es un ejercicio de Limite', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "homework",answer: "", lesson_id: l2.id)
-h5 = Homework.new(name:'Este es un ejercicio de Limite2', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "homework",answer: "", lesson_id: l2.id)
-h6 = Homework.new(name:'Este es un ejercicio de Limite3', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "homework",answer: "",  lesson_id: l2.id)
-h7 = Homework.new(name:'Este es un ejercicio de Derivada', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "flashcard", answer: "", lesson_id: l3.id)
-h8 = Homework.new(name:'Este es un ejercicio de Derivada2', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",type_off: "flashcard",  answer: "", lesson_id: l3.id)
-h9 = Homework.new(name:'Este es un ejercicio de Derivada', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "flashcard",  answer: "",  lesson_id: l3.id)
-h10 = Homework.new(name:'Ejercicios de Prefijos', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "flashcard", answer: "",  lesson_id:  l4.id)
-h11 = Homework.new(name:'Ejercicios de SUfijos', content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", type_off: "flashcard", answer: "",  lesson_id: l5.id)
+h1 = Homework.new(name: " Numeros enteros"  ,content: " Ordenar, en sentido creciente, representar gráficamente, y calcular los opuestos y valores absolutos de los siguientes números enteros: 8, −6, −5, 3, −2, 4, −4, 0, 7", type_off: "homework", answer: "", lesson_id: l1.id)
+h2 = Homework.new(name: " Valor absoluto y valor opuesto", content: "Representar gráficamente, y calcular los opuestos y valores absolutos de los siguientes números enteros: −4, 6, −2, 1, −5, 0, 9", type_off: "homework",answer: "", lesson_id: l1.id)
+h3 = Homework.new(name:'Factorizar', content: "Sacar factor común en las expresiones:
+1) 3 · 2 + 3 · (−5) =
+2) (−2) · 12 + (−2) · (−6) =
+3) 8 · 5 + 8 =
+4) (−3) · (−2) + (−3) · (−5) = "  ,type_off: "homework", answer: "",  lesson_id: l1.id)
+h4 = Homework.new(name:'Aplicacion Derivada', content: " ¿Con qué rapidez baja el nivel del agua contenida en un depósito cilíndrico si estamos vaciándolo a razón de 3000 litros por minuto? ", type_off: "homework",answer: "", lesson_id: l3.id)
+h5 = Homework.new(name: 'Velocidad en un punto', content: " Un punto P se mueve sobre la parte de la parábola x D y 2 situada en el primer cuadrante de forma que su coordenada x está aumentando a razón de 5cm/sg. Calcular la velocidad a la que el punto P se aleja del origen cuando x=9", type_off: "homework",answer: "", lesson_id: l3.id)
+h6 = Homework.new(name:'Velocidad', content: "Un barco A se desplaza hacia el oeste con una velocidad de 20 millas por hora y otro barco B avanza hacia el norte a 15 millas por hora. Ambos se dirigen hacia un punto O del océano en el cual sus rutas se cruzan. Sabiendo que las distancias iniciales de los barcos A y B al punto O son, respectivamente, de 15 y de 60 millas, se pregunta: ¿A qué velocidad se acercan (o se alejan) los barcos entre sí cuando ha transcurrido una hora? ¿Y cuando han transcurrido 2 horas? ¿En qué momento están más próximos uno de otro?", type_off: "homework",answer: "",  lesson_id: l3.id)
+h7 = Homework.new(name:'Imagen de la derivada', content: " Calcular el número de ceros y la imagen de la función f : R  R dada por f(x)=x^6-3x^2+2", type_off: "homework", answer: "", lesson_id: l2.id)
+h8 = Homework.new(name:'Justificar ecuacion', content: "Justifica que la ecuación x^2 = x sen x + cos x . Tiene exactamente dos soluciones reales", type_off: "homework", answer: "", lesson_id: l2.id)
+h9 = Homework.new(name:'Refutar funciones derivables', content: "Prueba que las únicas funciones n veces derivables con derivada de orden n constante son las funciones polinómicas de grado", type_off: "flashcard", answer: "",  lesson_id: l2.id)
+h10 = Homework.new(name:'Tipos de Textos',content: "Escribe una conversación entre un médico y un paciente que llega a su consulta. Para ello, debes tener en cuenta las normas generalmente aceptadas en las conversaciones, así como las expresiones que se suelen utilizar", type_off: "flashcard",answer: "",lesson_id:l4.id)
+h11 = Homework.new(name: 'Definición de palabras', content: " Define las siguientes palabras teniendo en cuenta que la palabra definida no puede repetirse en la definición: 1. Silla -  2. Mesa – 3. Armario",type_off: "homework", answer: "", lesson_id:  l4.id)
+h12 = Homework.new(name: 'Puntuacion', content: " En el siguiente texto señala con diferentes colores el punto y seguido, el punto y aparte y el punto final. A continuación, explica la diferencia entre cada tipo de punto. Esta es la historia de Pergamino, el hijo del bibliotecario del reino eslavo. Una historia que trata sobre un libro maldito perdido, sobre vanidosas profetisas y tortuosos oráculos, y sobre criaturas y poderes antiguos como la noche. Estas son las aventuras de un niño, el hijo del Cazalibros, al que no le daba miedo viajar en compañía de demonios, ni de brujos, ni de legendarios guerreros condenados a la locura con tal de salvar a su padre. Esta es la historia de Pergamino, un niño que vivía en una biblioteca llena de libros y que un buen día descubrió que no todos los relatos tienen finales felices.", 
+type_off: "flashcard", answer: "",  lesson_id:  l6.id)
+h13 = Homework.new(name: 'Uso de puntos', content: " Escribe dos puntos o puntos suspensivos cuando sea necesario. a) No he podido olvidar sus palabras «No me gustan las despedidas, pero ». b) A mi abuelo le gustaba coleccionar de todo sellos, libros antiguos, postales de otros países, relojes de curioso diseño c) No sé creo que me dijo que llegaría a las cinco. d) Ya lo sabes, como dice el refrán «A mal tiempo ». e) En la maleta llevo cinco camisetas, dos pantalones, varios calcetines y calzoncillos, una toalla, el neceser.", type_off: "homework", answer: "",  lesson_id:  l6.id)
+h14 = Homework.new(name: 'Sustantivos', content: 'Indica si las siguientes afirmaciones son verdaderas o falsa. _ Los sustantivos pueden ir precedidos por un artículo u otro determinativo. _ Los sustantivos no pueden combinarse con otras palabras. _ Los sustantivos pueden desempeñar una función en la oración, solos o en un grupo. _ Los sustantivos siempre desempeñan una función dentro de un grupo. _ Los sustantivos tienen concordancia con los adjetivos que les acompañan, pero no siempre con los artículos. _ La concordancia se da siempre entre los sustantivos y los artículos y adjetivos que les acompañan', type_off: "homework", answer: "",  lesson_id:  l5.id)
+
+
 
 h1.save!
 h2.save!
@@ -74,6 +90,10 @@ h8.save!
 h9.save!
 h10.save!
 h11.save!
+h12.save!
+h13.save!
+h14.save!
+
 
 #--- Seed course de prueba--
 
