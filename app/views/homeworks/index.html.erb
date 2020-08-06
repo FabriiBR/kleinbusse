@@ -1,22 +1,38 @@
-<h1>  Aca se listan todas las tareas</h1>
-
- 
 <div class="container">
-  <div id="app-index" id="title">
-    <h2 class="card-appointment d-flex justify-content-between"></h2>  
-  </div>
-
-  <%# @homeworks.group_by(&:assignature).each  do |assignatures, homeworks  | %> 
-  <% @assignatures.each do | assignature|  %>
-  <h4> <%= assignature.name %> </h4>
-    <% assignature.lessons.each do |lesson| %>
-    <h4><%= lesson.name %></h4>
-      <% lesson.homeworks.each do |home| %>
-        <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li>
+  <div class = "main-container">
+    <h2 class="my-4"> Listado</h2>  
+    <div class = "cards d-flex">
+      <% @homework_assignatures.each do | assignature|   %>
+        <h2> Homeworks </h2>  
+        <div>
+          <h4> <%= assignature.name %> </h4> 
+          <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "homework"}.empty? }.each do |lesson| %>
+            <h4><%= lesson.name %> </h4>
+            <ul>
+              <% lesson.homeworks.select { |h| h.type_off == "homework"}.each do |home| %>     
+                <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li> 
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
-  <% end %>
 
+      <% @homework_assignatures.each do | assignature|  %>
+        <div><h2> Flashcards </h2>  </div>
+        <div>
+          <h4> <%= assignature.name %> </h4> 
+          <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "flashcard"}.empty? }.each do |lesson| %>
+            <h4><%= lesson.name %> </h4>
+            <ul>
+              <% lesson.homeworks.select { |h| h.type_off == "flashcard"}.each do |home| %>     
+                <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li> 
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

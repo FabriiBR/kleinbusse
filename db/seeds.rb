@@ -28,23 +28,15 @@ teacher.save!
 
 
 a1 = Assignature.new(name:"Matematica 1", teacher_id: teacher.id, batch_id: batch.id)
-a2 = Assignature.new(name:"Matematica 2", teacher_id: teacher.id, batch_id: batch2.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: teacher.id, batch_id: batch.id)
 #mat1: techer.id = 4, barch:id3
 a1.save!
-a2.save!
 a3.save!
 
 #--- Seed Lesssons de prueba--
-lesson = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/watch?v=uK4-s0ojHFg" )
-lesson2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/watch?v=o2UTk8bsLS0" )
-lesson3 = Lesson.new(assignature_id: a1.id,name: "Integrales", video: "https://www.youtube.com/watch?v=d7Y9Om4KCUM" )
-lesson.save
-lesson2.save
-lesson3.save
-l1 = Lesson.new(name:'Calculo', assignature_id: a1.id)
-l2 = Lesson.new(name:'Limite', assignature_id: a1.id)
-l3 = Lesson.new(name:'Derivada', assignature_id: a2.id)
+l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/watch?v=UbqjPCAjUfg" )
+l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/watch?v=o2UTk8bsLS0" )
+l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/watch?v=uK4-s0ojHFg" )
 l4 = Lesson.new(name:'Prefijos', assignature_id: a3.id)
 l5 = Lesson.new(name:'Sufijos', assignature_id: a3.id)
 
