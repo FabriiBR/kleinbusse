@@ -8,8 +8,9 @@
 Lesson.destroy_all
 User.destroy_all
 Assignature.destroy_all
-Batch.destroy_all
+Event.destroy_all
 Course.destroy_all
+Batch.destroy_all
 
 
 
