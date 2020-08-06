@@ -1,32 +1,55 @@
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <h2><%= @assignature.name %></h2>
-  </div>
-  <div class="d-flex justify-content-between">
-    <div class="d-flex flex-column">
+<div class="main-container">
+  <h2><%= @assignature.name %></h2>
+  <div class="cards">
+    <div class="main-container assigment">
+      <i class="fas fa-bookmark"></i>
+      <h3>Proximas Clases</h3>
       <div>
-        <h3>Tareas Pendientes</h3>
-      </div>
-      <div>
-        <h3>Links Importantes</h3>
+        <% @lessons.each do |lesson| %>
+            <hr>
+            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
+                <p><%= lesson.name %></p>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            <%end %>
+        <%end%>
+        <%=link_to "Ver mas", assignature_lessons_path(@assignature) %>
       </div>
     </div>
-    <div>
+    <div class="main-container assigment">
+      <i class="far fa-file-alt"></i>
+      <h3>Tareas Pendientes</h3>
       <div>
-        <h3>Proximas Clases</h3>
-      </div>
-      <div class="container">
         <% @lessons.each do |lesson| %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <%=link_to lesson_path(lesson.id) do%>
-              <%= lesson.name %>
+            <hr>
+            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
+                <p><%= lesson.name %></p>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
             <%end %>
-          </li>
-        </ul>
+        <%end%>
+        <%=link_to "Ver mas", homeworks_path %>
+      </div>
+    </div>
+    <div class="main-container assigment">
+      <i class="fas fa-link"></i>
+      <h3>Links Importantes</h3>
+      <div>
+         <% @lessons.each do |lesson| %>
+            <hr>
+            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
+              <div class="d-flex justify-content-between align-items-center my-2 borde" id="link">
+                <p><%= lesson.name %></p>
+              <i class="far fa-lightbulb"></i>
+              </div>
+            <%end %>
         <%end%>
       </div>
-    </div>    
+    </div>  
   </div>
-  <%= link_to "Volver", assignatures_path, class:"btn btn-success" %>
+
+<%= link_to "Volver", assignatures_path, class:"btn btn-success mt-4" %>
 </div>
+
