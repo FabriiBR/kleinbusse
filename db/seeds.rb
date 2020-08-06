@@ -40,8 +40,8 @@ a3.save!
 l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/embed/UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"  )
 l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0" , link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
 l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada"  )
-l4 = Lesson.new(name:'Prefijos', assignature_id: a3.id)
-l5 = Lesson.new(name:'Sufijos', assignature_id: a3.id)
+l4 = Lesson.new(name:'Prefijos', assignature_id: a3.id, link: "https://es.wikipedia.org/wiki/Predicado_(gram%C3%A1tica"  )
+l5 = Lesson.new(name:'Sufijos', assignature_id: a3.id, link: "https://es.wikipedia.org/wiki/Sujeto_(gram%C3%A1tica")
 
 l1.save!
 l2.save!
