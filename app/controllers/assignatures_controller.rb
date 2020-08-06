@@ -7,7 +7,6 @@ class AssignaturesController < ApplicationController
 
   def show
     @lessons = Lesson.where(assignature_id: @assignature.id)
-    #@homeworks = Homework.where(lesson_id: @lesson.id)
   end
 
   private
