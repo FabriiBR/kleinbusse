@@ -1,45 +1,36 @@
-<div class = "main-container">
-  <h2> Listado </h2>  
-  <div class="cards_home d-flex align-items-around">
-    <div class="main-container assigment">
-      <h3>Homeworks</h3>
-      <% @homework_assignatures.each do | assignature|   %>
-        <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "homework"}.empty? }.each do |lesson| %>
-          <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
-            <p><%= lesson.name %> </p>
-          </div>
-          <ul>
-            <div>
-              <% lesson.homeworks.select { |h| h.type_off == "homework"}.each do |home| %>     
-                <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
-                  <p> <%= link_to home.name, homework_path(home.id), class:"text-decoration-none text-dark" %> </p>
-                  <i class="fa fa-bullseye" aria-hidden="true"></i>
-                </div>
-              <% end %>
-            </div>
-          </ul>
-        <% end %>
-      <% end %>
-    </div> 
-    <div class="main-container assigment">  
-      <h3>Flashcards</h3>
-      <% @homework_assignatures.each do | assignature|  %>
-        <h4> <%= assignature.name %> </h4> 
-        <div>
-          <% assignature.lessons.reject { |l| l.homeworks.select { |h| h.type_off == "flashcard"}.empty? }.each do |lesson| %>
-            <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
-              <h4><%= lesson.name %> </h4>
-              <ul>
-                <% lesson.homeworks.select { |h| h.type_off == "flashcard"}.each do |home| %>     
-                  <li><p> <%= link_to home.name, homework_path(home.id)  %> </p></li> 
-                <% end %>
-              </ul>
-            </div>
+<div class="container">
+  <div class = "main-container_home">
+    <h2 class="card-title d-flex justify-content-between"> Listado <%= @assignature.name  %>   <%= link_to "Volver a la Materia", assignatures_path(@assignature.id), class:"btn btn-success mt-4" %></h2> 
+    <div class="cards_home d-flex align-items-around">
+      <div class="main-container_home assigment">
+        <h3>Homeworks  </h3>
+        <% if @assignature_homeworks.empty? %>
+           <p> No tenes homeworks!!! 😁 </p>
+        <% else %>
+          <% @assignature_homeworks.each do |lesson , homework| %>
+            <p> <%=  lesson.name%> </p>
+            <% homework.each do |home| %> 
+              <p> <%= link_to home.name, homework_path(home.id)  %> </p> 
+            <% end %>
           <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>    
+        <% end %>
+      </div>
+      <div class="main-container_home assigment">
+        <h3>Flashcards  </h3>
+        <% if @assignature_flashcards.empty? %>
+          <p> No tenes Flashcards!!! 😁 </p>
+        <% else %>
+          <% @assignature_flashcards.each do |lesson , homework| %>
+            <p> <%=  lesson.name%> </p>
+            <% homework.each do |home| %>    
+              <p> <%= link_to home.name, homework_path(home.id)  %> </p> 
+            <% end %>
+          <% end %>
+        <% end %>  
+      </div>
+    </div>    
+  </div>
 </div>
+
 
 
