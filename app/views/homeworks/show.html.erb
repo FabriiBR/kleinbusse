@@ -7,7 +7,7 @@
         <h4> Titulo: <%= @homework.name %></h4>
         <h4> Descripcion del ejercicio: <%= @homework.content%></h4> 
         <h4> Adjunta la respuesta aqui: </h4> 
-        <%= simple_form_for([@user_homework, @homework]) do |f| %>
+        <%= simple_form_for([@homework, @user_homework]) do |f| %>
           <%= f.input :file, as: :file %>
           <%= f.submit class:'btn btn-success' %>
         <% end %>
@@ -24,3 +24,4 @@
   </div>
 </div>
 
+<%console%>
