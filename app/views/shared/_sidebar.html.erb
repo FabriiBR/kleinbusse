@@ -1,3 +1,4 @@
+<% if current_user %>
 <nav class="sidebar">
   <div class="sidebar-head">
     <div class="head">
@@ -14,8 +15,8 @@
         <%= link_to "Another action", "#", class: "dropdown-item" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
-     <span class="info-name ">Juan Martinez</span>
-     <span class="info-type">Estudiante</span>
+     <span class="info-name "><%= current_user.first_name %> <%= current_user.last_name %></span>
+     <span class="info-type"><%= current_user.role == 'student' ? 'Estudiante' : 'Profesor' %></span>
   </div>
   <div class= "sidebar-event">
     <div class="event-header">
@@ -26,36 +27,18 @@
     </div>
     <div class="event">
       <ul class="sidebar-nav">
+        <% current_user.courses.first.events.order(:date).first(4).each do |event| %>
         <li class="event-item">
           <div class="event-date">
-            <span>2</span>
+            <span><%= ((event.date - DateTime.now)/86400).truncate() %></span>
             <span>Dias</span>
           </div>
           <div class="event-assig">
-            <span class="date-assig">Matematica</span>
-            <span class="date-day">Viernes, 24 sep 2020</span>
+            <span class="date-assig"><%= event.eventable_id %> <%= event.eventable_type %></span>
+            <span class="date-day"><%= event.date.strftime("%d/%m/%Y") %></span>
           </div>
         </li>
-        <li class="event-item">
-          <div class="event-date">
-            <span>2</span>
-            <span>Dias</span>
-          </div>
-          <div class="event-assig">
-            <span class="date-assig">Matematica</span>
-            <span class="date-day">Viernes, 24 sep 2020</span>
-          </div>
-        </li>
-        <li class="event-item">
-          <div class="event-date">
-            <span>2</span>
-            <span>Dias</span>
-          </div>
-          <div class="event-assig">
-            <span class="date-assig">Matematica</span>
-            <span class="date-day">Viernes, 24 sep 2020</span>
-          </div>
-        </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -89,3 +72,8 @@ function toggleNav(){
   }
 }
 </script>
+<%else%>
+  <script>
+    document.documentElement.style.setProperty('--sizesidebar','0rem');
+  </script>
+<%end%>

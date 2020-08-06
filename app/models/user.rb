@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   #has_many :assignatures, foreign_key: :teacher_id
   has_many :assignatures, through: :batch
+  has_many :courses, through: :batch
 
   validates :first_name, presence: true
   validates :last_name, presence: true

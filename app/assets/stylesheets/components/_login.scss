@@ -1,0 +1,95 @@
+.login_main{
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -6rem;
+  margin-bottom: -1rem;
+  display: flex;
+  min-width: 100vh;
+  min-height: 100vh;
+}
+
+.login_form{
+  font-family: 'DM Sans';
+  width: 50%;
+  background-color: #eceff1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_background{
+  width: 50%;
+}
+
+.login_form-form{
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  padding: 50px;
+  border-radius: 9px;
+  background-color:  rgba(129, 19, 44, 0.5);;
+}
+
+.input_button{
+  background-color: #DAF2EC;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #1DBD92;
+  border-radius: 9px;
+  align-self: center;
+}
+
+.background-img{
+  width: 100%;
+  height: 100%;
+}
+
+.school-img{
+  position: absolute;
+  height: 8rem;
+  width: 8rem;
+  top: 30px;
+  left: 210vh;
+}
+
+
+.input_login{
+  width: 15rem;
+  background-image: none;
+  transition: background-color 0.3s;
+}
+
+.form_field{
+  color: #1DBD92;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  height: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.icon-form{
+  background-color: #DAF2EC;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #1DBD92;
+  border-radius: 9px;
+  align-self: center;
+  padding: 7px 15px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.form_action{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_faq a{
+  color: #1DBD92;
+  font-weight: bold;
+}
