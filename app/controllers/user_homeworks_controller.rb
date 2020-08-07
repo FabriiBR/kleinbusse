@@ -8,7 +8,7 @@ class UserHomeworksController < ApplicationController
     @uh.student = current_user
     @uh.homework = @homework
     if @uh.save!
-      redirect_to homework_path(@homework)
+      redirect_to homework_user_homeworks_path(@homework)
     else
       render homework_path(@homework)
     end
@@ -17,6 +17,7 @@ class UserHomeworksController < ApplicationController
   def update
     @uh = UserHomework.find(params[:id])
     @uh.update(user_params)
+    redirect_to homework_path(@uh.homework_id)
   end
 
   private
