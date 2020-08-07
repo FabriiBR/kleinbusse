@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'assignatures#index'
   get '/profile', to: 'users#profile', as: 'profile'
   resources :assignatures, only: [:index, :show] do
     resources :lessons, only: [:index] 
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:show] do  
-    resources :tickets, only: [:index, :create]
+    resources :tickets, only: [:create, :new]
     resources :flashcards, only: [:index]
   end
 
@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     resources :user_homeworks, only: [:create, :update]
   end
   resources :user_homeworks, only: [:update]
+  resources :tickets, only: [:index]
 end

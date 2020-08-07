@@ -1,6 +1,6 @@
 <div class="container">
   <div class = "main-container_home">
-    <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', lesson_tickets_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>
+    <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>
     <div class="main-container assigment">
       <% if @homework.type_off == "homework" %>
         <h3> Homework </h3>
@@ -20,4 +20,3 @@
     </div>
   </div>
 </div>
-
