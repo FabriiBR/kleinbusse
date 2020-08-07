@@ -7,6 +7,7 @@
     background: #FEFEFE;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    opacity: 0.8;
     h2 {
         font-family: DM Sans;
         font-style: normal;
@@ -27,6 +28,10 @@
         align-items: center;
         color: #AAAAB7;
     }
+
+    &:hover{
+        opacity: 1;
+    }
 }
 .video-card {
     width: 100%;
@@ -39,3 +44,27 @@
     width: 70vw !important;
 }
 
+.flashcard {
+    h4 {
+        font-family: DM Sans;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        color: #212037;
+    }
+    li {
+        font-family: DM Sans;
+        font-style: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        color: #AAAAB7;
+    }
+
+
+}

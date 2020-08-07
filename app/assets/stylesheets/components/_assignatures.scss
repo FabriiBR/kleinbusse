@@ -154,6 +154,18 @@ p{
 }
 
 
+  td{
+    padding-bottom: 4px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #212037;
+  }
+
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

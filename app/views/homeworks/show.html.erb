@@ -14,15 +14,21 @@
         <h4> Titulo: <%= @homework.name %></h4>
         <h4> Descripcion del ejercicio: <%= @homework.content%></h4> 
         <h4> Adjunta la respuesta aqui: </h4> 
-        <p>------BUTTON---------</p>
-      <% else %>
-        <h3> Flashcard </h4> 
-        <h4> Titulo:  <%= @homework.name%></h4>
-        <h4> Descripcion del ejercicio:  <%= @homework.content%></h4> 
-        <%= simple_form_for(@homework) do |f| %> 
-          <%= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
-          <%= f.submit value="Update Flashcard", class:"btn btn-dark" %>
+        <%= simple_form_for([@homework, @user_homework]) do |f| %>
+          <%= f.input :file, as: :file %>
+          <%= f.submit class:'btn btn-success' %>
         <% end %>
+      <% else %>
+        <div class="flashcard">
+          <h4> Flashcard </h4> 
+          <h4> Titulo:  <%= @homework.name%></h4>
+          <h4> Descripcion del ejercicio:  <%= @homework.content%></h4> 
+          <%#= simple_form_for(@homework) do |f| %> 
+            <%#= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
+            <%#= f.submit value="Update Flashcard", class:"btn btn-dark" %>
+          <%# end %>
+          <%=link_to "Volver", assignature_homeworks_path(@homework.lesson.assignature_id), class:"btn btn-success" %>
+        </div>
       <% end %>
     </div>
   </div>
