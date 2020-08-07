@@ -11,21 +11,22 @@
     <div class="cards_home">
       <div class="main-container_home assigment">
         <div class="card-title d-flex d-flex justify-content-start align-items-left">
-          <i class="fa fa-file" aria-hidden="true"></i>
+          <i class="far fa-file" ></i>
           <h4> <strong>  Homeworks </strong>  </h4>
         </div>
         <% if @assignature_homeworks.empty? %>
            <p> No tenes homeworks!!! 😁 </p>
         <% else %>
           <% @assignature_homeworks.each do |lesson , homework| %>
-            
-            <h3>  <%=  lesson.name%>  </h3>
+            <h3> <%=  lesson.name%>  </h3>
             <hr>
             <% homework.each do |home| %> 
-              <div class="d-flex align-items-start justify-content-between" id="h_homework">
-                <p> <%= link_to home.name, homework_path(home.id) ,class:"text-decoration-none text-dark"  %> </p> 
-                <i class="fa fa-file" aria-hidden="true"></i>
-              </div>
+              <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>
+                <div class="d-flex align-items-start justify-content-between" id="h_homework">
+                  <p><%= home.name %></p>
+                  <i class="far fa-file"></i>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
@@ -40,11 +41,14 @@
         <% else %>
           <% @assignature_flashcards.each do |lesson , homework| %>
             <h4>  <%=  lesson.name%>  </h4>
-            <% homework.each do |home| %>    
-              <div class="d-flex align-items-start justify-content-between" id="h_flashcard">
-                <p> <%= link_to home.name, homework_path(home.id), class:"text-decoration-none text-dark"  %> </p> 
-                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-              </div>
+            <hr>
+            <% homework.each do |home| %> 
+              <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>
+                <div class="d-flex align-items-start justify-content-between" id="h_flashcard">
+                  <p><%= home.name %></p>
+                  <i class="fa fa-arrow-circle-right"></i>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>  

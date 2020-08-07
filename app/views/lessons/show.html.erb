@@ -1,4 +1,4 @@
-<div class="container cont">
+<div class="container">
   <div class="row justify-content-between">
     <div class= 'col-12 card video-card px-2'>
       <div class="tabs-underlined nav nav-tabs d-flex justify-content-end" id="nav-tab" role="tablist">
@@ -15,36 +15,38 @@
       </div>
     </div>
     <%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
-    <div class="col-5 white-card px-2 pt-2 center mt-5">
-      <div class="d-flex  align-items-start m-2 border-bottom">
-        <i class=" fas fa-bookmark"></i>
-        <h2 class='p-2 '> Clases</h2>
+    <div class="cards_lessons">
+      <div class="main-container_lessons assigment">
+        <div class="card-title d-flex d-flex justify-content-start align-items-left">
+          <i class="fas fa-bookmark"></i>
+          <h2> <strong>  Clases </strong>  </h2>
+        </div>
+        <% @lessons.each do |lesson| %> 
+          <hr>
+          <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"   do %>
+            <div class="d-flex align-items-start justify-content-between" id="l_lessons">
+              <p><%= lesson.name %></p>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <% @lessons.each do |lesson| %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <%=link_to lesson_path(lesson.id) do%>
-              <%= lesson.name %>
-            <%end %>
-          </li>
-        </ul>
-      <%end%>
-    </div>
-    <div class="col-5 white-card p-2 pt-2 center mt-5">
-      <div class="d-flex bd-highlight m-2 border-bottom text-center">
-        <i class="px-2 bd-highlightp-2 far fa-file-alt"></i>
-        <h2 class='px-2 bd-highlightp-2'> Tareas</h2>
-        <%=link_to "Ver mas tareas", homeworks_path, class:" ml-auto px-2 bd-highlight" %>
+
+      <div class="main-container_lessons assigment">
+        <div class="card-title d-flex d-flex justify-content-start align-items-left">
+          <i class=" far fa-file"></i>
+          <h2 class="card-title d-flex justify-content-between"> Tareas   <%=link_to 'Ver mas', assignature_homeworks_path(@homeworks), class: 'btn btn-success'%> </h2>
+        </div>
+        <% @homeworks.each do |hw| %> 
+        <hr>
+          <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
+            <div class="d-flex align-items-start justify-content-between" id="h_lessons">
+              <p><%= hw.name %></p>
+              <i class="far fa-file"></i>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <% @homeworks.each do |hw| %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <%=link_to homework_path(hw.id) do%>
-              <%= hw.name %>
-            <%end %>
-          </li>
-        </ul>
-      <%end%>
-    </div>
+    </div>  
   </div>
 </div>
