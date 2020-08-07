@@ -6,8 +6,8 @@
         <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false"><i class="fa fa-play" aria-hidden="true"></i>  Video</a>
       </div>
       <div class="tab-content" style="height: 45vh;" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
-          Clase
+        <div class="tab-pane fade show active pt-2" style="height: 45vh;" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
+          <iframe width="100%" height="100%" src="//www.slideshare.net/slideshow/embed_code/key/JglIZlXmioWtGK" frameborder="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;" allowfullscreen> </iframe>
         </div>
         <div class="tab-pane fade pt-2" style="height: 45vh;" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
           <iframe width="100%" height="100%" src=<%="#{@lesson.video }"%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -15,10 +15,11 @@
       </div>
     </div>
     <%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
-    <div class="col-5 white-card px-2 pt-2 center mt-5">
-      <div class="d-flex  align-items-start m-2 border-bottom">
-        <i class=" fas fa-bookmark"></i>
-        <h2 class='p-2 '> Clases</h2>
+    <div class="col-5 white-card p-2 pt-2 center mt-5">
+      <div class="d-flex bd-highlight m-2 border-bottom text-center">
+        <i class="px-2 bd-highlightp-2 fas fa-bookmark"></i>
+        <h2 class='px-2 bd-highlightp-2 '> Clases</h2>
+        <%=link_to "Ver mas Clases", assignature_lessons_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
       </div>
       <% @lessons.each do |lesson| %>
         <ul class="list-group list-group-flush">
@@ -34,7 +35,7 @@
       <div class="d-flex bd-highlight m-2 border-bottom text-center">
         <i class="px-2 bd-highlightp-2 far fa-file-alt"></i>
         <h2 class='px-2 bd-highlightp-2'> Tareas</h2>
-        <%#=link_to "Ver mas tareas", homeworks_path, class:" ml-auto px-2 bd-highlight" %>
+        <%=link_to "Ver mas tareas", assignature_homeworks_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
       </div>
       <% @homeworks.each do |hw| %>
         <ul class="list-group list-group-flush">
