@@ -3,6 +3,10 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all.order(:created_at)
   end
 
+  def myindex
+    @tickets = Ticket.where(student_id: current_user.id).order(:created_at)
+  end
+
   def new
     @lesson = Lesson.find(params[:lesson_id])
     @ticket = Ticket.new
