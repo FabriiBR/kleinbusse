@@ -5,60 +5,63 @@
     <li class="breadcrumb-item active" aria-current="page"> Leccion </li>
   </ol>
 </nav>
-<div class="container cont">
-  <div class="row justify-content-between">
-    <div class= 'col-12 card video-card px-2'>
-      <div class="tabs-underlined nav nav-tabs d-flex justify-content-end" id="nav-tab" role="tablist">
-        <h2> <%= @lesson.assignature.name %> </h2>
-        <div>
-          <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true"><i class="fa  fa-book" aria-hidden="true"></i>  Clase</a>
-          <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false"><i class="fa fa-play" aria-hidden="true"></i>  Video</a>
+<div class= "container">
+  <div class="container cont">
+    <div class="row justify-content-between">
+      <div class= 'col-12 card video-card px-2'>
+        <div class="tabs-underlined nav nav-tabs d-flex justify-content-between py-4" id="nav-tab" role="tablist">
+          <h2> <%= @lesson.assignature.name %> </h2>
+          <div>
+            <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true"><i class="fa  fa-book" aria-hidden="true"></i>  Clase</a>
+            <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false"><i class="fa fa-play" aria-hidden="true"></i>  Video</a>
+          </div>
+        </div>
+        <div class="tab-content" style="height: 45vh;" id="nav-tabContent">
+          <div class="tab-pane fade show active pt-2" style="height: 45vh;" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
+            <iframe width="100%" height="100%" src="//www.slideshare.net/slideshow/embed_code/key/JglIZlXmioWtGK" frameborder="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;" allowfullscreen> </iframe>
+          </div>
         </div>
       </div>
-      <div class="tab-content" style="height: 45vh;" id="nav-tabContent">
-        <div class="tab-pane fade show active pt-2" style="height: 45vh;" id="nav-clase" role="tabpanel" aria-labelledby="nav-clase-tab">
-          <iframe width="100%" height="100%" src="//www.slideshare.net/slideshow/embed_code/key/JglIZlXmioWtGK" frameborder="0" scrolling="no" style="border:1px solid #CCC; border-width:1px;" allowfullscreen> </iframe>
-
-
-      <%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
-    <br>
-    <div class="cards_lessons">
-      <div class="main-container_lessons assigment">
-        <div class="card-title d-flex d-flex justify-content-start align-items-left">
-          <i class="fas fa-bookmark"></i>
-          <h2> <strong>  Clases </strong>  </h2>
-          <%=link_to "Ver mas Clases", assignature_lessons_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
-        </div>
-        <% @lessons.each do |lesson| %> 
-          <hr>
-          <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"   do %>
-            <div class="d-flex align-items-start justify-content-between" id="l_lessons">
-              <p><%= lesson.name %></p>
-              <i class="fas fa-ellipsis-v"></i>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+    </div>
+  </div>
       
 
-      <div class="main-container_lessons assigment">
-        <div class="card-title d-flex ">
-          <i class=" far fa-file-alt"></i>
-          <h2 class="card-title d-flex align-items-center justify-content-between"> Tareas  </h2>
-          <%=link_to "Ver mas tareas", assignature_homeworks_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
-        </div>
-        <% @homeworks.each do |hw| %> 
-        <hr>
-          <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
-            <div class="d-flex align-items-start justify-content-between" id="h_lessons">
-              <p><%= hw.name %></p>
-              <i class="far fa-file-alt"></i>
-            </div>
-          <% end %>
-        <% end %>
+        <%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
+  <br>
+  <div class="cards_lessons">
+    <div class="main-container_lessons assigment">
+      <div class="card-title d-flex d-flex justify-content-start align-items-left">
+        <i class="fas fa-bookmark"></i>
+        <h2> <strong>  Clases </strong>  </h2>
+        <%=link_to "Ver mas Clases", assignature_lessons_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
       </div>
-    </div>  
+      <% @lessons.each do |lesson| %> 
+        <hr>
+        <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"   do %>
+          <div class="d-flex align-items-start justify-content-between" id="l_lessons">
+            <p><%= lesson.name %></p>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+    <div class="main-container_lessons assigment">
+      <div class="card-title d-flex ">
+        <i class=" far fa-file-alt"></i>
+        <h2 class="card-title d-flex align-items-center justify-content-between"> Tareas  </h2>
+        <%=link_to "Ver mas tareas", assignature_homeworks_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
+      </div>
+      <% @homeworks.each do |hw| %> 
+      <hr>
+        <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
+          <div class="d-flex align-items-start justify-content-between" id="h_lessons">
+            <p><%= hw.name %></p>
+            <i class="far fa-file-alt"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    </div>  
   </div>
 </div>
 
