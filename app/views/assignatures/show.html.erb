@@ -1,3 +1,9 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
+    <li class="breadcrumb-item active" aria-current="page"> <%=@assignature.name %></li>
+  </ol>
+</nav>
 <div class="main-container">
   <h2><%= @assignature.name %></h2>
   <div class="cards">
@@ -6,13 +12,13 @@
       <h3>Proximas Clases</h3>
       <div>
         <% @lessons.first(4).each do |lesson| %>
-            <hr>
-            <%=link_to lesson_path(lesson.id), class:"text-decoration-none text-dark" do%>
-              <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
-                <p><%= lesson.name %></p>
-                <i class="fas fa-ellipsis-v"></i>
-              </div>
-            <%end %>
+          <hr>
+          <%=link_to lesson_path(lesson), class:"text-decoration-none text-dark" do%>
+            <div class="d-flex justify-content-between align-items-center my-2 borde" id="lesson">
+              <p><%= lesson.name %></p>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+          <%end %>
         <%end%>
         <%=link_to "Ver mas", assignature_lessons_path(@assignature) %>
       </div>
@@ -22,13 +28,13 @@
       <h3>Tareas Pendientes</h3>
       <div>
         <% @assignature.homeworks.first(4).each do |homework| %>
-            <hr>
-            <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
-              <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
-                <p><%= homework.name %></p>
-                <i class="fas fa-pencil-alt"></i>
-              </div>
-            <%end %>
+          <hr>
+          <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
+            <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">
+              <p><%= homework.name %></p>
+              <i class="fas fa-pencil-alt"></i>
+            </div>
+          <%end %>
         <%end%>
         <%=link_to "Ver mas", assignature_homeworks_path(@assignature) %>
       </div>
@@ -49,5 +55,11 @@
       </div>
     </div> 
   </div>
+<<<<<<< HEAD
+</div>
+
+
+=======
   <%= link_to "Volver", assignatures_path, class:"btn btn-success mt-4" %>
 </div>
+>>>>>>> master

@@ -3,7 +3,6 @@
   border-radius: 8px;
   padding: 30px 45px;
 
-
   h2{
     font-family: DM Sans;
     font-style: normal;
@@ -36,6 +35,19 @@
 }
 
 
+.fa-print{
+  color: #FADB39;
+  font-size: 20px ;
+  padding-right: 15px;
+}
+
+
+.fa-file-signature{
+  color: #FADB39;
+  padding-right: 15px;
+  font-size: 20px ;
+}
+
 .fa-file{
   color: #FADB39;
   padding-right: 15px;
@@ -63,6 +75,22 @@ h3{
   
 }
 
+
+#h_homework:hover{
+  border-left: 4px solid  #FADB39;
+  padding-left: 8px;
+}
+
+#h_flashcard:hover{
+  border-left: 4px solid  #9FDBFC;
+  padding-left: 8px;
+}
+
+
+
+
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -72,28 +100,28 @@ h3{
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .cards {
+  .cards_home {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cards {
+  .cards_home {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+  .cards_home {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+  .cards_home {
+    grid-template-columns: 1fr 1fr;
   }
 }

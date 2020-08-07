@@ -1,0 +1,49 @@
+.main-container_lessons{
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px 45px;
+
+  h2{
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding-bottom: 27px;
+    padding-left: 0px;
+    padding-top: 4px;
+  }
+
+  .assigment{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+  }
+}
+
+.cards_lessons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.card-title {
+  background-color: white;
+  border-radius: 8px;
+  padding-left: 0px;
+}
+
+h3{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  
+  
+}
