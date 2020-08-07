@@ -12,13 +12,15 @@
           <%= f.submit class:'btn btn-success' %>
         <% end %>
       <% else %>
-        <h4> Flashcard </h4> 
-        <h4> Titulo:  <%= @homework.name%></h4>
-        <h4> Descripcion del ejercicio:  <%= @homework.content%></h4> 
-        <%= simple_form_for(@homework) do |f| %> 
-          <%= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
-          <%= f.submit value="Update Flashcard", class:"btn btn-dark" %>
-        <% end %>
+        <div class="flashcard">
+          <h4> Flashcard </h4> 
+          <h4> Titulo:  <%= @homework.name%></h4>
+          <h4> Descripcion del ejercicio:  <%= @homework.content%></h4> 
+          <%= simple_form_for(@homework) do |f| %> 
+            <%= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
+            <%= f.submit value="Update Flashcard", class:"btn btn-dark" %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
