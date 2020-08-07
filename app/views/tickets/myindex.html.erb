@@ -2,6 +2,12 @@
 
 <div class="main-container d-flex flex-column" style="font-family: 'DM Sans';">
   <h2>Mis tickets</h2>
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Tickets</li>
+  </ol>
+</nav>
   <div class="cards d-flex flex-column" id="tickets">
     <% @tickets.each do |ticket|  %>
     <div class="main-container assigment d-flex flex-row justify-content-between ticket-card">
