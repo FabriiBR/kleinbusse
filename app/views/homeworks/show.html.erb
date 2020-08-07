@@ -1,3 +1,10 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
+    <li class="breadcrumb-item"><%= link_to "Tareas", homework_path%></li>
+    <li class="breadcrumb-item active" aria-current="page">Tareas</li>
+  </ol>
+</nav>
 <div class="container">
   <div class = "main-container_home">
     <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>

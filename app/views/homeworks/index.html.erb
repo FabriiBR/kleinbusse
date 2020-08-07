@@ -1,7 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="http://localhost:3000/assignatures">Home</a></li>
-    <li class="breadcrumb-item"><a href="http://localhost:3000/lessons">Materias</a></li>
+    <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
     <li class="breadcrumb-item active" aria-current="page">Tareas</li>
   </ol>
 </nav>
@@ -11,7 +10,7 @@
     <div class="cards_home">
       <div class="main-container_home assigment">
         <div class="card-title d-flex d-flex justify-content-start align-items-left">
-          <i class="far fa-file" ></i>
+          <i class="fas fa-file-signature"></i>
           <h4> <strong>  Homeworks </strong>  </h4>
         </div>
         <% if @assignature_homeworks.empty? %>
@@ -24,7 +23,7 @@
               <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>
                 <div class="d-flex align-items-start justify-content-between" id="h_homework">
                   <p><%= home.name %></p>
-                  <i class="far fa-file"></i>
+                  <i class="fas fa-file-signature"></i>
                 </div>
               <% end %>
             <% end %>
