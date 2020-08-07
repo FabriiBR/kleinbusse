@@ -2,18 +2,27 @@ class HomeworksController < ApplicationController
   before_action :set_homework, only: %i[show :update]
 
   def index
-   #@homework_assignatures = Assignature.find(params[:assignature_id]).joins(lessons: :homeworks).where(homeworks: {type_off: "homework"}).distinct
+    # @homework_assignatures = Assignature.find(params[:assignature_id]).joins(lessons: :homeworks).where(homeworks: {type_off: "homework"}).distinct
     @assignature_homeworks = Homework.joins(:lesson).where(homeworks: {type_off: "homework"}).where("lessons.assignature_id =?",params[:assignature_id] ).group_by(&:lesson)
     @assignature_flashcards = Homework.joins(:lesson).where(homeworks: {type_off: "flashcard"}).where("lessons.assignature_id =?",params[:assignature_id] ).group_by(&:lesson)
     @assignature = Assignature.find(params[:assignature_id])
-
   end
 
   def show
+    if Homework.flashcard.include? Homework.find(params[:id])
+      @homework = Homework.find(params[:id])
+      @answer = @homework.answer
+    elsif UserHomework.where(homework_id: params[:id], student_id: current_user).exists?
+      @user_homework = UserHomework.where(homework_id: params[:id], student_id: current_user)
+      @user_homework = @user_homework[0]
+    else
+      @user_homework = UserHomework.new
+    end
   end
 
   def update
-    @homework.update
+    # @homework = Homework.find(params[:id])
+    # @homework.update(@homework.answer)
   end
 
   private
@@ -26,4 +35,3 @@ class HomeworksController < ApplicationController
     params.requiere(:homework).permit(:attach, :content, :answer, :type)
   end
 end
-
