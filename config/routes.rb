@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:show] do  
-    resources :tickets, only: [:index, :create, :new]
+    resources :tickets, only: [:create, :new]
     resources :flashcards, only: [:index]
   end
 
@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     resources :user_homeworks, only: [:create, :update]
   end
   resources :user_homeworks, only: [:update]
+  resources :tickets, only: [:index]
 end

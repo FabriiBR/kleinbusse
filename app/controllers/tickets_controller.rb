@@ -1,24 +1,29 @@
 class TicketsController < ApplicationController
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all.order(:created_at)
+  end
+
+  def new
+    @lesson = Lesson.find(params[:lesson_id])
+    @ticket = Ticket.new
   end
 
   def create
     @lesson = Lesson.find(params[:lesson_id])
-    @user = User.find(current_user)
-    @ticket = Ticket.new(hw_params)
-    @ticket.user = @user
+    @ticket = Ticket.new(ticket_params)
+    @ticket.state = 'Pendiente'
+    @ticket.student_id = current_user.id
     @ticket.lesson = @lesson
     if @ticket.save
-      redirect_to tickets_lesson_path(@lesson)
+      redirect_to tickets_path
     else
-      render tickets_lesson_path(@lesson)
+      render :new
     end
   end
 
   private
 
-  def hw_params
-    params.require(:ticket).permit(:state, :description)
+  def ticket_params
+    params.require(:ticket).permit(:description)
   end
 end

@@ -1,1 +1,29 @@
 
+
+<div class="main-container d-flex flex-column" style="font-family: 'DM Sans';">
+  <h2>Fila para la ayuda</h2>
+  <div class="cards d-flex flex-column" id="tickets">
+    <% @tickets.each do |ticket|  %>
+    <div class="main-container assigment d-flex flex-row justify-content-between ticket-card">
+      <div class="d-flex flex-row align-items-center">
+        <%= image_tag "https://randomuser.me/api/portraits/women/68.jpg", style:"vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"%>
+        <div class="d-flex flex-column ml-3">
+          <label><%= ticket.student.first_name %> <%= ticket.student.last_name %></label>
+          <label><%= ticket.description %></label>
+        </div>
+      </div>
+      <label class="align-self-center">Estado: <%= ticket.state %></label>
+      <div class="d-flex flex-row align-items-center">
+        <%= image_tag "https://randomuser.me/api/portraits/women/68.jpg", style:"vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"%>
+        <div class="d-flex flex-column ml-3">
+          <label>Profesor/a asignado:</label>
+          <label><%= ticket.lesson.assignature.teacher.first_name %> <%= ticket.lesson.assignature.teacher.last_name %></label>
+        </div>
+      </div>
+    </div> 
+    <% end %>
+    
+  </div>
+  <%=link_to 'Actualizar estado',tickets_path, class: 'btn btn-success mt-3'%>
+
+</div>
