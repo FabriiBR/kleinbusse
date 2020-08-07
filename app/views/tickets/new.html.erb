@@ -1,0 +1,20 @@
+
+<div class="main-container d-flex flex-column">
+  <h2>Panel de dudas</h2>
+  <div class="cards">
+    <div class="main-container assigment d-flex flex-column ">
+      <div>
+        <label>Por favor, tomese un tiempo para describir cuales son sus dudas especificas para poder ayudarlo de mejor manera</label>
+      </div>
+      <div>
+        <%= simple_form_for(@venue) do |f| %>
+          <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 10 } %>
+          <%= f.submit "Submit", class: "button small radius" %>
+      </fieldset>
+    <% end %>
+      </div>
+    </div>  
+  </div>
+
+
+</div>
