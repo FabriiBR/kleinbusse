@@ -4,6 +4,6 @@ class Homework < ApplicationRecord
   validates :content, presence: true
   validate :flashcard_type
   def flashcard_type
-    type.value == 'flashcard'
+    type_off.value == 'flashcard'
   end
 end
