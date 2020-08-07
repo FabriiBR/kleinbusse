@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'profile'
   resources :assignatures, only: [:index, :show] do
     resources :lessons, only: [:index] 
-    resources :homeworks, only: [:index] 
+    resources :homeworks, only: [:index]
   end
 
   resources :lessons, only: [:show] do  
