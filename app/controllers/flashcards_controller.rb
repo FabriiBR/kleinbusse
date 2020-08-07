@@ -1,6 +1,6 @@
 class FlashcardsController < ApplicationController
 
   def index
-    @flashcards = Homework.where(type: 1)
+    @flashcards = Homework.where(type: "flashcard"}
   end
 end

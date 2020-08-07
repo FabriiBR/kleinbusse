@@ -3,5 +3,6 @@ class UserHomework < ApplicationRecord
   belongs_to :homework
   has_one_attached :file
   validates :status, inclusion: { in: %w[pendiente enviado aprobado corregir],
-                                  message: "#{value} is not a valid status" }
+                                  message: " is not a valid status" }
+  # {status} agregar al mensaje
 end
