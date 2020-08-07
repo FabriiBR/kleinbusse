@@ -1,6 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
+    <li class="breadcrumb-item"><%= link_to  @assignature.name, assignature_path(@assignature.id)%></li>
     <li class="breadcrumb-item active" aria-current="page">Tareas</li>
   </ol>
 </nav>
