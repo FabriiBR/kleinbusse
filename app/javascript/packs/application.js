@@ -25,16 +25,18 @@ require("channels")
 // External imports
 import $ from 'jquery';
 import "bootstrap";
+// import initTicketCable from '../channels/ticket_channel'
 // import btn_newman from '../components/sidebar';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-
 $('#myTab a').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
 })
+
+// initTicketCable();
 
 // document.addEventListener('turbolinks:load', () => {
 // });

@@ -1,29 +1,29 @@
 <div class="login_main">
-  
-  <div class="login_form">
-    <h1>Cardenal Newman</h1>
-    <h3>Campus</h3>
-    <div class="login_form-form">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-school"}) do |f| %>
-        <div class="form_field">
-          <label class="icon-form"><i class="fas fa-user"></i></label>
+    <div class="login_form">
+     <div class="login_form-form">
+        <h1 class="text-center">Campus Virtual</h1>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-school"}) do |f| %>
+        <div id="input" >
           <%= f.input :email,
                       label: false,
                       required: false,
                       autofocus: true,
-                      input_html: { autocomplete: "email", class: 'input_login'} %>
+                      input_html: { autocomplete: "email", class: 'input_login'},
+                      placeholder: "facundo@gmail.com",
+                      label:"Email" %>
         </div>
-        <div class="form_field">
-          <label class="icon-form"><i class="fas fa-lock"></i></label>
+        <div id="input">
           <%= f.input :password,
                       label: false,
                       required: false,
-                      input_html: { autocomplete: "current-password", class: 'input_login' } %>
+                      input_html: { autocomplete: "current-password", class: 'input_login' },
+                      placeholder:"******",
+                      label:"Contraseña" %>
         </div>
         <div class="form_action">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           <%= f.button :submit, "Log in",
-                        class: "input_button" %>
+                        class: "btn btn-primary" %>
         </div>
         <% end %>
         <div class="form_faq">
@@ -31,11 +31,13 @@
         </div>
     </div>
     <br>
-    <h5>Estimada/o estudiante,<br>si su usuario se encuntra suspendido temporalmente, por favor comunicarse con el<br>sector Administracion por medio de administracion@newmancollage.edu.ar <br> Muchas Gracias</h5>
+    <br>
+    <br>
+    <p>Estimada/o estudiante.<br>Si su usuario se encuntra suspendido temporalmente, por favor comunicarse con el<br>sector Administracion por medio de administracion@newmancollage.edu.ar <br> Muchas Gracias</p>
   </div>
   <div class="login_background">
-    <img src="<%= asset_path 'login.jpg' %>" class="background-img">
-    <img src="<%= asset_path 'favicon.png' %>" class="school-img">
+    <img src="<%= asset_path 'rayuela.jpg' %>" class="background-img">
+    
   </div>
 </div>
 
