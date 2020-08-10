@@ -1,35 +1,30 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
+<nav aria-label="breadcrumb ">
+  <ol class="breadcrumb "> <%#main-container_home %>
     <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
     <li class="breadcrumb-item"><%= link_to "Tareas", homework_path%></li>
     <li class="breadcrumb-item active" aria-current="page">Tareas</li>
   </ol>
 </nav>
+
 <div class="container">
-  <div class = "main-container_home">
-    <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>
-    <div class="main-container assigment">
-      <% if @homework.type_off == "homework" %>
+  <% if @homework.type_off == "homework" %>
+    <div class = "main-container_home">
+      <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>
+      <div class="main-container assigment">
         <h3> Homework </h3>
-        <h4> Titulo: <%= @homework.name %></h4>
+        <h4></h4>
         <h4> Descripcion del ejercicio: <%= @homework.content%></h4> 
         <h4> Adjunta la respuesta aqui: </h4> 
         <%= simple_form_for([@homework, @user_homework]) do |f| %>
           <%= f.input :file, as: :file %>
           <%= f.submit class:'btn btn-success', data: {confirm: 'Confirmar cambios'}%>
         <% end %>
-      <% else %>
-        <div class="flashcard">
-          <h4> Flashcard </h4> 
-          <h4> Titulo:  <%= @homework.name%></h4>
-          <h4> Descripcion del ejercicio:  <%= @homework.content%></h4> 
-          <%#= simple_form_for(@homework) do |f| %> 
-            <%#= f.input :answer, include_blank: false ,label: "Indique su respuesta aqui"  %>
-            <%#= f.submit value="Update Flashcard", class:"btn btn-dark" %>
-          <%# end %>
-          <%=link_to "Volver", assignature_homeworks_path(@homework.lesson.assignature_id), class:"btn btn-success" %>
-        </div>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="flashcard">
+      <%= render 'shared/flashcard' %>
+      <%=link_to "Volver", assignature_homeworks_path(@homework.lesson.assignature_id), class:"btn btn-success" %>
+    </div>
+  <% end %>
 </div>
