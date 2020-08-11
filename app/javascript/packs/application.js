@@ -52,6 +52,10 @@ document.addEventListener('turbolinks:load', function () {
 	})
 
 })
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
     
 
 // 
@@ -60,3 +64,4 @@ document.addEventListener('turbolinks:load', function () {
 // })
 // // document.addEventListener('turbolinks:load', () => {
 // // });
+
