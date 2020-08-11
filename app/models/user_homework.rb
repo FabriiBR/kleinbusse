@@ -6,4 +6,5 @@ class UserHomework < ApplicationRecord
   scope :pending, -> { where(status: "pendiente") }
   scope :approved, -> { where(status: "aprobado") }
 
+
 end

@@ -23,6 +23,6 @@ class UserHomeworksController < ApplicationController
   private
 
   def user_params
-    params.require(:user_homework).permit(:file)
+    params.require(:user_homework).permit(:file, :user_answer)
   end
 end
