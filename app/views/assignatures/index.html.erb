@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <div>
-        <h2>Proximos Eventos</h2>
+        <h3>Proximos Eventos</h3>
         <div class="evento">                      
           <% current_user.courses.first.events.where('date > ?',(DateTime.now - 1.day)).order(:date).first(4).each do |event| %>
             <div class="ev-card d-flex">
@@ -19,7 +19,7 @@
         </div>  
       </div>
       <div>
-        <h2>Materias</h2>
+        <h3>Materias</h3>
         <div class="car">
             <% if current_user.role == "student" %>
               <% @assignatures.first(6).each do |assignature| %>
@@ -28,8 +28,9 @@
                   <div class="core">
                     <h3><%= assignature.name %></h3>
                     <p>Docente: <%= assignature.teacher.last_name %></p>
-                  </div>
-                  <i class="fa fa-ellipsis-v"></i>
+                    <progress id="bar" value="<%= assignature.user_homework_completion_rate %>" max="100"  data-toggle="tooltip" data-placement="bottom" title="<%= number_to_percentage(assignature.user_homework_completion_rate, precision: 2) %> de tareas completadas "></progress>
+                    </div>
+                  <i class="fa fa-ellipsis-v"></i>                  
                 <% end %>
               <% end %>
             <% else %>
@@ -40,37 +41,98 @@
               <% end %>
             <% end %>               
         </div>
-      </div>
-
-      <div>
-        <div>
-          <div class="d-flex justify-content-between mt-4 mb-2">
-            <h2>Tareas</h2>
-            <%= link_to "Ver mas", homeworks_path %>
-          </div>
-
-                             
-          <div class="car-hom">
-          </div>        
-        </div>
-        
-      </div>
-      
-
+      </div>     
     </div>
     <div class="col-12 col-md-4">
       <div id="calendar">
-      </div>
-      
+        <h3>Agosto</h3>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="col">Dom</th>
+              <th scope="col">Lun</th>
+              <th scope="col">Mar</th>
+              <th scope="col">Mier</th>
+              <th scope="col">Jue</th>
+              <th scope="col">Vie</th>
+              <th scope="col">Sab</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="fds">26</td>
+              <td id="fds">27</td>
+              <td id="fds">28</td>
+              <td id="fds">29</td>
+              <td id="fds">30</td>
+              <td id="fds">31</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td id="fds">2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td id="fds">8</td>
+            </tr>
+            <tr>
+              <td id="fds">9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td id="pd">14</td>
+              <td id="fds">15</td>
+            </tr>
+            <tr>
+              <td id="fds">16</td>
+              <td id="feriado">17</td>
+              <td id="feriado">18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td id="fds">22</td> 
+            </tr>
+            <tr>
+              <td id="fds">23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td id="fds">29</td> 
+            </tr>
+            <tr>
+              <td id="fds">30</td>
+              <td>31</td>
+              <td id="fds">1</td>
+              <td id="fds">2</td>
+              <td id="fds">3</td>
+              <td id="fds">4</td>
+              <td id="fds">5</td> 
+            </tr>
+          </tbody>
+        </table>
 
-      <div class="holiday">
-        <h3>158</h3>      
       </div>
+      <div class="holiday-grid">
+        <div class="d-flex align-items-center">
+          <i class="fas fa-bullhorn mr-3"></i>      
+          <h3>Próximo feriado</h3>
+        </div>
+        <div class="holiday">
+          <h3>2</h3>
+          <h4>dias!</h4>
+        </div>      
+      </div>
+
+      
 
 
     </div>
   </div>
 </div>
-
 
 
