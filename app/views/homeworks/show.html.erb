@@ -1,30 +1,20 @@
 <nav aria-label="breadcrumb ">
   <ol class="breadcrumb "> <%#main-container_home %>
     <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path%></li>
-    <li class="breadcrumb-item"><%= link_to "Tareas", homework_path%></li>
+    <li class="breadcrumb-item"><%= link_to "Tareas", assignature_homeworks_path(@homework.lesson.assignature_id)%></li>
     <li class="breadcrumb-item active" aria-current="page">Tareas</li>
   </ol>
 </nav>
 
 <div class="container">
   <% if @homework.type_off == "homework" %>
-    <div class = "main-container_home">
-      <h2 class="card-title d-flex justify-content-between"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%> </h2>
-      <div class="main-container assigment">
-        <h3> Homework </h3>
-        <h4></h4>
-        <h4> Descripcion del ejercicio: <%= @homework.content%></h4> 
-        <h4> Adjunta la respuesta aqui: </h4> 
-        <%= simple_form_for([@homework, @user_homework]) do |f| %>
-          <%= f.input :file, as: :file %>
-          <%= f.submit class:'btn btn-success', data: {confirm: 'Confirmar cambios'}%>
-        <% end %>
-      </div>
-    </div>
+  <div class="homework">
+    <%= render 'shared/homework' %>
+  </div>
   <% else %>
     <div class="flashcard">
       <%= render 'shared/flashcard' %>
-      <%=link_to "Volver", assignature_homeworks_path(@homework.lesson.assignature_id), class:"btn btn-success" %>
+      <%#=link_to "Volver", assignature_homeworks_path(@homework.lesson.assignature_id), class:"btn btn-success" %>
     </div>
   <% end %>
 </div>
