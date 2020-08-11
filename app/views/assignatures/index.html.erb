@@ -2,20 +2,38 @@
   <div class="row">
     <div class="col-12 col-md-8">
       <div>
-        <h2>Proximos Eventos</h2>      
+        <h2>Proximos Eventos</h2>
+        <div class="evento">                      
+          <% current_user.courses.first.events.where('date > ?',(DateTime.now - 1.day)).order(:date).first(4).each do |event| %>
+            <div class="ev-card d-flex">
+              <div>
+                <span class="date-assig"><%= event.eventable_id %> <%= event.eventable_type %></span>
+                <span class="date-day"><%= event.date.strftime("%d/%m/%Y") %></span>              
+              </div>
+              <div>
+                <div class="date"><%= ((event.date - DateTime.now)/86400).round() %></div>
+                <span class="ml-2">dias</span>              
+              </div>                       
+            </div>
+          <% end %>          
+        </div>  
       </div>
       <div>
         <h2>Materias</h2>
-        <div class="cartas">
+        <div class="car">
             <% if current_user.role == "student" %>
-              <% @assignatures.each do |assignature| %>
-                <%= link_to assignature_path(assignature), class:"car-assignature text-decoration-none text-dark" do %>           
-                  <h3><%= assignature.name %></h3>
-                  <p>Docente: <%= assignature.teacher.last_name %></p>
+              <% @assignatures.first(6).each do |assignature| %>
+                <%= link_to assignature_path(assignature), class:"car-assignature text-decoration-none text-dark d-flex" do %>           
+                  <div class="letra mr-4"><%= assignature.name.first  %></div>
+                  <div class="core">
+                    <h3><%= assignature.name %></h3>
+                    <p>Docente: <%= assignature.teacher.last_name %></p>
+                  </div>
+                  <i class="fa fa-ellipsis-v"></i>
                 <% end %>
               <% end %>
             <% else %>
-              <% @assignatures.each do |assignature| %>
+              <% @assignatures.first(6).each do |assignature| %>
                 <%= link_to assignature_path(assignature), class:"car-assignature text-decoration-none text-dark" do %>
                   <h3><%= assignature.name %></h3>
                 <% end %>
@@ -23,37 +41,27 @@
             <% end %>               
         </div>
       </div>
+
+      <div>
+        <div>
+          <div class="d-flex justify-content-between mt-4 mb-2">
+            <h2>Tareas</h2>
+            <%= link_to "Ver mas", homeworks_path %>
+          </div>
+
+                             
+          <div class="car-hom">
+          </div>        
+        </div>
+        
+      </div>
       
 
     </div>
     <div class="col-12 col-md-4">
       <div id="calendar">
       </div>
-      <div class="today-scheddule align-items-center">
-        <h2 class="my-5">Materias del Dia</h2>
-        <% if current_user.role == "student" %>
-          <% @assignatures.each do |assignature| %>
-            <%= link_to assignature_path(assignature), class:"text-decoration-none text-dark d-flex" do %>
-              <div class="letra">
-                <%= assignature.name.first %>
-              </div>
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h3><%= assignature.name %></h3>
-                    <p>Docente: <%= assignature.teacher.last_name %></p>
-                  </div>
-                  <i class="fas fa-ellipsis-h"></i>
-                </div>           
-            <% end %>
-          <% end %>
-        <% else %>
-          <% @assignatures.each do |assignature| %>
-            <%= link_to assignature_path(assignature), class:"text-decoration-none text-dark" do %>
-              <h3><%= assignature.name %></h3>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+      
 
       <div class="holiday">
         <h3>158</h3>      
