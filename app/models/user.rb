@@ -8,7 +8,7 @@ class User < ApplicationRecord
   #has_many :assignatures, foreign_key: :teacher_id
   has_many :assignatures, through: :batch
   has_many :courses, through: :batch
-  has_many :user_homeworks, inverse_of: :student
+  has_many :user_homeworks, foreign_key: "student_id", inverse_of: :student
   has_many :homeworks, through: :user_homeworks
 
   validates :first_name, presence: true

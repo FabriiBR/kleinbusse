@@ -36,7 +36,11 @@ $('#myTab a').on('click', function (e) {
     $(this).tab('show')
 })
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 // initTicketCable();
 
 // document.addEventListener('turbolinks:load', () => {
-// });
+ // });
