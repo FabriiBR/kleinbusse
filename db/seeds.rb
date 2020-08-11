@@ -36,7 +36,7 @@ t3.save!
 
 
 a1 = Assignature.new(name:"Matematica Inicial", teacher_id: t1.id, batch_id: batch.id)
-a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
+# a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: t2.id, batch_id: batch.id)
 a4 = Assignature.new(name:"Biologia", teacher_id: t3.id, batch_id: batch.id)
 a5 = Assignature.new(name:"Fisica", teacher_id: t1.id, batch_id: batch.id)
@@ -46,7 +46,7 @@ a7 = Assignature.new(name:"Quimica", teacher_id: t3.id, batch_id: batch.id)
 
 
 a1.save!
-a2.save!
+# a2.save!
 a3.save!
 a4.save!
 a5.save!
@@ -220,8 +220,9 @@ lr27 = UserHomework.new(student_id: user.id, homework_id: h27.id, status: "envia
 lr28 = UserHomework.new(student_id: user.id, homework_id: h28.id, status: "enviado", created_at: '04/08/2020', updated_at: "04/08/2020")
 lr29 = UserHomework.new(student_id: user.id, homework_id: h29.id, status: "enviado", created_at: '04/08/2020', updated_at: "10/08/2020")
 lr30 = UserHomework.new(student_id: user.id, homework_id: h30.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
-lr31 = UserHomework.new(student_id: user.id, homework_id: h32.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
-lr32 = UserHomework.new(student_id: user.id, homework_id: h33.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
+
+lr31 = UserHomework.new(student_id: user.id, homework_id: h31.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
+lr32 = UserHomework.new(student_id: user.id, homework_id: h32.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
 lr33 = UserHomework.new(student_id: user.id, homework_id: h33.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
 lr34 = UserHomework.new(student_id: user.id, homework_id: h34.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
 lr35 = UserHomework.new(student_id: user.id, homework_id: h35.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
@@ -266,6 +267,26 @@ lr26.save!
 lr27.save!
 lr28.save!
 lr29.save!
+lr30.save!
+lr31.save!
+lr32.save!
+lr33.save!
+lr34.save!
+lr35.save!
+lr36.save!
+lr37.save!
+lr38.save!
+lr39.save!
+lr40.save!
+lr41.save!
+lr42.save!
+lr43.save!
+lr44.save!
+
+
+
+
+
 
 #--- Seed course de prueba--
 
