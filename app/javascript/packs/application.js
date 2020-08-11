@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-// require("turbolinks").start()
+require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 // require('util.js')
@@ -40,12 +40,32 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-$('#myTab a').on('click', function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-})
 
-// initTicketCable();
-
-// document.addEventListener('turbolinks:load', () => {
+//  initTicketCable();
+// $('#myTab a').on('click', function (e) {
+//     e.preventDefault()
+//     $(this).tab('show')
 // });
+document.addEventListener('turbolinks:load', function () {
+    // Add your code
+	console.log("hola manola")
+	const flashdone = document.querySelector("#button_to_answer");
+	const flashcardCopy = document.querySelector("#hidden_answer");
+	console.log(flashdone)
+	console.log(flashcardCopy)
+	flashdone.addEventListener("click",(e) =>{
+		const userAnswer = document.querySelector("#userAnswer");
+		flashcardCopy.innerText = ''
+		flashcardCopy.insertAdjacentText("beforeend",userAnswer.value)
+		// console.log(flashcardAnswer.innerText);
+	})
+
+})
+    
+
+// 
+// //   e.currentTarget.setAttribute('aria-hidden', 'true');
+//     console.log("'casi casi'");
+// })
+// // document.addEventListener('turbolinks:load', () => {
+// // });

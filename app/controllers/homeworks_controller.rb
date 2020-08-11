@@ -13,10 +13,8 @@ class HomeworksController < ApplicationController
   end
 
   def show
-    if Homework.flashcard.include? Homework.find(params[:id])
+    if UserHomework.where(homework_id: params[:id], student_id: current_user).exists?
       @homework = Homework.find(params[:id])
-      @answer = @homework.answer
-    elsif UserHomework.where(homework_id: params[:id], student_id: current_user).exists?
       @user_homework = UserHomework.where(homework_id: params[:id], student_id: current_user)
       @user_homework = @user_homework[0]
     else
