@@ -9,6 +9,15 @@ require("@rails/activestorage").start()
 require("channels")
 // require('util.js')
 
+// 202010 - GAR - Chart.js
+require("chartkick")
+require("chart.js")
+
+// 202010 - GAR - Highcharts
+require("chartkick").use(require("highcharts"))
+
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

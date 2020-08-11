@@ -20,14 +20,34 @@
           <% @assignature_homeworks.each do |lesson , homework| %>
             <h3> <%= lesson.name%>  </h3>
             <hr>
+            <%aprobados = 0 %>
+            <%corregir = 0 %>
+            <%enviados = 0 %>
+            <%pendientes = 0 %>
             <% homework.each do |home| %> 
-              <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>
-                <div class="d-flex align-items-start justify-content-between" id="h_homework">
-                  <p><%= home.name %></p>
-                  <i class="fas fa-file-signature"></i>
-                </div>
+
+              <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>   
+                  <% if home.user_homeworks.first.status == 'aprobado' %>
+                    <%aprobados = aprobados + 1 %>
+                  <% elsif   home.user_homeworks.first.status == 'corregir' %>
+                    <%corregir = corregir + 1 %>
+                  <% elsif   home.user_homeworks.first.status == 'enviados' %>
+                    <%enviados = enviados + 1 %>
+                  <% else  %>
+                    <%pendientes = pendientes + 1 %>
+                  <% end %>  
               <% end %>
             <% end %>
+            <div class="d-flex align-items-start justify-content-between" id="h_homework">
+              <%#= line_chart User.group_by_day(:created_at).count %>
+              <p> Aprobados: <%= aprobados%> </p>
+              <p> Corregir: <%= corregir%> </p>
+              <p> Enviados: <%= enviados%> </p>
+              <p> Pendientes: <%= pendientes%> </p>
+              <div class="progress" style="width: 274px; border-radius: 8px;">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
           <% end %>
         <% end %>
       </div>
@@ -56,7 +76,7 @@
     </div>    
   </div>
 </div>
-<%console%>
+
 
 
 
