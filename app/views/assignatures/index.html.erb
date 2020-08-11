@@ -1,76 +1,76 @@
-
 <div class="container">
-  <div class="main-container">
-    <h2 class="my-4">Materias</h3>
-      <div class="cards d-flex">
-        <% if current_user.role == "student" %>
-          <% @assignatures.each do |assignature| %>
-            <%= link_to assignature_path(assignature), class:"card-assignature text-decoration-none text-dark" do %>           
-              <h3><%= assignature.name %></h3>
-              <p>Docente: <%= assignature.teacher.last_name %></p>
-            <% end %>
-          <% end %>
-        <% else %>
-          <% @assignatures.each do |assignature| %>
-            <%= link_to assignature_path(assignature), class:"card-assignature text-decoration-none text-dark" do %>
-              <h3><%= assignature.name %></h3>
-            <% end %>
-          <% end %>
-        <% end %>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <div>
+        <h2>Proximos Eventos</h2>
+        <div class="evento">                      
+          <% current_user.courses.first.events.where('date > ?',(DateTime.now - 1.day)).order(:date).first(4).each do |event| %>
+            <div class="ev-card d-flex">
+              <div>
+                <span class="date-assig"><%= event.eventable_id %> <%= event.eventable_type %></span>
+                <span class="date-day"><%= event.date.strftime("%d/%m/%Y") %></span>              
+              </div>
+              <div>
+                <div class="date"><%= ((event.date - DateTime.now)/86400).round() %></div>
+                <span class="ml-2">dias</span>              
+              </div>                       
+            </div>
+          <% end %>          
+        </div>  
       </div>
-  </div>
-  <div class="main-container assigment mt-4">
-    <table class="table text-center">
-    <thead>
-      <tr>
-        <th scope="col">Horario</th>
-        <th scope="col">Lunes</th>
-        <th scope="col">Martes</th>
-        <th scope="col">Miercoles</th>
-        <th scope="col">Jueves</th>
-        <th scope="col">Viernes</th>
+      <div>
+        <h2>Materias</h2>
+        <div class="car">
+            <% if current_user.role == "student" %>
+              <% @assignatures.first(6).each do |assignature| %>
+                <%= link_to assignature_path(assignature), class:"car-assignature text-decoration-none text-dark d-flex" do %>           
+                  <div class="letra mr-4"><%= assignature.name.first  %></div>
+                  <div class="core">
+                    <h3><%= assignature.name %></h3>
+                    <p>Docente: <%= assignature.teacher.last_name %></p>
+                  </div>
+                  <i class="fa fa-ellipsis-v"></i>
+                <% end %>
+              <% end %>
+            <% else %>
+              <% @assignatures.first(6).each do |assignature| %>
+                <%= link_to assignature_path(assignature), class:"car-assignature text-decoration-none text-dark" do %>
+                  <h3><%= assignature.name %></h3>
+                <% end %>
+              <% end %>
+            <% end %>               
+        </div>
+      </div>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Modulo 1 <p>8.00 hs - 9.45 hs</p></th>
-        <td>Matemática</td>
-        <td>Lengua</td>
-        <td>Geografia</td>
-        <td>Historia</td>
-        <td>Plástica</td>
+      <div>
+        <div>
+          <div class="d-flex justify-content-between mt-4 mb-2">
+            <h2>Tareas</h2>
+            <%= link_to "Ver mas", homeworks_path %>
+          </div>
 
-      </tr>
-      <tr>
-        <th scope="row">Modulo 2 <p>10.00 hs - 11.45 hs</p></th>
-        <td>Biologia</td>
-        <td>Contabilidad</td>
-        <td>Filosofia</td>
-        <td>Marketing</td>
-        <td>Computación</td>
-      </tr>
-      <tr>
-        <th scope="row">Modulo 3 <p>12.00 hs - 13.15 hs</p></th>
-        <td>Historia</td>
-        <td>Matemática</td>
-        <td>lengua</td>
-        <td>Contabilidad</td>
-        <td>Computación</td>
+                             
+          <div class="car-hom">
+          </div>        
+        </div>
         
-      </tr>
-      <tr>
-        <th scope="row">Modulo Tarde <p>14.00 hs - 15.30 hs</p></th>
-        <td>Ingles</td>
-        <td>Educacion Física</td>
-        <td>ingles</td>
-        <td>Educacion Física</td>
-        <td>ingles</td>        
-      </tr>
+      </div>
+      
 
-    </tbody>
-  </table>
+    </div>
+    <div class="col-12 col-md-4">
+      <div id="calendar">
+      </div>
+      
+
+      <div class="holiday">
+        <h3>158</h3>      
+      </div>
+
+
+    </div>
   </div>
-
 </div>
+
+
 
