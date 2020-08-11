@@ -2,7 +2,7 @@ class HomeworksController < ApplicationController
   before_action :set_homework, only: %i[show :update]
 
   def index
-     @assignature_homeworks = Homework.joins(:lesson).where(homeworks: {type_off: "homework"}).where("lessons.assignature_id =?",params[:assignature_id] ).includes(:user_homeworks).where(user_homeworks: { student_id: current_user.id }).group_by(&:lesson)
+    @assignature_homeworks = Homework.joins(:lesson).where(homeworks: {type_off: "homework"}).where("lessons.assignature_id =?",params[:assignature_id] ).includes(:user_homeworks).where(user_homeworks: { student_id: current_user.id }).group_by(&:lesson)
 
     @assignature_flashcards = Homework.joins(:lesson).where(homeworks: {type_off: "flashcard"}).where("lessons.assignature_id =?",params[:assignature_id] ).includes(:user_homeworks).where(user_homeworks: { student_id: current_user.id }).group_by(&:lesson)
 
