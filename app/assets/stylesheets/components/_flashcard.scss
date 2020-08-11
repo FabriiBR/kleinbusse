@@ -159,6 +159,10 @@
                 }
             }
         }
+        .fa-star {
+            color: rgb(185, 185, 185);
+            font-size: 20px;
+        }
 
         .description {
             grid-row: 5;
@@ -173,7 +177,7 @@
         }
 
         .location,
-        .price {
+        .favorite {
             font-weight: 600;
             color: black;
             grid-row: 1;
@@ -185,7 +189,7 @@
             justify-self: left;
         }
 
-        .price {
+        .favorite {
             grid-column: 3/-1;
             justify-self: right;
         }
