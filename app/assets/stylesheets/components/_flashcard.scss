@@ -18,7 +18,7 @@
 
     .card {
         width: 80%;
-        height: 340px;
+        height: 60vh;
         margin: 1em;
         perspective: 1500px;
         .content {
@@ -104,12 +104,8 @@
         }
         .flash_form {
             width: 100%;
-
-             .text {
-                height: 100px;
-            }
-            .btn {
-                width: 20vw;
+            .button {
+                width: 40vh;
             }
         }
     }

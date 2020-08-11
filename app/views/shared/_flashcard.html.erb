@@ -1,44 +1,41 @@
 <div class="wrapper">
-    <div class="card">
-        <input type="checkbox" id="card1" class="more" aria-hidden="true">
-        <div class="content">
-            <div class="front" style="background-image: url(<%= cl_image_path 'https://res.cloudinary.com/julianoviedo1/image/upload/v1597072316/flashcard_background.jpg' %>)">
-                <div class="inner">
-                    <div class="contenido">
-                        <h2><%= @homework.name%></h2>
-                        <h3><%= @homework.content%></h3>
-                    </div>
-                    <div class="flash_form">
-                        <%= simple_form_for(@homework) do |f| %> 
-                            <%= f.input :answer, include_blank: false , :input_html => { :class => 'text' }%>
-                            <label for="card1" class="button btn" aria-hidden="true">
-                                Respuesta
-                            </label>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
-            <div class="back">
-                <div class="inner">
-                    <div class="info">
-
-                    </div>
-                    <div class="description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum nostrum ipsam
-                            ullam, reiciendis nam consectetur? Doloribus voluptate architecto possimus perferendis
-                            tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
-                    </div>
-                    <div class="location">Respuesta</div>
-                    <div class="price"><i class="far fa-star"></i></div>
-                    <label for="card1" class="button return" aria-hidden="true">
-                        <i class="fas fa-arrow-left"></i>
-                    </label>
-                </div>
-            </div>
+  <div class="card">
+    <input type="checkbox" id="card1" class="more" aria-hidden="true">
+    <div class="content">
+      <%= simple_form_for([@homework, @user_homework]) do |f| %> 
+      <div class="front" style="background-image: url(<%= cl_image_path 'https://res.cloudinary.com/julianoviedo1/image/upload/v1597072316/flashcard_background.jpg' %>)">
+        <div class="inner">
+          <div class="contenido">
+            <h2><%= @homework.name%></h2>
+            <h3><%= @homework.content%></h3>
+          </div>
+          <%= f.input :user_answer, as: :text, input_html: { id: 'userAnswer' }%>
+          <label for="card1" class="button" id="button_to_answer" aria-hidden="true">
+            Ver Respuesta
+          </label>
         </div>
     </div>
+    <div class="back">
+        <div class="inner">
+          <div class="description">
+            <p><%= @homework.answer%></p> 
+          </div>
+          <div class="location">Respuesta</div>
+          <div class="price">
+            <i class="far fa-star"></i>
+          </div>
+          <div class="answers">
+          <p id= "hidden_answer"></p>
+          </div>
+          <div class="flash_form">
+            <label for="card1" class="button return" aria-hidden="true">
+              <i class="fas fa-arrow-left"></i>
+            </label>
+            <%= f.submit class:'button'%>  
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-
-<% console %>
