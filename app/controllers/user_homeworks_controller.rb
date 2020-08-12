@@ -8,16 +8,26 @@ class UserHomeworksController < ApplicationController
     @uh.student = current_user
     @uh.homework = @homework
     if @uh.save!
-      redirect_to homework_user_homeworks_path(@homework)
+      flash[:notice] = 'Subiste tu archivo!'
     else
-      render homework_path(@homework)
+      flash[:notice] = 'No subiste un archivo!'
     end
+    redirect_to homework_user_homeworks_path(@homework)
   end
 
   def update
     @uh = UserHomework.find(params[:id])
-    @uh.update(user_params)
-    redirect_to homework_path(@uh.homework_id)
+    if params[:user_homework].present?
+      @uh.status = "enviado"
+      @uh.update(user_params)
+      raise
+      redirect_to homework_path(@uh.homework_id)
+      flash[:notice] = 'Subiste tu archivo!'
+      return
+    else
+      redirect_to homework_path(@uh.homework_id)
+      flash[:notice] = 'No subiste un archivo!'
+    end
   end
 
   private
