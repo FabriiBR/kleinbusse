@@ -5,11 +5,13 @@
     <li class="breadcrumb-item active" aria-current="page"> Leccion </li>
   </ol>
 </nav>
+
 <div class= "container">
-  <div class="container cont">
-    <div class="row justify-content-between">
-      <div class= 'col-12 card video-card px-2'>
+  <div class="row">
+    <div class="col-12 justify-content-between">
+      <div class= ' card video-card px-2'>
         <div class="tabs-underlined nav nav-tabs d-flex justify-content-end" id="nav-tab" role="tablist">
+          <h2 style="position:absolute;left:2%;"><%=  @lesson.name %></h2>
           <a class="tab-underlined active" id="nav-clase-tab" data-toggle="tab" href="#nav-clase" role="tab" aria-controls="nav-clase" aria-selected="true"><i class="fa  fa-book" aria-hidden="true"></i>  Clase</a>
           <a class="tab-underlined" id="nav-profile-tab" data-toggle="tab" href="#nav-video" role="tab" aria-controls="nav-video" aria-selected="false"><i class="fa fa-play" aria-hidden="true"></i>  Video</a>
         </div>
@@ -24,28 +26,26 @@
       </div>
     </div>
   </div>
-      
-
-        <%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
-  <br>
-  <div class="cards_lessons">
-    <div class="main-container_lessons assigment">
-      <div class="card-title d-flex d-flex justify-content-start align-items-left">
-        <i class="fas fa-bookmark"></i>
-        <h2> <strong>  Clases </strong>  </h2>
+  <br><%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
+  
+  <div class="row justify-content-between px-3">
+    <div class="col-md-12 col-lg-5 main-container_lessons ">
+      <div class="d-flex">
+        <i class="fas fa-bookmark p-2"></i>
+        <h2 class= 'p-2'> <strong>Clases</strong>  </h2>
         <%=link_to "Ver mas Clases", assignature_lessons_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
       </div>
       <% @lessons.each do |lesson| %> 
         <hr>
-        <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"   do %>
-          <div class="d-flex align-items-start justify-content-between" id="l_lessons">
+        <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"    do %>
+          <div class="d-flex align-items-start justify-content-between borde" id="lesson">
             <p><%= lesson.name %></p>
             <i class="fas fa-ellipsis-v"></i>
           </div>
         <% end %>
       <% end %>
     </div>
-    <div class="main-container_lessons assigment">
+    <div class="col-lg-5 col-md-12 main-container_lessons assigment">
       <div class="card-title d-flex ">
         <i class=" far fa-file-alt"></i>
         <h2 class="card-title d-flex align-items-center justify-content-between"> Tareas  </h2>
@@ -54,14 +54,13 @@
       <% @homeworks.each do |hw| %> 
       <hr>
         <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
-          <div class="d-flex align-items-start justify-content-between" id="h_lessons">
+          <div class="d-flex align-items-start justify-content-between borde" id="homework">
             <p><%= hw.name %></p>
             <i class="far fa-file-alt"></i>
           </div>
         <% end %>
       <% end %>
     </div>
-    </div>  
   </div>
 </div>
 
