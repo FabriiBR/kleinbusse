@@ -102,11 +102,11 @@
                 margin: 0 1px;
             }
         }
-        .flash_form {
-            width: 100%;
-            .button {
-                width: 40vh;
-            }
+        #userAnswer {
+            width: 45vw;
+            height: 25vh;
+            border-radius: 8px;
+            margin-top: 4%;
         }
     }
 
@@ -115,9 +115,9 @@
         background-color: #fff;
         border: 1px solid rgb(240, 240, 240);
         .inner {
-            grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
-            grid-template-columns: repeat(4, auto);
-            grid-column-gap: 0.8em;
+            grid-template-rows: 1fr 5fr 2fr;
+            // grid-template-columns: repeat(4, auto);
+            // grid-column-gap: 0.8em;
             justify-items: center;
         }
 
@@ -159,6 +159,10 @@
                 }
             }
         }
+        .fa-star {
+            color: rgb(185, 185, 185);
+            font-size: 20px;
+        }
 
         .description {
             grid-row: 5;
@@ -173,7 +177,7 @@
         }
 
         .location,
-        .price {
+        .favorite {
             font-weight: 600;
             color: black;
             grid-row: 1;
@@ -185,7 +189,7 @@
             justify-self: left;
         }
 
-        .price {
+        .favorite {
             grid-column: 3/-1;
             justify-self: right;
         }
@@ -194,6 +198,11 @@
             grid-column: 1/-1;
             justify-self: center;
         }
+    }
+    .endbuttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 
     .button {

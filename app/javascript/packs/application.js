@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import $ from 'jquery';
 import "bootstrap";
+// import { favorite } from '../components/flashcard';
 // import initTicketCable from '../channels/ticket_channel'
 // import btn_newman from '../components/sidebar';
 
@@ -50,7 +51,15 @@ document.addEventListener('turbolinks:load', function () {
 		flashcardCopy.insertAdjacentText("beforeend",userAnswer.value)
 		// console.log(flashcardAnswer.innerText);
 	})
-
+	const fav = document.querySelector('.fa-star')
+	fav.addEventListener("click",(e)=>{
+		// fav.removeAttribute('color')
+		if (fav.getAttribute("style") == "color:#F2B01E;"){
+			fav.setAttribute('style',"color: rgb(185, 185, 185);")
+		} else {
+			fav.setAttribute('style',"color:#F2B01E;")
+		}
+	})
 })
 
 $(function () {
