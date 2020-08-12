@@ -32,8 +32,9 @@ require("chartkick").use(require("highcharts"))
 // ----------------------------------------------------
 
 // External imports
-import $ from 'jquery';
+import $ from 'jquery'
 import "bootstrap";
+// import toggleNav from "../components/toggle_sidebar"; 
 // import { favorite } from '../components/flashcard';
 // import initTicketCable from '../channels/ticket_channel'
 // import btn_newman from '../components/sidebar';

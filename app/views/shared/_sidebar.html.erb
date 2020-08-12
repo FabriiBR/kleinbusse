@@ -1,10 +1,10 @@
 <% if current_user %>
 <nav class="sidebar">
   <div class="sidebar-head">
-    <div class="head">
-      <a class="head-link">
-        <input type="image" onclick="toggleNav()" class="head-img" id="btn_open" src="<%= asset_path 'favicon.png' %>">
+    <div class="head mt-4 px-4">
+      <a class="head-link d-flex align-items-center justify-content-between">
         <span class="head-text">Cardenal Newman</span>
+        <input type="image" onclick="toggleNav()" class="head-img" id="btn_open" src="<%= asset_path 'favicon.png' %>">
       </a>
     </div>
   </div>
@@ -16,12 +16,27 @@
      <span class="info-name "><%= current_user.first_name %> <%= current_user.last_name %></span>
      <span class="info-type"><%= current_user.role == 'student' ? 'Estudiante' : 'Profesor' %></span>
   </div>
-  <div class= "sidebar-event">
-    <div class="event-header">
-      <a class="nav-link" >
-        <i class="link-bell far fa-bell"></i>
-        <span class="link-text">Proximos Eventos</span>
-      </a>
+  <div class="navigator mt-4 px-4">
+    <%= link_to assignatures_path, class:"navigator-item #{'navigator-item-active' if request.path == assignatures_path} primero text-decoration-none text-dark d-flex navigator-border " do %>
+      <p class="link-text">Dashboard</p>
+      <i id="i-dash" class="fas fa-bars"></i>      
+    <% end %>
+    <%= link_to user_homeworks_path, class:"navigator-item #{ 'navigator-item-active' if request.path == user_homeworks_path} text-decoration-none text-dark d-flex navigator-border " do %>
+      <p class="link-textb">Mis tareas</p>
+      <i id="i-dash" class="fas fa-pencil-alt"></i>
+    <% end %>
+    <%= link_to ticket_path, class:"navigator-item #{ 'navigator-item-active' if request.path == ticket_path} text-decoration-none text-dark d-flex navigator-border " do %>
+      <p class="link-textc">Mis tickets</p>
+      <i id="i-dash" class="far fa-comment-alt"></i>
+    <% end %>    
+  </div>  
+  
+  <div>
+    <div>
+      <div class="nav-link d-flex align-items-center justify-content-between mt-5 px-4" >
+        <h3 class="link-textd">Próximos Eventos</h3>    
+        <i id="i-dash-bell" class="far fa-bell"></i>       
+      </div>
     </div>
     <div class="event">
       <ul class="sidebar-nav">
@@ -50,22 +65,36 @@ function toggleNav(){
     document.documentElement.style.setProperty('--sizesidebar','18rem');
     document.querySelector(".head-text").style.display = "block";
     document.querySelector(".link-text").style.display = "block";
+    document.querySelector(".link-textb").style.display = "block";
+    document.querySelector(".link-textc").style.display = "block";
+    document.querySelector(".link-textd").style.display = "block";
     document.querySelector(".info-name").style.display = "block";
     document.querySelector(".info-type").style.display = "block";
     document.querySelector(".event").style.display = "block";
-    document.querySelector(".info-avatar").style.width = "150px";
-    document.querySelector(".info-avatar").style.height = "150px";
+    document.querySelector(".info-avatar").style.width = "100px";
+    document.querySelector(".info-avatar").style.height = "100px";
+    document.querySelector(".navigator-item").classList.add("primero")
+    document.querySelectorAll(".navigator-item").forEach(icon => {
+      icon.classList.add("navigator-border")
+    });    
     toggleStatus = true;
   }
   else if (toggleStatus === true){
     document.documentElement.style.setProperty('--sizesidebar','5rem');
     document.querySelector(".head-text").style.display = "none";
     document.querySelector(".link-text").style.display = "none";
+    document.querySelector(".link-textb").style.display = "none";
+    document.querySelector(".link-textc").style.display = "none";
+    document.querySelector(".link-textd").style.display = "none";
     document.querySelector(".info-name").style.display = "none";
     document.querySelector(".info-type").style.display = "none";
     document.querySelector(".event").style.display = "none";
     document.querySelector(".info-avatar").style.width = "60px";
     document.querySelector(".info-avatar").style.height = "60px";
+    document.querySelector(".navigator-item").classList.remove("primero")
+    document.querySelectorAll(".navigator-item").forEach(icon => {
+      icon.classList.remove("navigator-border")
+    });
     toggleStatus = false;
   }
 }
