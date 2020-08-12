@@ -27,7 +27,6 @@
       <i class="far fa-file-alt"></i>
       <h3>Pendientes</h3>
       <div>
-        <hr>
         <% @assignature.homeworks.first(4).each do |homework| %>
           <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
             <div class="d-flex justify-content-between align-items-center my-2 borde" id="homework">

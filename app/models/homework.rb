@@ -7,6 +7,6 @@ class Homework < ApplicationRecord
   def done_by(user)
     self.user_homeworks.find_by(student_id: user.id)
   end
-  
+
 
 end
