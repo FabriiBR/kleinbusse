@@ -26,6 +26,7 @@
     <div class="main-container assigment">
       <i class="far fa-file-alt"></i>
       <h3>Pendientes</h3>
+      <hr>
       <div>
         <% @assignature.homeworks.first(4).each do |homework| %>
           <%=link_to homework_path(homework), class:"text-decoration-none text-dark" do%>
