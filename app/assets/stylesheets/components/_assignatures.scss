@@ -22,9 +22,11 @@
   }
   .assigment{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  
     .p-bottom {
       margin: 15px;
     }
+
   }
 
 }
@@ -51,7 +53,7 @@
     display: flex;
     align-items: center;
     color: #AAAAB7;
-  
+
   }
 
 }
@@ -76,6 +78,9 @@
   padding-left: 8px;
 }
 
+#link{
+  margin: 0;
+}
 
 
 h3{

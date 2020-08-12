@@ -30,7 +30,7 @@
       <div>
         <% @assignature.homeworks.first(4).each do |homework| %>
           <%=link_to homework_path(homework),class:"text-decoration-none text-dark" do%>
-            <div class="d-flex justify-content-between align-items-center py-2 my-2" id="homework">
+            <div class="d-flex justify-content-between align-items-center py-2 my-2 borde" id="homework">
              <% if homework.user_homeworks.first.status == 'corregir' || homework.user_homeworks.first.status == 'pendiente' %>
                <p><%= homework.name %></p>
               <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -41,19 +41,19 @@
       </div>
       <p class="p-bottom d-flex align-items-end justify-content-between position-absolute fixed-bottom">  <%= link_to "Ver mas tareas pendientes", assignature_homeworks_path(@assignature), class:"btn btn-outline-success btn-sm btn-block"%></p> 
     </div>
-    <div class="main-container assigment">
+    <div class="main-container assigment position-relative">
       <i class="fas fa-link"></i>
       <h3>Links Importantes</h3>
       <hr>
       <div>
         <% @lessons.first(4).each do |lesson| %>
-            <%=link_to "#{lesson.link}",target: :_blank, class:"text-decoration-none text-dark" do%>
-              <div class="d-flex justify-content-between align-items-center my-2 borde" id="link">
-                <p><%= lesson.name %></p>
-              <i class="far fa-lightbulb"></i>
-              </div>
-            <%end %>
-        <%end%>
+          <%=link_to "#{lesson.link}",target: :_blank, class:"text-decoration-none text-dark" do%>
+            <div class="d-flex justify-content-between align-items-center py-2 my-2 borde" style= "height: 36px;" id="link">
+              <p><%= lesson.name %></p>
+            <i class="far fa-lightbulb"></i>
+            </div>
+          <%end %>
+        <%end %>
       </div>
     </div> 
   </div>

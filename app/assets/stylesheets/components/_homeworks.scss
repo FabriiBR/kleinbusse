@@ -2,6 +2,8 @@
   background-color: white;
   border-radius: 8px;
   padding: 30px 45px;
+  padding-bottom: 80px; // alto del boton  + valor del margen del botton * 2
+
 
   h2{
     font-family: DM Sans;
@@ -15,13 +17,17 @@
     padding-bottom: 27px;
     padding-left: 0px;
   }
+  p{
+    margin: 0;
+  }
 
   .assigment{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-
+    .p-bottom {
+      margin: 15px;
+    }
   }
 }
-
 
 .cards_home{
   display: grid;
@@ -65,6 +71,8 @@
 .btn-outline-success{
   border-radius: 10px;
 }
+
+
 
 
 h3{
