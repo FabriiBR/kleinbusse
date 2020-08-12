@@ -2,6 +2,7 @@
   background-color: white;
   border-radius: 8px;
   padding: 30px 45px;
+  padding-bottom: 80px; // alto del boton  + valor del margen del botton * 2
 
   h2{
     font-family: DM Sans;
@@ -16,10 +17,18 @@
     padding-left: 50px;
   }
 
+  p{
+    margin: 0;
+  }
   .assigment{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  
+    .p-bottom {
+      margin: 15px;
+    }
 
   }
+
 }
 
 .cards{
@@ -28,6 +37,7 @@
   grid-gap: 25px;
 
 }
+
 
 .card-assignature{
   border: 15px solid #f4f4f4;
@@ -43,7 +53,7 @@
     display: flex;
     align-items: center;
     color: #AAAAB7;
-  
+
   }
 
 }
@@ -68,6 +78,9 @@
   padding-left: 8px;
 }
 
+#link{
+  margin: 0;
+}
 
 
 h3{
@@ -84,7 +97,6 @@ h3{
 }
 
 p{
-  padding-bottom: 4px;
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
