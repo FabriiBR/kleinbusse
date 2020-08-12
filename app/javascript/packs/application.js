@@ -13,8 +13,7 @@ require("channels")
 require("chartkick")
 require("chart.js")
 
-// 202010 - GAR - Highcharts
-require("chartkick").use(require("highcharts"))
+// 202010 - GAR - Highchartssxs
 
 
 
