@@ -10,11 +10,11 @@ require("channels")
 // require('util.js')
 
 // 202010 - GAR - Chart.js
-require("chartkick")
-require("chart.js")
+// require("chartkick")
+// require("chart.js")
 
 // 202010 - GAR - Highcharts
-require("chartkick").use(require("highcharts"))
+// require("chartkick").use(require("highcharts"))
 
 
 
