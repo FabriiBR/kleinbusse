@@ -1,6 +1,12 @@
 class UserHomeworksController < ApplicationController
   # STATUS = %w[pendiente enviado aprobado corregir]
 
+  def index
+    @assignatures = current_user.assignatures
+    @user_homeworks_total = current_user.user_homeworks
+    @user_homeworks = current_user.user_homeworks.pending
+  end  
+
   def create
     @homework = Homework.find(params[:homework_id])
     @uh = UserHomework.new(user_params)
@@ -20,7 +26,6 @@ class UserHomeworksController < ApplicationController
     if params[:user_homework].present?
       @uh.status = "enviado"
       @uh.update(user_params)
-      raise
       redirect_to homework_path(@uh.homework_id)
       flash[:notice] = 'Subiste tu archivo!'
       return

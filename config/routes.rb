@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :homeworks, only: [:index, :show] do
     resources :user_homeworks, only: [:create, :update]
   end
-  resources :user_homeworks, only: [:update]
+  resources :user_homeworks, only: [:index, :update]
   resources :tickets, only: [:index]
   get '/mytickets', to: 'tickets#myindex', as: 'ticket'
 end
