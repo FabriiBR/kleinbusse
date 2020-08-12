@@ -1,15 +1,19 @@
-<h1 class="d-flex justify-content-between my-3"> Tareas Pendientes  <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success'%></h1>
+<h1 class="d-flex justify-content-between my-3"> Tareas Pendientes </h1>
 <div class = "main-container_home my-3">
   <%# main-container assigment %>
-  <div class="info">
+  <div class="container info">
     <h2> <%=@homework.name%> </h2>
     <h3> Descripcion del ejercicio: <%= @homework.content%></h3> 
   </div>
-</div>
-<div class="container my-5">
-  <h3> Adjunta la respuesta aqui: </h3> 
-  <%= simple_form_for([@homework, @user_homework]) do |f| %>
-    <%= f.input :file, as: :file %>
-    <%= f.submit :'Subir Tarea', class:'btn btn-success', data: {confirm: 'Confirmar cambios'}%>
-  <% end %>
+  <div class="container my-5">
+    <h4 class="my-4" style="font-size:18px;"> Adjunta la respuesta aqui: </h4> 
+    <%= simple_form_for([@homework, @user_homework]) do |f| %>
+      <%= f.input :file, as: :file, label: false %>
+      <%= f.submit :'Subir Tarea', class:'btn btn-success m-1', data: {confirm: 'Confirmar cambios'}%>
+      <%=link_to 'Tengo una duda!', new_lesson_ticket_path(@homework.lesson_id), class: 'btn btn-success my-4'%>
+    <% end %>
+    <%if @user_homework.file.attached?%>
+      <p> Felicitaciones, subiste un archivo!</p>
+    <% end %>
+  </div>
 </div>
