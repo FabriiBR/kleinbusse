@@ -36,7 +36,7 @@ t3.save!
 
 
 a1 = Assignature.new(name:"Matematica Inicial", teacher_id: t1.id, batch_id: batch.id)
-a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
+# a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: t2.id, batch_id: batch.id)
 a4 = Assignature.new(name:"Biologia", teacher_id: t3.id, batch_id: batch.id)
 a5 = Assignature.new(name:"Fisica", teacher_id: t1.id, batch_id: batch.id)
@@ -46,7 +46,7 @@ a7 = Assignature.new(name:"Quimica", teacher_id: t3.id, batch_id: batch.id)
 
 
 a1.save!
-a2.save!
+# a2.save!
 a3.save!
 a4.save!
 a5.save!
@@ -130,20 +130,19 @@ h28 = Homework.new(name: 'Fuerza normal', content: 'Sabiendo que la fuerza norma
 h29 = Homework.new(name: 'Un péndulo en tensión', content: 'Una bola metálica de 1 kg de masa se encuentra en reposo colgando del techo de una habitación por medio de una cuerda de 2 m de longitud. Si la masa de la cuerda es despreciable e inextensible. ¿Cuál es el valor de la tensión de la cuerda?', type_off: "homework", answer: "",  lesson_id:  l11.id)
 h30= Homework.new(name: 'teoría de Arrhenius y de Brönsted-Lowry', content: '¿Cuál es la diferencia fundamental del concepto de ácido-base según la teoría de Arrhenius y de Brönsted-Lowry?', type_off: "flashcard", answer: "La diferencia se encuentra en que el concepto de Brönsted-Lowry amplía las bases a especies que en la definición de Arrhenius no tiene cabida. ",  lesson_id:  l12.id)
 h31= Homework.new(name: ' Reacciones Brönsted-Lowry', content: 'Completa las siguientes reacciones entre pares ácidos y bases de  Brönsted-Lowry: a. NH4 + H2O ↔ ------------- // b. H2O + (CO3) = ↔ ------------- // c. H2O + CH3 – COO-  ↔ ------------', type_off: "flashcard", answer: "a. H3O //  b. OH //  c.  OH ",  lesson_id:  l12.id)
-h32= Homework.new(name: 'Verdadero Falso', content: 'a- Un ácido es tanto más débil cuanto mayor es el valor de su Ka. b- Siempre que un ácido y una base se mezclan en cantidades estequiométricas, el pH de la disolución resultante es 7, independientemente de que el ácido y la base sean fuertes o débiles. c- El pH de una disolución de NaCl 10-3 M es 7.', type_off: "flashcard", answer: "a- FALSO b- FALSO c. VERDADERO ",  lesson_id:  l12.id)
-h33= Homework.new(name: 'Estrcutra Electronica', content: 'a. Consultando la tabla periódica escriba la estructura electrónica de: a- Li, b-Al, c-P, d-Ar   e indique número de electrones de valencia' , type_off: "flashcard", answer: "a- [He] 2s1   b- [Ne] 3s² 3p¹   c- [Ne] 3s² 3p³   d- [Ne] 3s² 3p⁶",  lesson_id:  l13.id)
+h32= Homework.new(name: 'Acido-Base: V/F', content: 'a- Un ácido es tanto más débil cuanto mayor es el valor de su Ka. b- Siempre que un ácido y una base se mezclan en cantidades estequiométricas, el pH de la disolución resultante es 7, independientemente de que el ácido y la base sean fuertes o débiles. c- El pH de una disolución de NaCl 10-3 M es 7.', type_off: "flashcard", answer: "a- FALSO b- FALSO c. VERDADERO ",  lesson_id:  l12.id)
+h33= Homework.new(name: 'Estructura Electronica', content: 'a. Consultando la tabla periódica escriba la estructura electrónica de: a- Li, b-Al, c-P, d-Ar   e indique número de electrones de valencia' , type_off: "flashcard", answer: "a- [He] 2s1   b- [Ne] 3s² 3p¹   c- [Ne] 3s² 3p³   d- [Ne] 3s² 3p⁶",  lesson_id:  l13.id)
 h34= Homework.new(name: 'Simbolo quimico', content: 'a. Consultando la tabla periódica indique el simbolo quimico de: a- Argon, b-Fosforo, c-Hierro, d-Hidrogeno   e indique número de electrones de valencia' , type_off: "flashcard", answer:  "a. Ar b. P c. Fe d. H",  lesson_id:  l13.id)
 h35= Homework.new(name: 'Tipo', content: 'a. Consultando la tabla periódica indique el numero atomico de: a-Titanio, b-Lantano, c-Tulio, d-Radon   e indique número de electrones de valencia' , type_off: "flashcard", answer: "a. 22 b. 57  c. 69 d. 86",  lesson_id:  l13.id)
-h35= Homework.new(name: 'Verdadero Falso', content: 'El tema de la filosofía presocrática fue el tema de la Naturaleza.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
-h36= Homework.new(name: 'Verdadero Falso', content: 'El problema de la naturaleza estudiado por los presocráticos consistió en la investigación de la composición última de la realidad.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
-h37= Homework.new(name: 'Verdadero Falso', content: 'LLas explicaciones teleológicas acaban considerando que Dios dirige el curso de la Naturaleza.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
-h38= Homework.new(name: 'Verdadero Falso', content: 'Los sofistas, en particular los de la segunda generación, consideraron que un principio fundamental que debe regir la vida social es la ley del más fuerte.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l15.id)
-h39= Homework.new(name: 'Verdadero Falso', content: 'Los sofistas defendieron el intelectualismo moral.', type_off: "flashcard", answer: "FALSO",  lesson_id:  l15.id)
-h40= Homework.new(name: 'Verdadero Falso', content: 'Para los sofistas el diálogo era la mejor forma de alcanzar la verdad.', type_off: "flashcard", answer: "FALSO",  lesson_id:  l15.id)
-h41= Homework.new(name: 'Imperativo Categorico o Universalidad', content: 'Soy joven y estoy cómodamente asentado en un medio público de transporte; sube una persona bastante mayor y todos los asientos están ocupados. ¿Le he de ofrecer mi asiento? ¿Qué debo hacer? Universalizo: Siempre que una persona mayor acceda a un medio público y no haya asientos libres, una persona joven le ha de ofrecer el suyo.', type_off: "flashcard", answer: "Universalidad",  lesson_id:  l16.id)
-h42= Homework.new(name: 'Imperativo Categorico o Universalidad', content: 'Una persona que tiene talento y que puede aportar mucho a la sociedad, contempla la posibilidad de vivir cómodamente y sin esfuerzo. Se pregunta si ha de esforzarse desarrollando sus ventajosas disposiciones naturales o limitarse a disfrutar de la vida. ¿Qué debe hacer? Universaliza: Siempre que se dispone de un buen talento se ha de dejar que se oxidar y dedicarse al ocio y a la diversión.', type_off: "flashcard", answer: "Categorico",  lesson_id:  l16.id)
-h43= Homework.new(name: 'Imperativo Categorico o Universalidad', content: 'Un Un chico, que tiene costumbres ecológicas haciendo la selección de residuos, constata que bastante gente de su barrio no lo hace, incluso, disponiendo de contenedores. ¿Qué debe hacer? ¿Ha de mantener la costumbre? Universaliza: Si cuando uno o unos no hacen aquello que conviene todos lo dejaran de hacer, nunca conseguiríamos mejoras.', type_off: "flashcard", answer: "Universalidad",  lesson_id:  l16.id)
-h44= Homework.new(name: 'Imperativo Categorico o Universalidad', content: 'Una persona desesperada y con asco por la vida, pero todavía con capacidad racional quiere suicidarse. Se pregunta si debe o no hacerlo. Universaliza: Si una persona, sea quién sea, se encuentra en situación desesperada y desagradable, ha de quitarse la vida.', type_off: "flashcard", answer: "Categorico",  lesson_id:  l16.id)
+h36= Homework.new(name: '1 PreSocrativos V/F', content: 'El tema de la filosofía presocrática fue el tema de la Naturaleza.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
+h37= Homework.new(name: '2 PreSocrativos V/F', content: 'El problema de la naturaleza estudiado por los presocráticos consistió en la investigación de la composición última de la realidad.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
+h38= Homework.new(name: '3 PreSocrativos V/F', content: 'Las explicaciones teleológicas acaban considerando que Dios dirige el curso de la Naturaleza.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l14.id)
+h39= Homework.new(name: '1 Sofistas V/F', content: 'Los sofistas, en particular los de la segunda generación, consideraron que un principio fundamental que debe regir la vida social es la ley del más fuerte.', type_off: "flashcard", answer: "VERDADERO",  lesson_id:  l15.id)
+h40= Homework.new(name: '2 Sofistas V/F', content: 'Los sofistas defendieron el intelectualismo moral.', type_off: "flashcard", answer: "FALSO",  lesson_id:  l15.id)
+h41= Homework.new(name: '3 Sofistas V/F', content: 'Para los sofistas el diálogo era la mejor forma de alcanzar la verdad.', type_off: "flashcard", answer: "FALSO",  lesson_id:  l15.id)
+h42= Homework.new(name: '1 Imp Categorico / Universalidad', content: 'Soy joven y estoy cómodamente asentado en un medio público de transporte; sube una persona bastante mayor y todos los asientos están ocupados. ¿Le he de ofrecer mi asiento? ¿Qué debo hacer? Universalizo: Siempre que una persona mayor acceda a un medio público y no haya asientos libres, una persona joven le ha de ofrecer el suyo.', type_off: "flashcard", answer: "Universalidad",  lesson_id:  l16.id)
+h43= Homework.new(name: '2 Imp Categorico / Universalidad', content: 'Una persona que tiene talento y que puede aportar mucho a la sociedad, contempla la posibilidad de vivir cómodamente y sin esfuerzo. Se pregunta si ha de esforzarse desarrollando sus ventajosas disposiciones naturales o limitarse a disfrutar de la vida. ¿Qué debe hacer? Universaliza: Siempre que se dispone de un buen talento se ha de dejar que se oxidar y dedicarse al ocio y a la diversión.', type_off: "flashcard", answer: "Categorico",  lesson_id:  l16.id)
+h44= Homework.new(name: '3 Imp Categorico / Universalidad', content: 'Un Un chico, que tiene costumbres ecológicas haciendo la selección de residuos, constata que bastante gente de su barrio no lo hace, incluso, disponiendo de contenedores. ¿Qué debe hacer? ¿Ha de mantener la costumbre? Universaliza: Si cuando uno o unos no hacen aquello que conviene todos lo dejaran de hacer, nunca conseguiríamos mejoras.', type_off: "flashcard", answer: "Universalidad",  lesson_id:  l16.id)
 
 h1.save!
 h2.save!
@@ -220,6 +219,22 @@ lr26 = UserHomework.new(student_id: user.id, homework_id: h26.id, status: "corre
 lr27 = UserHomework.new(student_id: user.id, homework_id: h27.id, status: "enviado", created_at: '04/08/2020', updated_at: "04/08/2020")
 lr28 = UserHomework.new(student_id: user.id, homework_id: h28.id, status: "enviado", created_at: '04/08/2020', updated_at: "04/08/2020")
 lr29 = UserHomework.new(student_id: user.id, homework_id: h29.id, status: "enviado", created_at: '04/08/2020', updated_at: "10/08/2020")
+lr30 = UserHomework.new(student_id: user.id, homework_id: h30.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
+
+lr31 = UserHomework.new(student_id: user.id, homework_id: h31.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
+lr32 = UserHomework.new(student_id: user.id, homework_id: h32.id, status: "pendiente", created_at: '04/08/2020', updated_at: "04/08/2020")
+lr33 = UserHomework.new(student_id: user.id, homework_id: h33.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
+lr34 = UserHomework.new(student_id: user.id, homework_id: h34.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
+lr35 = UserHomework.new(student_id: user.id, homework_id: h35.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
+lr36 = UserHomework.new(student_id: user.id, homework_id: h36.id, status: "pendiente", created_at: '05/08/2020', updated_at: "05/08/2020")
+lr37 = UserHomework.new(student_id: user.id, homework_id: h37.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr38 = UserHomework.new(student_id: user.id, homework_id: h38.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr39 = UserHomework.new(student_id: user.id, homework_id: h39.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr40 = UserHomework.new(student_id: user.id, homework_id: h40.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr41 = UserHomework.new(student_id: user.id, homework_id: h41.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr42 = UserHomework.new(student_id: user.id, homework_id: h42.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr43 = UserHomework.new(student_id: user.id, homework_id: h43.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
+lr44 = UserHomework.new(student_id: user.id, homework_id: h44.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
 
 
 
@@ -252,6 +267,26 @@ lr26.save!
 lr27.save!
 lr28.save!
 lr29.save!
+lr30.save!
+lr31.save!
+lr32.save!
+lr33.save!
+lr34.save!
+lr35.save!
+lr36.save!
+lr37.save!
+lr38.save!
+lr39.save!
+lr40.save!
+lr41.save!
+lr42.save!
+lr43.save!
+lr44.save!
+
+
+
+
+
 
 #--- Seed course de prueba--
 

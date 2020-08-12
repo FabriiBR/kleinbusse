@@ -9,6 +9,7 @@ class AssignaturesController < ApplicationController
 
   def show
     @lessons = Lesson.where(assignature_id: @assignature.id)
+        
   end
 
   private

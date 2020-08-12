@@ -50,18 +50,21 @@
         <i class=" far fa-file-alt"></i>
         <h2 class="card-title d-flex align-items-center justify-content-between"> Tareas  </h2>
         <%=link_to "Ver mas tareas", assignature_homeworks_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
-      </div>
-      <% @homeworks.each do |hw| %> 
+      </div>      
+      <% @lesson_homeworks.each do |hw| %> 
       <hr>
         <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
           <div class="d-flex align-items-start justify-content-between" id="h_lessons">
-            <p><%= hw.name %></p>
-            <i class="far fa-file-alt"></i>
-          </div>
+            <% if hw.user_homeworks.first.status == 'corregir' || hw.user_homeworks.first.status == 'pendiente' %>
+              <p><%= hw.name %></p>
+              <i class="fas fa-pencil-alt"></i>
+            <% end %>  
+          </div>  
         <% end %>
       <% end %>
     </div>
     </div>  
   </div>
 </div>
+
 
