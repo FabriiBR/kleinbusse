@@ -1,12 +1,12 @@
 
 const toggleNav = () => {
-  let toggleStatus = false;
+    let toggleStatus = false;
 
   // let navSize = getComputedStyle(document.documentElement).getPropertyValue('--sizesidebar');
   if (toggleStatus === false) {
     document.documentElement.style.setProperty('--sizesidebar','18rem');
     document.querySelector(".head-text").style.display = "block";
-    document.querySelectorAll(".navigator-item").classList.add("navigator-border");
+    document.querySelector(".navigator-item").classList.add("navigator-border");
     document.querySelector(".link-text").style.display = "block";
     document.querySelector(".link-textb").style.display = "block";
     document.querySelector(".link-textc").style.display = "block";
@@ -25,7 +25,7 @@ const toggleNav = () => {
     document.querySelector(".link-textb").style.display = "none";
     document.querySelector(".link-textc").style.display = "none";
     document.querySelector(".link-textd").style.display = "none";
-    document.querySelectorAll(".navigator-item").classList.remove("navigator-border");
+    document.querySelector(".navigator-item").classList.remove("navigator-border");
     
 
     document.querySelector(".info-name").style.display = "none";
