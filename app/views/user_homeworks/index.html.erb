@@ -1,0 +1,26 @@
+<div class="container">
+  <div >
+    <div >
+      <div>
+        <h3>Tareas pendientes</h3>
+        <div class="row">
+          <% @user_homeworks.each do |user_homework|  %>
+            <%= link_to homework_path(user_homework.homework), class:"col-12 col-md-5 car-assignature text-decoration-none text-dark d-flex my-2 mx-4 ", scope:"col" do %>                   
+              <div class="letra mr-4"><%= user_homework.homework.lesson.assignature.name.first %></div>
+              <div class="d-flex flex-column align-items-center mx-3">
+                <h3><%= user_homework.homework.lesson.name %></h3>
+                <p><%= user_homework.homework.name %></p>
+              </div>
+              <div>
+                <p><%= user_homework.homework.type_off.capitalize %></p>
+                <p><%= user_homework.status.capitalize %></p>              
+              </div>           
+             
+              <i class="fa fa-ellipsis-v"></i>
+            <% end %>
+          <% end %>
+        </div>                       
+    </div>    
+  </div>
+</div>
+
