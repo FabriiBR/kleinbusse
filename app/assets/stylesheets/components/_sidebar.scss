@@ -9,6 +9,13 @@ body{
   background-color: #eceff1;
 }
 
+.foto{
+  background-color: white ;
+  height: 100vh;
+  padding-top: 30px;
+  border-radius: 0px 60px 0px 0px;
+}
+
 main{
   margin-left: var(--sizesidebar);
   width:  calc(100%-var(--sizesidebar));
@@ -20,13 +27,13 @@ main{
   width: var(--sizesidebar);
   height: 100vh;
   position: fixed;
-  background-color: white;
+  background-color:white;
   transition: 250ms ease;
   align-items: center;
 
 
   .sidebar-head{
-    color: #1DBD92;
+    color:#1DBD92;
     font-weight: bold;
     font-size: 18px;
     padding: 0;

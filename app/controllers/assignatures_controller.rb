@@ -3,7 +3,8 @@ class AssignaturesController < ApplicationController
 
   def index
     @assignatures = current_user.assignatures
-    
+    @user_homeworks_total = current_user.user_homeworks
+    @user_homeworks = current_user.user_homeworks.pending
   end
 
   def show

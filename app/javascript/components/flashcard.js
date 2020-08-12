@@ -2,5 +2,7 @@
 
 // // const backcard = { currenttarget.setAttribute('aria-hidden', 'true') }
 
+// const favorite = () => {
 
-// export { flashdone };
+// }
+// export { favorite };
