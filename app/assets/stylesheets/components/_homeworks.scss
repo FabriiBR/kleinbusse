@@ -2,6 +2,8 @@
   background-color: white;
   border-radius: 8px;
   padding: 30px 45px;
+  padding-bottom: 80px; // alto del boton  + valor del margen del botton * 2
+
 
   h2{
     font-family: DM Sans;
@@ -15,10 +17,15 @@
     padding-bottom: 27px;
     padding-left: 0px;
   }
+  p{
+    margin: 0;
+  }
 
   .assigment{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-
+    .p-bottom {
+      margin: 15px;
+    }
   }
 }
 
@@ -61,6 +68,12 @@
   margin-bottom: 0;
 }
 
+.btn-outline-success{
+  border-radius: 10px;
+}
+
+
+
 
 h3{
   font-family: DM Sans;
@@ -75,14 +88,21 @@ h3{
   
 }
 
+.breadcrumb{
+  font-size: 12px;
+  padding: 0;
+}
+
 
 #h_homework:hover{
   border-left: 4px solid  #FADB39;
   padding-left: 8px;
+  line-height: 3px;
 }
 
 #h_flashcard:hover{
   border-left: 4px solid  #9FDBFC;
+  align-items: center;
   padding-left: 8px;
 }
 
