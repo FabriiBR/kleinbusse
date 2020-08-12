@@ -20,7 +20,6 @@ class UserHomeworksController < ApplicationController
     if params[:user_homework].present?
       @uh.status = "enviado"
       @uh.update(user_params)
-      raise
       redirect_to homework_path(@uh.homework_id)
       flash[:notice] = 'Subiste tu archivo!'
       return

@@ -29,39 +29,39 @@
   <br><%# --------------------------------------------------------bottom d-flex justify-content-between mt-5 %>
   
   <div class="row justify-content-between px-3">
-    <div class="col-md-12 col-lg-5 main-container_lessons ">
-      <div class="d-flex">
+    <div class="col-md-12 col-lg-5 main-container_lessons mt-1">
+      <div class="d-flex align-items-center">
         <i class="fas fa-bookmark p-2"></i>
-        <h2 class= 'p-2'> <strong>Clases</strong>  </h2>
-        <%=link_to "Ver mas Clases", assignature_lessons_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
+        <h2 class= 'p-2'>Clases</h2>
       </div>
       <% @lessons.each do |lesson| %> 
-        <hr>
+        <hr style= "margin-top: 0.6rem; margin-bottom: 0.4rem">
         <%= link_to lesson_path(lesson.id),class:"text-decoration-none text-dark"    do %>
-          <div class="d-flex align-items-start justify-content-between borde" id="lesson">
+          <div class="d-flex align-items-center justify-content-between borde " style= "height: 36px;" id="lesson">
             <p><%= lesson.name %></p>
             <i class="fas fa-ellipsis-v"></i>
           </div>
         <% end %>
       <% end %>
+      <p class="mt-2">  <%= link_to "Ver mas clases",  assignature_lessons_path(@lesson.assignature_id), class:"btn btn-outline-success btn-sm btn-block"%></p> 
     </div>
-    <div class="col-lg-5 col-md-12 main-container_lessons assigment">
-      <div class="card-title d-flex ">
-        <i class=" far fa-file-alt"></i>
-        <h2 class="card-title d-flex align-items-center justify-content-between"> Tareas  </h2>
-        <%=link_to "Ver mas tareas", assignature_homeworks_path(@lesson.assignature_id), class:" ml-auto px-2 bd-highlight" %>
+    <div class="col-lg-5 col-md-12 main-container_lessons mt-1">
+      <div class="d-flex ">
+        <i class=" far fa-file-alt p-2"></i>
+        <h2 class="p-2">Tareas</h2>
       </div>      
       <% @lesson_homeworks.each do |hw| %> 
-      <hr>
+        <hr style= "margin-top: 0.6rem; margin-bottom: 0.4rem">
         <%= link_to homework_path(hw.id),class:"text-decoration-none text-dark"   do %>
-          <div class="d-flex align-items-start justify-content-between borde" id="homework">
-            <% if hw.user_homeworks.first.status == 'corregir' || hw.user_homeworks.first.status == 'pendiente' %>
+          <div class="d-flex align-items-center justify-content-between borde" style= "height: 36px;" id="homework">
+            <%# if hw.user_homeworks.first.status == 'corregir' || hw.user_homeworks.first.status == 'pendiente' %>
               <p><%= hw.name %></p>
               <i class="fas fa-pencil-alt"></i>
-            <% end %>  
+            <%# end %>  
           </div>
         <% end %>
       <% end %>
+      <p class="mt-2">  <%= link_to "Ver mas tareas pendientes", assignature_homeworks_path(@lesson.assignature_id), class:"btn btn-outline-success btn-sm btn-block"%></p> 
     </div>
   </div>
 </div>
