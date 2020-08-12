@@ -1,0 +1,21 @@
+
+
+<div>
+  <h3>Tareas pendientes</h3>
+  <div class="car">
+    <% @user_homeworks.each do |user_homework|  %>
+      <%= link_to user_homework_path(user_homework), class:" text-decoration-none text-dark d-flex car-hom-un", scope:"col" do %>                   
+        <div class="letra mr-4"><%= user_homework.homework.lesson.assignature.name.first %></div>
+                  <div class="car-assignature">
+                    <h3><%= user_homework.homework.lesson.assignature.name %></h3>
+                    <p><%= user_homework.homework.lesson.name %></p>
+                    <p><%= user_homework.homework.name %></p>
+                    <p><%= user_homework.homework.type_off.capitalize %></p>
+                    <p><%= user_homework.status.capitalize %></p>
+                  </div>
+                  <i class="fa fa-ellipsis-v"></i>      
+        
+      <% end %>
+    <% end %>
+  </div>                       
+</div>

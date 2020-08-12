@@ -23,8 +23,9 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import $ from 'jquery';
+import $ from 'jquery'
 import "bootstrap";
+import toggleSidebar from "../components/toggle_sidebar"; 
 // import { favorite } from '../components/flashcard';
 // import initTicketCable from '../channels/ticket_channel'
 // import btn_newman from '../components/sidebar';
@@ -41,6 +42,7 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', function () {
     // Add your code
 	console.log("hola manola")
+	toggleSidebar();
 	const flashdone = document.querySelector("#button_to_answer");
 	const flashcardCopy = document.querySelector("#hidden_answer");
 	console.log(flashdone)
