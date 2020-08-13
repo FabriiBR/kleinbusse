@@ -4,15 +4,19 @@
       <div>
         <h3>Proximos Eventos</h3>
         <div class="evento">                      
-          <% current_user.courses.first.events.where('date > ?',(DateTime.now - 1.day)).order(:date).first(4).each do |event| %>
+          <% current_user.courses.first.events.where('date > ?',Date.today).order(:date).first(4).each do |event| %>
             <div class="ev-card d-flex">
               <div>
                 <span class="date-assig"><%= event.eventable_id %> <%= event.eventable_type %></span>
                 <span class="date-day"><%= event.date.strftime("%d/%m/%Y") %></span>              
               </div>
               <div>
-                <div class="date"><%= ((event.date - DateTime.now)/86400).round() %></div>
-                <span class="ml-2">dias</span>              
+                <% if ((event.date - DateTime.now)/86400).round() != 0 %>
+                  <div class="date"><%= ((event.date - DateTime.now)/86400).round() %></div>
+                  <span class="ml-2">dias</span>
+                <%else %>
+                  <span class="date p-2">Hoy</span>
+                <%end %>
               </div>                       
             </div>
           <% end %>          

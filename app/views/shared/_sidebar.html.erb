@@ -40,11 +40,15 @@
     </div>
     <div class="event">
       <ul class="sidebar-nav">
-        <% current_user.courses.first.events.where('date > ?',(DateTime.now - 1.day)).order(:date).first(4).each do |event| %>
+        <% current_user.courses.first.events.where('date > ?',Date.today).order(:date).first(4).each do |event| %>
         <li class="event-item">
           <div class="event-date">
+            <% if ((event.date - DateTime.now)/86400).round() != 0 %>
             <span><%= ((event.date - DateTime.now)/86400).round() %></span>
             <span>Dias</span>
+            <%else %>
+              <span class="my-auto">Hoy</span>
+            <%end %>
           </div>
           <div class="event-assig">
             <span class="date-assig"><%= event.eventable_id %> <%= event.eventable_type %></span>
