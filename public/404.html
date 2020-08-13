@@ -51,17 +51,24 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .banner{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("/assets/404.jpg");
+    background-size: cover;
+    background-position: center;
+  }
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>La pagina a la que ingresaste no existe.</h1>
-      <p> Tal vez tipeaste mal...  </p>
-      
-    </div>
+  <div class="container">
+    <div class="banner"></div>
+    
     <a href="https://kleinbusselw.herokuapp.com" > </a>
   </div>
 </body>
