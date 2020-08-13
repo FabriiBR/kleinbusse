@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Todas las Materias", assignatures_path%></li>
-    <li class="breadcrumb-item"><%= link_to  @lesson.assignature.name, assignature_path(@lesson.id)%></li>
+    <li class="breadcrumb-item"><%= link_to  @lesson.assignature.name, assignature_path(@lesson.assignature_id)%></li>
     <li class="breadcrumb-item active" aria-current="page"> Leccion </li>
   </ol>
 </nav>

@@ -36,8 +36,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass'
 gem 'simple_form'
 
-# Charts 20200810 -GAR 
-gem 'chartkick'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
