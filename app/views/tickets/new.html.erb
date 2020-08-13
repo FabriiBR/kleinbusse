@@ -5,32 +5,25 @@
       <li class="breadcrumb-item active" aria-current="page">Tickets</li>
     </ol>
   </nav>
-
-  <div>
+  <div class>
     <h2>Panel de dudas</h2>
-
-    <div class="main-container assigment my-3 d-flex">
+    <div class="main-container assigment my-3 py-3 d-flex">
       <div>
         <i class="far fa-lightbulb"></i>      
       </div>
-      <div>
+      <div class="ml-3">
         <h3><%= @homework.lesson.name %></h3>
         <p><%= @homework.content  %></p>        
-      </div>
-    
-    </div>
-    
-    
-    <div class="main-container assigment d-flex flex-column">
-      
-
+      </div>    
+    </div>    
+    <div class="main-container assigment d-flex flex-column pb-3">
       <div>
-        <label>Por favor, tomese un tiempo para describir cuales son sus dudas especificas para poder ayudarlo de mejor manera</label>
+        <p>Por favor, tomese un tiempo para describir cuales son sus dudas especificas para poder ayudarlo de mejor manera</p>
       </div>
-      <div>
+      <div class="mt-3">
         <%= simple_form_for [ @homework, @ticket ] do |f| %>
           <%= f.input :description, label: false, as: :text, :input_html => { cols: 5, rows: 10} %>
-          <%= f.submit "Submit", class: "btn btn-success" %>
+          <%= f.submit "Enviar", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>  
