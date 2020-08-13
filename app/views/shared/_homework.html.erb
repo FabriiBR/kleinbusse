@@ -11,6 +11,7 @@
       <%= f.input :file, as: :file, label: false %>
       <%= f.submit :'Subir Tarea', class:'btn btn-success m-1', data: {confirm: 'Confirmar cambios'}%>
       <%=link_to 'Tengo una duda!', new_homework_ticket_path(@homework), class: 'btn btn-success my-4'%>
+
     <% end %>
     <%if @user_homework.file.attached?%>
       <p> Felicitaciones, subiste un archivo!</p>

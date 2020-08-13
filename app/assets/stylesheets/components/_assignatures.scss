@@ -68,9 +68,16 @@
 
 }
 
-.borde{
+.borde {
   border-left: 4px solid transparent;
   padding-left: 8px;
+  p {
+    margin-bottom: 0!important;
+  }
+
+  .fas, .far {
+    margin-bottom: 0!important;
+  }
 }
 
 #lesson:hover{
