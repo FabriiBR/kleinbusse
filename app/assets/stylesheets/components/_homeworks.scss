@@ -41,32 +41,20 @@
   padding-left: 0px;
 }
 
-
-.fa-print{
-  color: #FADB39;
-  font-size: 20px ;
-  padding-right: 15px;
-}
-
-
 .fa-file-signature{
-  color: #FADB39;
+  color: #9FDBFC;
   padding-right: 15px;
-  font-size: 20px ;
-}
-
-.fa-file{
-  color: #FADB39;
-  padding-right: 15px;
-  font-size: 20px ;
+  font-size: 30px ;
 }
 
 .fa-arrow-circle-right{
   padding-right: 15px;
-  color: #9FDBFC;
-  font-size: 20px ;
+  color: #FADB39;
+  font-size: 30px ;
   margin-bottom: 0;
 }
+
+
 
 .btn-outline-success{
   border-radius: 10px;
@@ -95,17 +83,29 @@ h3{
 
 
 #h_homework:hover{
-  border-left: 4px solid  #FADB39;
+  border-left: 4px solid  #9FDBFC;
   padding-left: 8px;
   line-height: 3px;
 }
 
 #h_flashcard:hover{
-  border-left: 4px solid  #9FDBFC;
+  border-left: 4px solid  #FADB39;
   align-items: center;
   padding-left: 8px;
+
 }
 
+.fa-file{
+  color: #FADB39;
+  padding-right: 15px;
+  font-size: 20px ;
+}
+
+.fa-print{
+  color: #FADB39;
+  font-size: 20px ;
+  padding-right: 15px;
+}
 
 
 
