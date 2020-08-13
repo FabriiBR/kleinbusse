@@ -51,17 +51,47 @@
       color: #666;
       box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
     }
+    
+  .banner{
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("/assets/500n.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    
+  }
+
+  .boton{
+    text-decoration: none;
+    color: white;
+    background-color: #00ADA7;
+    padding: 15px 40px;
+    border-radius: 8px;
+    position: absolute;
+    top: 48%;
+    right: 42%;
+    opacity: 0.8;
+  }
+
+  .boton:hover{
+    opacity: 1;
+  }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>Upss Algo salio mal...</h1>
-      <img src="<%= asset_path 'rayuela.jpg' %>" class="background-img">
+  <div class="container">
+    <div class="banner">
+      <a href="http://www.kleinbusse.digital/assignatures" class="boton" >Home</a>
     </div>
-    <a href="http://kleinbusse.digital"> </a>
+    
+    
   </div>
 </body>
 </html>

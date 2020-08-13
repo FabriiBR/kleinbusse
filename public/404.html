@@ -51,26 +51,47 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
-
+  
   .banner{
     height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("/assets/404.jpg");
+    background-image: url("/assets/404n.gif");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    
   }
+
+  .boton{
+    text-decoration: none;
+    color: white;
+    background-color: #2766AF;
+    padding: 15px 40px;
+    border-radius: 8px;
+    position: absolute;
+    top: 73%;
+    right: 46%;
+    opacity: 0.7;
+  }
+
+  .boton:hover{
+    opacity: .9;
+  }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
   <div class="container">
-    <div class="banner"></div>
+    <div class="banner">
+      <a href="http://www.kleinbusse.digital/assignatures" class="boton" >Home</a>
+    </div>
     
-    <a href="http://kleinbusse.digital" > </a>
+    
   </div>
 </body>
 </html>
