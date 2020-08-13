@@ -23,9 +23,15 @@ batch3 = Batch.create!(grade: 201 , start_year:2019)
 batch4 = Batch.create!(grade: 202 , start_year:2019)
 
 user = User.new(email:"student@student.com", password:"123456", first_name:"Juana", last_name:"Rodriguez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
+<<<<<<< HEAD
+user2 = User.new(email:"student2@student.com", password:"123456", first_name:"Carlos", last_name:"Gomez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
+=======
+>>>>>>> master
 
 user.save!
+user2.save!
 
+#--- Seed teacher--
 t1 = User.new(email: "teacher@teacher.com", password:"123456", first_name:"Florencia", last_name:"Fernandez", role:"teacher", institute:"Cardenal Newman", birthday: "12/04/1965", batch_id: batch.id)
 t1.save!
 t2 = User.new(email: "teacher2@teacher.com", password:"123456", first_name:"Carlos", last_name:"Gomez", role:"teacher", institute:"Cardenal Newman", birthday: "12/04/1985", batch_id: batch.id)
@@ -34,7 +40,7 @@ t3 = User.new(email: "teacher3@teacher.com", password:"123456", first_name:"Romi
 t3.save!
 
 
-
+#--- Seed Materias--
 a1 = Assignature.new(name:"Matematica Inicial", teacher_id: t1.id, batch_id: batch.id)
 # a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: t2.id, batch_id: batch.id)
@@ -55,22 +61,22 @@ a7.save!
 
 
 #--- Seed Lesssons de prueba--
-l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/embed/UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal"  )
-l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0", link: "https://es.wikipedia.org/wiki/L%C3%ADmite"  )
-l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada"  )
-l4 = Lesson.new(assignature_id: a3.id,name: "La palabra", video:"https://www.youtube.com/embed/zHlER3p3pko", link:"https://es.wikipedia.org/wiki/Uso_del_lenguaje")
-l5 = Lesson.new(assignature_id: a3.id,name: "Sustantivo", video:"https://www.youtube.com/embed/QndKx287w8", link:"https://es.wikipedia.org/wiki/Sustantivo#:~:text=Los%20sustantivos%20son%20palabras%20cuyos,de%20hechos%20o%20relaciones%20gramaticales.")
-l6 = Lesson.new(assignature_id: a3.id,name: "Ortografia", video:"https://www.youtube.com/embed/XVVheqqMOu4", link:"https://es.wikipedia.org/wiki/Ortograf%C3%ADa")
-l7 = Lesson.new(assignature_id: a4.id,name: "La celula", video:"https://www.youtube.com/embed/hlJCXQaenac", link:"https://es.wikipedia.org/wiki/C%C3%A9lula")
-l8 = Lesson.new(assignature_id: a4.id,name: "Sistema Digestivo", video:"https://www.youtube.com/embed/woBW9w2DgHs?list=PLhSt5fhj3_u08mHO1h8k3JYl8KwMulwde", link:"https://es.wikipedia.org/wiki/Aparato_digestivo")
-l9 = Lesson.new(assignature_id: a4.id,name: "Sistema Respiratorio", video:"https://www.youtube.com/embed/TSGH-vvT-Qo?list=PLhSt5fhj3_u08mHO1h8k3JYl8KwMulwde" , link:"https://es.wikipedia.org/wiki/Aparato_respiratorio")
-l10 = Lesson.new(assignature_id: a5.id,name: "Mov Rectilineo", video:"https://www.youtube.com/embed/bUNmYei82hA?list=PLhSt5fhj3_u27YZxJOrm5Nw5X-PrVzguX" , link:"https://es.wikipedia.org/wiki/Movimiento_rectil%C3%ADneo")
-l11 = Lesson.new(assignature_id: a5.id,name: "Fuerza y Movimiento", video:"https://www.youtube.com/embed/AWpcZaFsDpU?list=PLhSt5fhj3_u27YZxJOrm5Nw5X-PrVzguX", link:"https://es.wikipedia.org/wiki/Fuerza#:~:text=En%20f%C3%ADsica%2C%20la%20fuerza%20es,la%20forma%20de%20los%20materiales.")
-l12 = Lesson.new(assignature_id: a7.id,name: "Acidos - Base", video:"https://www.youtube.com/embed/vCo9e8ZNUqM", link:"https://es.wikipedia.org/wiki/Base_(qu%C3%ADmica)")
-l13 = Lesson.new(assignature_id: a7.id,name: "Quimica Organica", video:"https://www.youtube.com/embed/uzQoaKj-leI", link: "https://es.wikipedia.org/wiki/Qu%C3%ADmica_org%C3%A1nica")
-l14 = Lesson.new(assignature_id: a6.id,name: "Los preSocraticos", video:"https://www.youtube.com/embed/XWPDAUn3x3Q?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL" , link: "https://es.wikipedia.org/wiki/Filosof%C3%ADa_presocr%C3%A1tica#:~:text=La%20filosof%C3%ADa%20presocr%C3%A1tica%20es%20el,sean%20cronol%C3%B3gicamente%20posteriores%20a%20%C3%A9l.")
-l15 = Lesson.new(assignature_id: a6.id,name: "Sofistas - Protagoras y Giorgias", video:"https://www.youtube.com/embed/7JgnRsxmJFQ?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL", link: "https://es.wikipedia.org/wiki/Sofista")
-l16 = Lesson.new(assignature_id: a6.id,name: "Imperativo Categorico", video:"https://www.youtube.com/embed/h_6OBJmryhg?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL", link: "https://es.wikipedia.org/wiki/Imperativo_categ%C3%B3rico#:~:text=El%20imperativo%20categ%C3%B3rico%20es%20un,humano%20en%20todas%20sus%20manifestaciones")
+l1 = Lesson.new(assignature_id: a1.id,name: "Calculo", video: "https://www.youtube.com/embed/UbqjPCAjUfg", link:"https://es.wikipedia.org/wiki/C%C3%A1lculo_infinitesimal", lecure:"//www.slideshare.net/slideshow/embed_code/key/5KOpLESJKSRzIe" )
+l2 = Lesson.new(assignature_id: a1.id,name: "Limites", video: "https://www.youtube.com/embed/o2UTk8bsLS0", link: "https://es.wikipedia.org/wiki/L%C3%ADmite", lecure: "//www.slideshare.net/slideshow/embed_code/key/kpDVIbVVKB5TQC")
+l3 = Lesson.new(assignature_id: a1.id,name: "Derivadas", video: "https://www.youtube.com/embed/uK4-s0ojHFg", link:"https://es.wikipedia.org/wiki/Derivada", lecure: "//www.slideshare.net/slideshow/embed_code/key/JglIZlXmioWtGK")
+l4 = Lesson.new(assignature_id: a3.id,name: "La palabra", video:"https://www.youtube.com/embed/zHlER3p3pko", link:"https://es.wikipedia.org/wiki/Uso_del_lenguaje", lecure:  "//www.slideshare.net/slideshow/embed_code/key/ffX7dE9AEUUjZq")
+l5 = Lesson.new(assignature_id: a3.id,name: "Sustantivo", video:"https://www.youtube.com/embed/QndKx287w8", link:"https://es.wikipedia.org/wiki/Sustantivo#:~:text=Los%20sustantivos%20son%20palabras%20cuyos,de%20hechos%20o%20relaciones%20gramaticales.", lecure:  "//www.slideshare.net/slideshow/embed_code/key/zarTgdXeMsRXVN")
+l6 = Lesson.new(assignature_id: a3.id,name: "Ortografia", video:"https://www.youtube.com/embed/XVVheqqMOu4", link:"https://es.wikipedia.org/wiki/Ortograf%C3%ADa", lecure: "//www.slideshare.net/slideshow/embed_code/key/oV6sIqhvPGDwkf" )
+l7 = Lesson.new(assignature_id: a4.id,name: "La celula", video:"https://www.youtube.com/embed/hlJCXQaenac", link:"https://es.wikipedia.org/wiki/C%C3%A9lula", lecure: "//www.slideshare.net/slideshow/embed_code/key/3pcPqKeGpD9ERu" )
+l8 = Lesson.new(assignature_id: a4.id,name: "Sistema Digestivo", video:"https://www.youtube.com/embed/woBW9w2DgHs?list=PLhSt5fhj3_u08mHO1h8k3JYl8KwMulwde", link:"https://es.wikipedia.org/wiki/Aparato_digestivo", lecure: "//www.slideshare.net/slideshow/embed_code/key/k1YPixidEmsONl" )
+l9 = Lesson.new(assignature_id: a4.id,name: "Sistema Respiratorio", video:"https://www.youtube.com/embed/TSGH-vvT-Qo?list=PLhSt5fhj3_u08mHO1h8k3JYl8KwMulwde" , link:"https://es.wikipedia.org/wiki/Aparato_respiratorio",lecure: "//www.slideshare.net/slideshow/embed_code/key/J8spyryPWUtj4L" )
+l10 = Lesson.new(assignature_id: a5.id,name: "Mov Rectilineo", video:"https://www.youtube.com/embed/bUNmYei82hA?list=PLhSt5fhj3_u27YZxJOrm5Nw5X-PrVzguX" , link:"https://es.wikipedia.org/wiki/Movimiento_rectil%C3%ADneo", lecure: "//www.slideshare.net/slideshow/embed_code/key/Fpl3E6GBSB0uSE" )
+l11 = Lesson.new(assignature_id: a5.id,name: "Fuerza y Movimiento", video:"https://www.youtube.com/embed/AWpcZaFsDpU?list=PLhSt5fhj3_u27YZxJOrm5Nw5X-PrVzguX", link:"https://es.wikipedia.org/wiki/Fuerza#:~:text=En%20f%C3%ADsica%2C%20la%20fuerza%20es,la%20forma%20de%20los%20materiales.",lecure: "//www.slideshare.net/slideshow/embed_code/key/NK87M6Z4AEwvBU" )
+l12 = Lesson.new(assignature_id: a7.id,name: "Acidos - Base", video:"https://www.youtube.com/embed/vCo9e8ZNUqM", link:"https://es.wikipedia.org/wiki/Base_(qu%C3%ADmica)", lecure: "//www.slideshare.net/slideshow/embed_code/key/LXqybFCIDWgAxJ" )
+l13 = Lesson.new(assignature_id: a7.id,name: "Quimica Organica", video:"https://www.youtube.com/embed/uzQoaKj-leI", link: "https://es.wikipedia.org/wiki/Qu%C3%ADmica_org%C3%A1nica", lecure:"//www.slideshare.net/slideshow/embed_code/key/16eidMrL9Rz0U1" )
+l14 = Lesson.new(assignature_id: a6.id,name: "Los preSocraticos", video:"https://www.youtube.com/embed/XWPDAUn3x3Q?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL" , link: "https://es.wikipedia.org/wiki/Filosof%C3%ADa_presocr%C3%A1tica#:~:text=La%20filosof%C3%ADa%20presocr%C3%A1tica%20es%20el,sean%20cronol%C3%B3gicamente%20posteriores%20a%20%C3%A9l.", lecure: "//www.slideshare.net/slideshow/embed_code/key/4Om5RSGjJ9Wi4j" )
+l15 = Lesson.new(assignature_id: a6.id,name: "Sofistas - Protagoras y Giorgias", video:"https://www.youtube.com/embed/7JgnRsxmJFQ?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL", link: "https://es.wikipedia.org/wiki/Sofista",  lecure: "//www.slideshare.net/slideshow/embed_code/key/NpFaBEUyjlZDCb" )
+l16 = Lesson.new(assignature_id: a6.id,name: "Imperativo Categorico", video:"https://www.youtube.com/embed/h_6OBJmryhg?list=PLG35rBQQGtNhX1noleC-fvhK-w-ToJqAL", link: "https://es.wikipedia.org/wiki/Imperativo_categ%C3%B3rico#:~:text=El%20imperativo%20categ%C3%B3rico%20es%20un,humano%20en%20todas%20sus%20manifestaciones", lecure:"//www.slideshare.net/slideshow/embed_code/key/853WVS08Z9plrO")
 
 
 l1.save!
@@ -189,7 +195,7 @@ h42.save!
 h43.save!
 h44.save!
 
-
+#--- Seed user:homewrok-
 lr1 = UserHomework.new(student_id: user.id, homework_id: h1.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr2 = UserHomework.new(student_id: user.id, homework_id: h2.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr3 = UserHomework.new(student_id: user.id, homework_id: h3.id, status: "aprobado", created_at: '03/08/2020', updated_at: "04/08/2020")
@@ -299,8 +305,8 @@ course4 = Course.create!(name: '2B', batch_id: batch4.id)
 
 event1 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Matematica', eventable_id:"Examen", course_id: course1.id)
 event2 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Lenguaje', eventable_id:"Parcial", course_id: course1.id)
-event3 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Biologia', eventable_id:"Examen", course_id: course2.id)
-event4 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Fisica', eventable_id:"Repaso", course_id: course2.id)
+event3 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Biologia', eventable_id:"Examen", course_id: course1.id)
+event4 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Fisica', eventable_id:"Repaso", course_id: course1.id)
 event5 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Quimica', eventable_id:"Examen", course_id: course3.id)
 event6 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Sociales', eventable_id:"Examen", course_id: course3.id)
 event7 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Religion', eventable_id:"Parcial", course_id: course4.id)
@@ -309,3 +315,9 @@ event9 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:
 event10 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course2.id)
 
 puts 'finish seed'
+
+#--- Seed ctickets--
+
+
+
+    
