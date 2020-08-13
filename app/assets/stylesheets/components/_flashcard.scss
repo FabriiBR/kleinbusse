@@ -1,5 +1,6 @@
 .flashcard {
         //box-sizing: border-box;
+
     
     body {
         margin: 0;
@@ -18,7 +19,7 @@
 
     .card {
         width: 80%;
-        height: 60vh;
+        height: 70vh;
         margin: 1em;
         perspective: 1500px;
         .content {
