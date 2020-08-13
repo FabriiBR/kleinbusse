@@ -193,6 +193,7 @@ h43.save!
 h44.save!
 
 #--- Seed user:homewrok-
+lr0 = UserHomework.new(student_id: user2.id, homework_id: h1.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr1 = UserHomework.new(student_id: user.id, homework_id: h1.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr2 = UserHomework.new(student_id: user.id, homework_id: h2.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr3 = UserHomework.new(student_id: user.id, homework_id: h3.id, status: "aprobado", created_at: '03/08/2020', updated_at: "04/08/2020")
@@ -240,7 +241,7 @@ lr43 = UserHomework.new(student_id: user.id, homework_id: h43.id, status: "pendi
 lr44 = UserHomework.new(student_id: user.id, homework_id: h44.id, status: "pendiente", created_at: '06/08/2020', updated_at: "06/08/2020")
 
 
-
+lr0.save!
 lr1.save!
 lr2.save!
 lr3.save!

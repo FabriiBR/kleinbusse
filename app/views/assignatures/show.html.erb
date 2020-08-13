@@ -29,12 +29,12 @@
       <hr>
       <div>
         <%# current_user.user_homeworks.needs_action.first(4).each do |user_homework| %>
-        <% @homeworks_user.each do |homework| %>
+        <% @homeworks_user.first(4).each do |homework| %>
           <%=link_to homework_path(homework),class:"text-decoration-none text-dark" do%>
             <% if ['corregir', 'pendiente'].include?(homework.user_homeworks.first.status) %>
               <div class="d-flex justify-content-between align-items-center py-2 my-2 borde" id="homework">
                 <p><%= homework.name %></p>
-                <p><%= homework.user_homeworks.first.status %></p>
+                <p><%#= homework.user_homeworks.first.status %></p>
                 <i class="fa fa-pencil-alt" aria-hidden="true"></i>
               </div>
             <%end %> 
