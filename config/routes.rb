@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   end
 
   resources :lessons, only: [:show] do  
-    resources :tickets, only: [:create, :new]
     resources :flashcards, only: [:index]
   end
 
   resources :homeworks, only: [:index, :show] do
+    resources :tickets, only: [:create, :new]
     resources :user_homeworks, only: [:create, :update]
   end
   resources :user_homeworks, only: [:index, :update]

@@ -8,16 +8,16 @@ class TicketsController < ApplicationController
   end
 
   def new
-    @lesson = Lesson.find(params[:lesson_id])
+    @homework = Homework.find(params[:homework_id])
     @ticket = Ticket.new
   end
 
   def create
-    @lesson = Lesson.find(params[:lesson_id])
+    @homework = Homework.find(params[:homework_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.state = 'Pendiente'
     @ticket.student_id = current_user.id
-    @ticket.lesson = @lesson
+    @ticket.lesson = @homework.lesson
     if @ticket.save
       redirect_to tickets_path
     else
