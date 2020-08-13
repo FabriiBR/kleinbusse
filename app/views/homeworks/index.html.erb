@@ -6,7 +6,7 @@
   </ol>
 </nav>
 <div class="container ">
-  <h2 class="d-flex align-items-center justify-content-between"> Listado <%= @assignature.name  %>   <%= link_to "Volver a la Materia", assignatures_path(@assignature.id), class:"btn btn-outline-success mt-4"%></h2> 
+  <h2 class="d-flex align-items-center justify-content-between"> Listado <%= @assignature.name  %> </h2> 
   <div class="cards_home">
     <!--Home-->
     <div class="main-container_home assigment">
@@ -48,7 +48,7 @@
           <hr>
           <% homework.each do |home| %> 
             <%= link_to  homework_path(home.id) ,class:"text-decoration-none text-dark"   do %>
-              <div class="d-flex align-items-center justify-content-between my-6 style="height: 55px;" id="h_flashcard">
+              <div class="d-flex align-items-center justify-content-between  py-0 my-4 style= "height: 55px;"  id="h_flashcard">
                 <% if home.user_homeworks.first.status == 'corregir' || home.user_homeworks.first.status == 'pendiente' %>
                   <p><%= home.name %></p>
                   <i class="fas fa-pencil-alt mb-0"></i>
@@ -61,6 +61,8 @@
     </div>
   </div>    
 </div>
+
+
 
 
 
