@@ -26,7 +26,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import $ from 'jquery'
+import $ from 'jquery';
 import "bootstrap";
 // import toggleNav from "../components/toggle_sidebar"; 
 // import { favorite } from '../components/flashcard';

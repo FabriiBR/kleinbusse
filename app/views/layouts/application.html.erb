@@ -5,47 +5,43 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
             
-    <!-- Primary Meta Tags -->
-    <title>Kleinbusse  Educación -
-    Una nueva forma de estudiar</title>
+    <%# <!-- Primary Meta Tags --> %>
+    <title>Kleinbusse  Educación - Una nueva forma de estudiar</title>
     <meta name="title" content="Kleinbusse  Educación -
     Una nueva forma de estudiar">
     <meta name="description" content="Llega una nueva forma de estudiar, forma parte de la innovación en educación.  Consulta por los planes educativos.">
 
-    <!-- Open Graph / Facebook -->
+    <%# <!-- Open Graph / Facebook --> %>
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://kleinbusse.digital/">
-    <meta property="og:title" content="Kleinbusse  Educación -
-    Una nueva forma de estudiar">
+    <meta property="og:title" content="Kleinbusse  Educación - Una nueva forma de estudiar">
     <meta property="og:description" content="Llega una nueva forma de estudiar, forma parte de la innovación en educación.  Consulta por los planes educativos.">
-    <meta property="og:image" content="<%= image_tag 'Kleinbusse_meta.png'%>">
+    <meta property="og:image" content="<%= image_url 'Kleinbusse_meta.png'%>">
 
-    <!-- Twitter -->
+    <%# <!-- Twitter --> %>
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://kleinbusse.digital/">
     <meta property="twitter:title" content="Kleinbusse  Educación -
     Una nueva forma de estudiar">
     <meta property="twitter:description" content="Llega una nueva forma de estudiar, forma parte de la innovación en educación.  Consulta por los planes educativos.">
-    <meta property="twitter:image" content="<%= image_tag 'Kleinbusse_meta.png'%>">
+    <meta property="twitter:image" content="<%= image_url 'Kleinbusse_meta.png' %>">
     
-    <!-- FAVICON -->
+    <%# <!-- FAVICON --> %>
     <%= favicon_link_tag 'favicon-32x32.png'%>
     
 
-    <!-- OTROS -->
+    <%# <!-- OTROS --> %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
   </head>
-
-  <body>  
+  <body>
     <div class="content">
       <div class="content-sidebar">
         <%= render 'shared/sidebar' %>
       </div>
       <div class="content-navbar mt-4">
-  
         <%= render 'shared/flashes' %>
       </div>
       <div class="content-main">
