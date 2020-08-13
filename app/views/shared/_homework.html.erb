@@ -9,8 +9,8 @@
     <h4 class="my-4" style="font-size:18px;"> Adjunta la respuesta aqui: </h4> 
     <%= simple_form_for([@homework, @user_homework]) do |f| %>
       <%= f.input :file, as: :file, label: false %>
-      <%= f.submit :'Subir Tarea', class:'btn btn-success m-1', data: {confirm: 'Confirmar cambios'}%>
-      <%=link_to 'Tengo una duda!', new_homework_ticket_path(@homework), class: 'btn btn-success my-4'%>
+      <%= f.submit :'Subir Tarea', class:'btn btn-outline-success btn-sm mt-3', data: {confirm: 'Confirmar cambios'}%>
+      <%=link_to 'Tengo una duda!', new_homework_ticket_path(@homework), class: 'btn btn-outline-success btn-sm mt-3'%>
 
     <% end %>
     <%if @user_homework.file.attached?%>
