@@ -1,30 +1,31 @@
-
-
-<div class="main-container d-flex flex-column" style="font-family: 'DM Sans';">
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Materias", assignatures_path %></li>
     <li class="breadcrumb-item active" aria-current="page">Tickets</li>
   </ol>
 </nav>
+<div class="main d-flex flex-column" style="font-family: 'DM Sans';">
+
   <h2>Fila para la ayuda</h2>
   <div class="cards d-flex flex-column" id="tickets">
     <% @tickets.each do |ticket|  %>
-    <div class="main-container assigment d-flex flex-row justify-content-between ticket-card">
+    <div class="main-container assigment d-flex flex-row justify-content-between p-3">
       <div class="d-flex flex-row align-items-center">
         <%= image_tag "https://randomuser.me/api/portraits/women/67.jpg", style:"vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"%>
         <div class="d-flex flex-column ml-3 ">
-          <label><%= ticket.student.first_name %> <%= ticket.student.last_name %></label>
-          <label style="width: 18rem"><%= ticket.description %></label>
-          <label>Creado hace: <%= (((ticket.created_at - DateTime.now)* (-1))/60).round %> min</label>
+          <h3><%= ticket.lesson.assignature.name %></h3>
+          <p><%= ticket.student.first_name %> <%= ticket.student.last_name %></p>
+          <p style="width: 18rem"><%= ticket.description %></p>
+          
         </div>
       </div>
-      <label class="align-self-center">Estado: <%= ticket.state %></label>
+      <p>Creado hace: <%= (((ticket.created_at - DateTime.now)* (-1))/60).round %> min</p>
+      <p class="align-self-center">Estado: <%= ticket.state %></p>
       <div class="d-flex flex-row align-items-center">
         <%= image_tag "https://randomuser.me/api/portraits/women/68.jpg", style:"vertical-align: middle; width: 50px; height: 50px; border-radius: 50%;"%>
         <div class="d-flex flex-column ml-3">
-          <label>Profesor/a asignado:</label>
-          <label><%= ticket.lesson.assignature.teacher.first_name %> <%= ticket.lesson.assignature.teacher.last_name %></label>
+          <p>Profesor/a asignado:</p>
+          <p><%= ticket.lesson.assignature.teacher.first_name %> <%= ticket.lesson.assignature.teacher.last_name %></p>
         </div>
       </div>
     </div> 
