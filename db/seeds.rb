@@ -302,7 +302,7 @@ course4 = Course.create!(name: '2B', batch_id: batch4.id)
 #--- Seed events de prueba--
 
 event1 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Matematica', eventable_id:"Examen", course_id: course1.id)
-event2 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Lenguaje', eventable_id:"Parcial", course_id: course1.id)
+event2 = Event.create!(date: DateTime.strptime("08/19/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Lenguaje', eventable_id:"Parcial", course_id: course1.id)
 event3 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Biologia', eventable_id:"Examen", course_id: course2.id)
 event4 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Fisica', eventable_id:"Repaso", course_id: course2.id)
 event5 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Quimica', eventable_id:"Examen", course_id: course3.id)
