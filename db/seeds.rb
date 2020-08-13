@@ -23,7 +23,7 @@ batch3 = Batch.create!(grade: 201 , start_year:2019)
 batch4 = Batch.create!(grade: 202 , start_year:2019)
 
 user = User.new(email:"student@student.com", password:"123456", first_name:"Juana", last_name:"Rodriguez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
-user2 = User.new(email:"student2@student.com", password:"123456", first_name:"Carlos", last_name:"Gomez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
+user2 = User.new(email:"student2@student.com", password:"123456", first_name:"Nicolas", last_name:"Kennedy", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
 
 user.save!
 user2.save!
