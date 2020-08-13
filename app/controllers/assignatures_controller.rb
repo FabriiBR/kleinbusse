@@ -9,7 +9,8 @@ class AssignaturesController < ApplicationController
 
   def show
     @lessons = Lesson.where(assignature_id: @assignature.id)
-        
+    @homeworks_user= Homework.joins(:lesson).where("lessons.assignature_id =?",params[:id] ).includes(:user_homeworks).where(user_homeworks: { student_id: current_user.id, status: [ "pendiente", "corregir"]  })# 200813 GAR Mostrar por usuario
+
   end
 
   private
