@@ -23,9 +23,12 @@ batch3 = Batch.create!(grade: 201 , start_year:2019)
 batch4 = Batch.create!(grade: 202 , start_year:2019)
 
 user = User.new(email:"student@student.com", password:"123456", first_name:"Juana", last_name:"Rodriguez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
+user2 = User.new(email:"student2@student.com", password:"123456", first_name:"Carlos", last_name:"Gomez", role:"student", institute:"Cardenal Newman", birthday: "20/04/2014", batch_id: batch.id)
 
 user.save!
+user2.save!
 
+#--- Seed teacher--
 t1 = User.new(email: "teacher@teacher.com", password:"123456", first_name:"Florencia", last_name:"Fernandez", role:"teacher", institute:"Cardenal Newman", birthday: "12/04/1965", batch_id: batch.id)
 t1.save!
 t2 = User.new(email: "teacher2@teacher.com", password:"123456", first_name:"Carlos", last_name:"Gomez", role:"teacher", institute:"Cardenal Newman", birthday: "12/04/1985", batch_id: batch.id)
@@ -34,7 +37,7 @@ t3 = User.new(email: "teacher3@teacher.com", password:"123456", first_name:"Romi
 t3.save!
 
 
-
+#--- Seed Materias--
 a1 = Assignature.new(name:"Matematica Inicial", teacher_id: t1.id, batch_id: batch.id)
 # a2 = Assignature.new(name:"Matematica Avanzada", teacher_id: t1.id, batch_id: batch.id)
 a3 = Assignature.new(name:"Lengua 1", teacher_id: t2.id, batch_id: batch.id)
@@ -189,7 +192,7 @@ h42.save!
 h43.save!
 h44.save!
 
-
+#--- Seed user:homewrok-
 lr1 = UserHomework.new(student_id: user.id, homework_id: h1.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr2 = UserHomework.new(student_id: user.id, homework_id: h2.id, status: "corregir", created_at: '03/08/2020', updated_at: "04/08/2020")
 lr3 = UserHomework.new(student_id: user.id, homework_id: h3.id, status: "aprobado", created_at: '03/08/2020', updated_at: "04/08/2020")
@@ -299,8 +302,8 @@ course4 = Course.create!(name: '2B', batch_id: batch4.id)
 
 event1 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Matematica', eventable_id:"Examen", course_id: course1.id)
 event2 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Lenguaje', eventable_id:"Parcial", course_id: course1.id)
-event3 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Biologia', eventable_id:"Examen", course_id: course2.id)
-event4 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Fisica', eventable_id:"Repaso", course_id: course2.id)
+event3 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Biologia', eventable_id:"Examen", course_id: course1.id)
+event4 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Fisica', eventable_id:"Repaso", course_id: course1.id)
 event5 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Quimica', eventable_id:"Examen", course_id: course3.id)
 event6 = Event.create!(date: DateTime.strptime("08/15/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Sociales', eventable_id:"Examen", course_id: course3.id)
 event7 = Event.create!(date: DateTime.strptime("08/14/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Religion', eventable_id:"Parcial", course_id: course4.id)
@@ -309,3 +312,9 @@ event9 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:
 event10 = Event.create!(date: DateTime.strptime("08/13/2020 14:00", "%m/%d/%Y %H:%M"), eventable_type: 'Festival del Deporte', course_id: course2.id)
 
 puts 'finish seed'
+
+#--- Seed ctickets--
+
+
+
+    

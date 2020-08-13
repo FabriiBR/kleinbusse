@@ -30,12 +30,12 @@
       <div>
         <% @assignature.homeworks.first(4).each do |homework| %>
           <%=link_to homework_path(homework),class:"text-decoration-none text-dark" do%>
-            <div class="d-flex justify-content-between align-items-center py-2 my-2 borde" id="homework">
-             <% if homework.user_homeworks.first.status == 'corregir' || homework.user_homeworks.first.status == 'pendiente' %>
-               <p><%= homework.name %></p>
-              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-             <%end %> 
-            </div>
+            <% if homework.user_homeworks.first.status == 'corregir' || homework.user_homeworks.first.status == 'pendiente' %>
+              <div class="d-flex justify-content-between align-items-center py-2 my-2 borde" id="homework">
+                <p><%= homework.name %></p>
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </div>
+            <%end %> 
           <%end %>
         <%end%>
       </div>
