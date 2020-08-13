@@ -51,18 +51,61 @@
       color: #666;
       box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
     }
+    
+    
+  .banner{
+    margin-left: 35%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("/assets/422.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 400px;
+    
+  }
+
+
+  .boton{
+    text-decoration: none;
+    color: white;
+    background-color: #2FC0F2;
+    padding: 15px 40px;
+    border-radius: 8px;
+    
+    opacity: 0.7;
+    margin-top: 15px;
+  }
+
+  .boton:hover{
+    opacity: .9;
+  }
+
+  .mensaje{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
+  <div class="container">
+    <div class="banner">
+      
+    </div>
+    <div class="mensaje">
       <h1>Las modificaciones que queres hacer no estan permitidas.</h1>
       <p>Tal vez no tenes acceso...</p>
-      <p> Si crees que tenes acceso envia un email a  support@kleinbusse.com</p>
+      <p> Si crees que tenes acceso envia un email a  support@kleinbusse.digital</p>
+      <br>
+      <a href="http://www.kleinbusse.digital/assignatures" class="boton" >Home</a>
     </div>
-    <a href="http://kleinbusse.digital" > </a>
+    
   </div>
 </body>
 </html>
