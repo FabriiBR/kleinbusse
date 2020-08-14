@@ -14,7 +14,7 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
      <span class="info-name "><%= current_user.first_name %> <%= current_user.last_name %></span>
-     <span class="info-type"><%= current_user.role == 'student' ? 'Estudiante' : 'Profesor' %></span>
+     <p class="info-type"><%= current_user.role == 'student' ? current_user.batch.grade : 'Profesor' %></p>
   </div>
   <div class="navigator mt-4 px-4">
     <%= link_to assignatures_path, class:"navigator-item #{'navigator-item-active' if request.path == assignatures_path} primero text-decoration-none text-dark d-flex navigator-border " do %>
